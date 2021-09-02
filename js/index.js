@@ -18,7 +18,7 @@ let contact = `<div class="card border-0 h-100 g-0 mt-2 ms-2">
 </div>
 </div>`;
 
-$(window).ready(function(){
+$(document).ready(function(){
     $('#login-modal').modal('toggle');
 });
 

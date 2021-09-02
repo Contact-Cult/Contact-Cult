@@ -28,9 +28,19 @@
 		$stmt = $conn->prepare("INSERT into Contacts ( FirstName, LastName, Details, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssss",  $FirstName, $LastName, $Details, $PhoneNumber, $Email);
 		$stmt->execute();
-		$stmt->close();
-		$conn->close();
+		$result = $stmt->get_result();
 		returnWithError("");
+	    	
+	    	if($row = $result->fetch_assoc() ){
+		
+			returnWithInfo($row['FirstName'], $row['LastName'], $row['Details'], $row['PhoneNumber'], $row['Email']);
+			
+		}
+	    else {
+		returnWithError("Something went wrong");    	
+	    }
+	    	$stmt->close();
+		$conn->close();
 	}
 
 	function getRequestInfo()

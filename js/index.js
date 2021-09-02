@@ -18,7 +18,7 @@ let contact = `<div class="card border-0 h-100 g-0 mt-2 ms-2">
 </div>
 </div>`;
 
-$(document).ready(function(){
+$(window).ready(function(){
     $('#login-modal').modal('toggle');
 });
 
@@ -42,7 +42,7 @@ function login() {
     toggleBlur();
 
 }
-~
+
 function toggleBlur() {
     $("#navbar").toggleClass("modal-blur");
     $("#card-deck").toggleClass("modal-blur");

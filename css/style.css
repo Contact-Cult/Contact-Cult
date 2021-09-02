@@ -1,11 +1,13 @@
 body {
-    padding-top: 75px;
+    padding-top: 60px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    max-width: 408px;
+    min-width: 345px;
+    max-width: 345px;
+    max-height: 110px;
 }
 
 .card:hover {
@@ -18,4 +20,12 @@ body {
 
 .dropdown-menu {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-blur{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }

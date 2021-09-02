@@ -51,7 +51,7 @@ body {
 }
 
 .modal-content {
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .card-img {
@@ -62,8 +62,8 @@ body {
 }
 
 .contact-img {
-  border-top-left-radius: 9px;
-  border-bottom-right-radius: 10px;
+  /* border-top-left-radius: 9px;
+  border-bottom-right-radius: 10px; */
 }
 
 .dashed-line {

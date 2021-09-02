@@ -1,1 +1,191 @@
-This is a test. :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>ContactCult</title>
+</head>
+
+<body class="bg-light pb-4">
+    <div class="modal fade" id="login-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="username" class="form-control" id="username" placeholder="Username">
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn" href="#signup" data-bs-target="#signup-modal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Sign
+                        up</div>
+                    <button id="login-btn" class="btn btn-primary" data-bs-target="#login-modal" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signup-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign Up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-inline-flex mb-4">
+                        <div class="form-floating me-2">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                            <label for="floatingInput">First Name</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Last Name">
+                            <label for="floatingInput">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="username" class="form-control" id="username" placeholder="Username">
+                        <label for="floatingInput">Username</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="d-inline-flex mb-4">
+                        <div class="form-floating me-2">
+                            <input type="password" class="form-control" id="floatingInput" placeholder="Password">
+                            <label for="floatingInput">Password</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingInput"
+                                placeholder="Confirm Password">
+                            <label for="floatingInput">Confirm Password</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="signup-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-shadow navbar-expand navbar-light bg-light fixed-top modal-blur" id="navbar">
+        <div class="container container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi-person-lines-fill ms-2"></i>
+                <p class="d-none d-sm-inline">ContactCult</p>
+            </a>
+
+            <div class="d-inline-flex">
+                <!-- Search bar -->
+                <form class="d-flex">
+
+                    <div class="input-group me-1">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <select class="form-select" id="search-option" style="min-width: 95px; max-width: 95px;">
+                            <option value="1" selected="selected">All</option>
+                            <option value="2">Name</option>
+                            <option value="3">First</option>
+                            <option value="4">Last</option>
+                            <option value="5">Tag</option>
+                        </select>
+                        <button class="btn btn-outline-success" type="submit"><i class="bi-search"></i></button>
+                    </div>
+                </form>
+
+                <button class="btn btn-success d-sm-inline-flex ms-sm-4" type="submit" onclick="addContact()"
+                    id="add-btn">
+                    <i class="bi bi-plus"></i>
+                    <div class="d-none d-sm-inline">Add</div>
+                </button>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="navbar-toggler-icon"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Account</a></li>
+                            <li><a class="dropdown-item" href="#">Help</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">About</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Card deck -->
+    <div class="container-fluid modal-blur" id="card-deck">
+        <div class="row justify-content-center me-0" id="contact-list">
+
+            <!-- Card -->
+            <!-- <div class="card border-0 h-100 g-0 mt-2 ms-2">
+                <div class="container-fluid d-inline-flex">
+                    <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                        class="img rounded-start d-inline-flex" alt="..."
+                        style="min-height: 110px; max-height: 110px; max-width: 110px; ">
+
+                    <div class="ms-2 mt-1">
+                        <h5 class="card-title">John Doe</h5>
+
+                        <div class="card-text">
+                            555-555-5555<br />
+                            John@example.com<br />
+                            <div>
+                                <i class="bi-tags-fill text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- End Card -->
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

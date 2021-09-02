@@ -13,6 +13,10 @@ let contact = `
                 John@example.com<br />
                 <div>
                     <i class="bi-tags-fill text-muted"></i>
+                    <span class="badge bg-primary" style="font-size: 8px">Primary</span>
+                    <span class="badge bg-danger" style="font-size: 8px">Danger</span>
+                    <span class="badge bg-info" style="font-size: 8px">Info</span>
+                    <span class="badge bg-warning" style="font-size: 8px">Warning</span>
                 </div>
             </div>
         </div>

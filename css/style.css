@@ -27,7 +27,11 @@ body {
   max-width: 345px;
   max-height: 110px;
   background-color: #eeeeee;
-  /* border-radius: 10px; */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .card:hover {
@@ -51,19 +55,27 @@ body {
 }
 
 .modal-content {
-  /* border-radius: 10px; */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .card-img {
-  /* border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px; */
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    -o-border-radius: 10px 0 0 10px;
+    -ms-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 .contact-img {
-  /* border-top-left-radius: 9px;
-  border-bottom-right-radius: 10px; */
+    -webkit-border-radius: 9px 0 10px 0;
+    -moz-border-radius: 9px 0 10px 0;
+    -o-border-radius: 9px 0 10px 0;
+    -ms-border-radius: 9px 0 10px 0;
+  border-radius: 9px 0 10px 0;
 }
 
 .dashed-line {
@@ -73,7 +85,3 @@ body {
   background-color: #fff;
   width: 97%;
 }
-
-/* .modal-content {
-    border-radius: 50px;
-} */

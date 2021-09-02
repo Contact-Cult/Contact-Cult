@@ -1,5 +1,5 @@
 let contact = `
-<div id="contact-card" href="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="toggleBlur()">
+<div id="contact-card" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
         <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
             class="img card-img d-inline-flex" alt="..."
@@ -44,7 +44,7 @@ let editorHTML = `
 <div class="mt-3 container-fluid">
     <div class="float-end btn-group-vertical">
         <button type="button" class="btn-close mb-2" style="font-size: 23px" data-bs-dismiss="modal" aria-label="Close"></button>
-        <i type="button" class="bi-pencil-square ms-1 mt-5 float-end" style="font-size: 28px;" data-bs-dismiss="modal"></i>
+        <i class="bi-pencil-square ms-1 mt-5 float-end" style="font-size: 28px;" data-bs-dismiss="modal"></i>
     </div>
 </div>
 </div>

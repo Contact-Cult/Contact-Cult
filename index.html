@@ -11,7 +11,7 @@
     <title>ContactCult</title>
 </head>
 
-<body class="bg-light pb-4">
+<body class="pb-4">
     <div class="modal fade" id="login-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -32,7 +32,7 @@
                     <div class="btn" href="#signup" data-bs-target="#signup-modal" data-bs-toggle="modal"
                         data-bs-dismiss="modal">Sign
                         up</div>
-                    <button id="login-btn" class="btn btn-primary" data-bs-target="#login-modal" data-bs-toggle="modal"
+                    <button id="login-btn" class="btn btn-color" data-bs-target="#login-modal" data-bs-toggle="modal"
                         data-bs-dismiss="modal">Login</button>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-primary" id="signup-btn">Submit</button>
+                    <button class="btn btn-color" id="signup-btn">Submit</button>
                 </div>
             </div>
         </div>
@@ -92,9 +92,9 @@
 
 
     <!-- Navbar -->
-    <nav class="navbar navbar-shadow navbar-expand navbar-light bg-light fixed-top modal-blur" id="navbar">
+    <nav class="navbar navbar-shadow navbar-expand navbar-light fixed-top modal-blur" id="navbar">
         <div class="container container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand text-light" href="#">
                 <i class="bi-person-lines-fill ms-2"></i>
                 <p class="d-none d-sm-inline">ContactCult</p>
             </a>
@@ -112,12 +112,11 @@
                             <option value="4">Last</option>
                             <option value="5">Tag</option>
                         </select>
-                        <button class="btn btn-outline-success" type="submit"><i class="bi-search"></i></button>
+                        <button class="btn search-btn btn-color" type="submit"><i class="bi-search"></i></button>
                     </div>
                 </form>
 
-                <button class="btn btn-success d-sm-inline-flex ms-sm-4" type="submit" onclick="addContact()"
-                    id="add-btn">
+                <button class="btn btn-color d-sm-inline-flex ms-sm-4" type="submit" onclick="addContact()" id="add-btn">
                     <i class="bi bi-plus"></i>
                     <div class="d-none d-sm-inline">Add</div>
                 </button>
@@ -153,7 +152,7 @@
         <div class="row justify-content-center me-0" id="contact-list">
 
             <!-- Card -->
-            <!-- <div id="contact-card" type="button" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-editor" onclick="toggleBlur()">
+            <!-- <div id="contact-card" type="button" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="toggleBlur()">
                 <div class="container-fluid d-inline-flex" >
                     <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
                         class="img rounded-start d-inline-flex" alt="..."
@@ -177,7 +176,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="contact-editor" tabindex="-1">
+    <!-- Contact Editor -->
+    <div class="modal fade" id="contact-details" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="d-inline-flex">
@@ -189,20 +189,24 @@
                         sadasdas<br />
                         sadasdas<br />
                     </div>
+                    <div class="mt-2 float-end">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
 
                 <div class="ms-3" style="font-size: 25px">Notes</div>
                 <hr class="m-0">
                 <div id="notes" class="ms-3 my-2">
-                        sadasdas<br />
-                        <hr class="m-0 dashed-line">
-                        sadasdas<br />
-                        <hr class="m-0 dashed-line">
-                        sadasdas<br />
-                        <hr class="m-0 dashed-line">
-                        sadasdas<br />
-                        <hr class="m-0 dashed-line">
-                        sadasdas<br />
+                    sadasdas<br />
+                    <hr class="m-0 dashed-line">
+                    sadasdas<br />
+                    <hr class="m-0 dashed-line">
+                    sadasdas<br />
+                    <hr class="m-0 dashed-line">
+                    sadasdas<br />
+                    <hr class="m-0 dashed-line">
+                    sadasdas<br />
                 </div>
 
                 <!-- <div class="modal-footer">

@@ -42,7 +42,7 @@ function login() {
     toggleBlur();
 
 }
-
+~
 function toggleBlur() {
     $("#navbar").toggleClass("modal-blur");
     $("#card-deck").toggleClass("modal-blur");

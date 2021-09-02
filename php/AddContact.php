@@ -1,18 +1,32 @@
 <?php
-	$inData = getRequestInfo();
-	
-	$color = $inData["color"];
-	$userId = $inData["userId"];
+    require_once 'DBHandler.php';
+    require_once 'functions.php';
 
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
-	if ($conn->connect_error) 
-	{
+    $inData = getRequestInfo();
+
+    # Contact Book User registration information stored as variables.
+    #$DateCreated = date("Y/m/d"); #Might not need
+    $FirstName = $inData["FirstName"];
+    $LastName = $inData["LastName"];
+    $Details = $inData["Contact Details"];
+    $PhoneNumber = $inData["PhoneNumber"];
+    $Email = $inData["Email"];
+
+
+    # establish connection to MySQL server to access database and handle failed
+    # connection error case
+    $conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName); #Might have to change this idk tho
+    if( $conn->connect_error )
+    {
 		returnWithError( $conn->connect_error );
-	} 
-	else
-	{
-		$stmt = $conn->prepare("INSERT into Colors (UserId,Name) VALUES(?,?)");
-		$stmt->bind_param("ss", $userId, $color);
+    }
+
+    # Query the database to insert the registered user into the Users table if
+	# validation constraints are met or else return an error
+    else
+    {
+		$stmt = $conn->prepare("INSERT into Contacts ( FirstName, LastName, Details, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss",  $FirstName, $LastName, $Details, $PhoneNumber, $Email);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

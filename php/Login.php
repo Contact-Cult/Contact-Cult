@@ -4,7 +4,7 @@
 
 		$inData = getRequestInfo();
 
-		# Contact login information stored as variables
+		# Contact Book login information stored as variables
 		$ID = 0;
 		$FirstName = "";
 		$LastName = "";
@@ -46,5 +46,3 @@
 			$retValue = '{"ID":' . $ID . ',"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","error":""}';
 			sendResultInfoAsJson( $retValue );
 		}
-
-	?>

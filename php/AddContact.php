@@ -21,7 +21,8 @@
 		$stmt = $conn->prepare("INSERT INTO Contacts ( FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
 		$stmt->execute();
-	    
+	    $result = $stmt->get_result();
+
       $stmt->close();
       $conn->close();
 #      returnWithError("");

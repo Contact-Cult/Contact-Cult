@@ -7,7 +7,7 @@
 	$color = $inData["color"];
 	$userId = $inData["userId"];
 
-	$conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName);
+	$conn = new mysqli("165.22.9.236", "APIbot", "beepboop", "ContactManager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );

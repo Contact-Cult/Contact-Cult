@@ -1,6 +1,6 @@
 body {
   padding-top: 60px;
-  background-color: rgb(255, 255, 255);
+  background-color: #eeeeff;
 }
 
 .navbar {
@@ -33,7 +33,7 @@ body {
   min-width: 345px;
   max-width: 345px;
   max-height: 110px;
-  background-color: #ebebeb;
+  /* background-color: #ebebeb; */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;

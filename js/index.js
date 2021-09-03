@@ -165,6 +165,7 @@ function openEditor() {
 // Login
 function doLogin()
 {
+    var login = true;
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -197,7 +198,7 @@ function doLogin()
 				if( userId < 1 || userId === undefined)
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-					return false;
+					login = false;
 				}
 
 				firstName = jsonObject.firstName;
@@ -211,10 +212,10 @@ function doLogin()
 	catch(err)
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
-        return false;
+        login = false;
 	}
 
-    return true;
+    return login;
 }
 
 function saveCookie()

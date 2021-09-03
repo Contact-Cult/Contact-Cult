@@ -4,10 +4,13 @@
 
     $inData = getRequestInfo();
 
-    $ID = $inData["ID"];;	
+    $ID = $inData["ID"];	
     $FirstName = $inData["FirstName"];
     $LastName = $inData["LastName"];
     $Address = $inData["Address"];
+    $City = $inData["City"];
+    $State = $inData["State"];
+    $ZipCode = $inData["ZipCode"];
     $PhoneNumber = $inData["PhoneNumber"];
     $Email = $inData["Email"];
 
@@ -19,8 +22,8 @@
     else
     {
 	    
-		$stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?,?, ?, ?, ?, ?)");
-		$stmt->bind_param("ssssss", $ID, $FirstName, $LastName, $Address, $PhoneNumber, $Email);
+		$stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode $PhoneNumber, $Email);
 		$stmt->execute();
 	    
       $stmt->close();

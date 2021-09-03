@@ -22,25 +22,9 @@
 		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
 		$stmt->execute();
 	    
-	    $result = $stmt->get_result();
-
-			if( $row = $result->fetch_assoc()  )
-			{
-				returnWithInfo($row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
-			}
-			else
-			{
-				returnWithError("No Records Found");
-			}
-	    
       $stmt->close();
       $conn->close();
 #      returnWithError("");
     }
 
-function returnWithInfo( $FirstName, $LastName, $ID )
-		{
-			$retValue = '{"FirstName":' . $FirstName . ',"LastName":"' . $LastName . '","Address":"' . $Address . '","PhoneNumber":' . $PhoneNumber . ',"Email":' . $Email . ',"error":""}';
-			sendResultInfoAsJson( $retValue );
-		}
 ?>

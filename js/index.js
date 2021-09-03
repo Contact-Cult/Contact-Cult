@@ -38,7 +38,7 @@ $(window).ready(function () {
     $('#login-modal').modal('toggle');
 
     if (readCookie()) {
-
+        login();
     } else {
         for (let i = 0; i < 20; i++) {
             $("#contact-list").append(contact);

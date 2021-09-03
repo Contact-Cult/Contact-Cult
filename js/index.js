@@ -203,8 +203,6 @@ function doLogin()
 				lastName = jsonObject.lastName;
 
 				saveCookie();
-
-				window.location.href = "color.html";
 			}
 		};
 		xhr.send(jsonPayload);

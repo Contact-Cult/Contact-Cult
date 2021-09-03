@@ -177,7 +177,6 @@ function doLogin()
 	document.getElementById("loginResult").innerHTML = "";
 
 	var tmp = {UserName:username,Password:password};
-    // console.log(tmp);
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 
@@ -197,10 +196,11 @@ function doLogin()
 
                 console.log(xhr.responseText);
 
-				if( userId < 1 || userId === undefined)
+				if( userId < 1 || userId == undefined)
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					login = false;
+                    return login;
 				}
 
 				firstName = jsonObject.firstName;
@@ -215,6 +215,7 @@ function doLogin()
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
         login = false;
+        return login;
 	}
 
     return login;

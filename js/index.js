@@ -193,6 +193,7 @@ function doLogin()
 			{
 				var jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
+                console.log(userId);
 
 				if( userId < 1 )
 				{

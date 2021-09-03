@@ -24,7 +24,7 @@
 	    $result = $stmt->get_result();
 	if( $row = $result->fetch_assoc()  )
 			{
-				returnWithInfo($row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
+				#returnWithInfo($row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
 			}
 			else
 			{

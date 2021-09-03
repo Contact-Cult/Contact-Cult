@@ -1,11 +1,3 @@
-// Test urlbased
-var urlBase = 'https://www.contactcult.com/php';
-var extension = 'php';
-
-var userId = 0;
-var firstName = "";
-var lastName = "";
-
 let contact = `
 <div id="contact-card" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
@@ -31,59 +23,8 @@ let contact = `
     </div>
 </div>`;
 
-let editorHTML = `
-<div class="d-inline-flex">
-    <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
-        class="img d-inline-flex contact-img" alt="..." width="150" height="150">
-    <div class="ms-3 mt-3">
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-        sadasdas<br />
-    </div>
-    <div class="mt-3 container-fluid">
-        <div class="float-end btn-group-vertical">
-            <button type="button" class="btn-close mb-2" style="font-size: 23px" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-    </div>
-</div>
-
-    <div class="ms-3" style="font-size: 25px">Notes</div>
-    <hr class="m-0">
-    <div id="notes" class="ms-3 my-2">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-        <hr class="m-0 dashed-line">
-        sadasdas<br />
-    </div>
-
-<div class="modal-footer">
-    <div class="btn" href="#signup" data-bs-target="#contact-editor" data-bs-toggle="modal"
-        data-bs-dismiss="modal">Cancel</div>
-    <button id="" class="btn btn-primary" data-bs-target="#contact-editor" data-bs-toggle="modal"
-        data-bs-dismiss="modal">Save</button>
-</div>
-`
-
+let editorHTML = ``;
+var contactInfo;
 
 $(window).ready(function () {
     // Check if user is logged in
@@ -138,111 +79,12 @@ function addContact() {
 }
 
 function openEditor() {
-    $("#editor").empty();
-    $("#editor").append(editorHTML);
+    contactInfo = $("#editor").clone();
+    // $("#editor").empty();
+    // $("#editor").append(editorHTML);
 }
 
-
-
-// Login
-function doLogin()
-{
-    var login = true;
-	userId = 0;
-	firstName = "";
-	lastName = "";
-
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
-	// var hash = md5( password );
-
-	document.getElementById("loginResult").innerHTML = "";
-
-	var tmp = {UserName:username,Password:password};
-//	var tmp = {login:login,password:hash};
-	var jsonPayload = JSON.stringify( tmp );
-
-    var url = urlBase + '/Login.' + extension;
-
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function()
-		{
-			if (this.readyState == 4 && this.status == 200)
-			{
-				var jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.ID;
-
-                console.log(xhr.responseText);
-
-				if( userId < 1 || userId == undefined)
-				{
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-                    return;
-				}
-
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
-
-				saveCookie();
-
-
-                $("#contact-list").empty();
-                for (let i = 0; i < 10; i++) {
-                    $("#contact-list").append(contact);
-                }
-                $('#login-modal').modal('toggle');
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("loginResult").innerHTML = err.message;
-	}
-}
-
-function saveCookie()
-{
-	var minutes = 20;
-	var date = new Date();
-	date.setTime(date.getTime()+(minutes*60*1000));
-	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString();
-}
-
-function readCookie()
-{
-	userId = -1;
-	var data = document.cookie;
-	var splits = data.split(",");
-	for(var i = 0; i < splits.length; i++)
-	{
-		var thisOne = splits[i].trim();
-		var tokens = thisOne.split("=");
-		if( tokens[0] == "userId" )
-		{
-			userId = parseInt( tokens[1].trim() );
-		}
-	}
-
-	if( userId < 0 )
-	{
-		window.location.href = "index.html";
-	}
-	else
-	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
-	}
-}
-
-function doLogout()
-{
-	userId = 0;
-	firstName = "";
-	lastName = "";
-	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-	window.location.href = "index.html";
+function closeEditor() {
+    // $("#editor").empty();
+    // $("#editor").append(contactInfo);
 }

@@ -53,18 +53,11 @@ else
     #$row = $result->fetch_assoc();
     #$stmt->close();
 
-    if (true)
-    {
-        returnWithError("Username already exists.");
-    }
-    else
-    {
-        #$stmt = $conn->prepare("INSERT INTO Users (DateCreated, FirstName, LastName, UserName, Password) VALUES (?, ?, ?, ?, ?)");
-        #$stmt->bind_param("sssss", $DateCreated, $FirstName, $LastName, $UserName, $Password);
-        #$stmt->execute();
-        #$stmt->close();
-        #$conn->close();
+    $stmt = $conn->prepare("INSERT into Colors (UserId,Name) VALUES(?,?)");
+        $stmt->bind_param("ss", $userId, $color);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
         returnWithError("");
-    }
 }
 ?>

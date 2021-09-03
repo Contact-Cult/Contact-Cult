@@ -28,7 +28,6 @@ function doSignup() {
 }
 
 function doLogin() {
-    userId = 0;
     firstName = "";
     lastName = "";
 
@@ -49,6 +48,7 @@ function login() {
     $('#login-modal').modal('toggle');
     // End test code
 
+    userId = 0;
     document.getElementById("loginResult").innerHTML = "";
 
     // var tmp = {UserName:username,Password:password};

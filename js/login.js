@@ -34,7 +34,7 @@ function doLogin() {
 
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
-    var hash = md5(password);
+    hash = md5(password);
 
     login();
 }
@@ -52,7 +52,8 @@ function login() {
     document.getElementById("loginResult").innerHTML = "";
 
     // var tmp = {UserName:username,Password:password};
-    var tmp = { login: username, password: hash };
+    var tmp = { UserName: username, Password: hash };
+    console.log(tmp);
     var jsonPayload = JSON.stringify(tmp);
 
     var url = urlBase + '/Login.' + extension;

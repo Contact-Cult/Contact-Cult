@@ -177,7 +177,7 @@ function doLogin()
 	document.getElementById("loginResult").innerHTML = "";
 
 	var tmp = {UserName:username,Password:password};
-    console.log(tmp);
+    // console.log(tmp);
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 

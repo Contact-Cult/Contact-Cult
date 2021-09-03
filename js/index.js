@@ -130,14 +130,9 @@ $("#contact-details").on("hidden.bs.modal", function () {
 function login() {
     // Test code
     // Adding cards
-    $("#contact-list").empty();
-    for (let i = 0; i < 10; i++) {
-        $("#contact-list").append(contact);
-    }
+
     // End test code
-    if(doLogin()) {
-        $('#login-modal').modal('toggle');
-    }
+    doLogin()
 
 }
 
@@ -199,14 +194,20 @@ function doLogin()
 				if( userId < 1 || userId == undefined)
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-					login = false;
-                    return login;
+                    return;
 				}
 
 				firstName = jsonObject.firstName;
 				lastName = jsonObject.lastName;
 
 				saveCookie();
+
+
+                $("#contact-list").empty();
+                for (let i = 0; i < 10; i++) {
+                    $("#contact-list").append(contact);
+                }
+                $('#login-modal').modal('toggle');
 			}
 		};
 		xhr.send(jsonPayload);
@@ -214,11 +215,7 @@ function doLogin()
 	catch(err)
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
-        login = false;
-        return login;
 	}
-
-    return login;
 }
 
 function saveCookie()

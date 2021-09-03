@@ -170,13 +170,13 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 
-	var login = document.getElementById("username").value;
+	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
 	// var hash = md5( password );
 
 	document.getElementById("loginResult").innerHTML = "";
 
-	var tmp = {login:login,password:password};
+	var tmp = {UserName:username,Password:password};
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 

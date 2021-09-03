@@ -165,7 +165,6 @@ function openEditor() {
 // Login
 function doLogin()
 {
-    console.log("asdasda");
 	userId = 0;
 	firstName = "";
 	lastName = "";
@@ -195,7 +194,7 @@ function doLogin()
 				userId = jsonObject.id;
                 console.log(userId);
 
-				if( userId < 1 )
+				if( userId < 1 || userId === undefined)
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return false;

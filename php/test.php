@@ -1,7 +1,4 @@
 <?php
-	 require_once 'DBHandler.php';
-   	 require_once 'functions.php';
-
 	$inData = getRequestInfo();
 	
 	$color = $inData["color"];

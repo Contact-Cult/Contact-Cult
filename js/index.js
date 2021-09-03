@@ -37,8 +37,12 @@ $(window).ready(function () {
 
     $('#login-modal').modal('toggle');
 
-    for (let i = 0; i < 20; i++) {
-        $("#contact-list").append(contact);
+    if (readCookie()) {
+
+    } else {
+        for (let i = 0; i < 20; i++) {
+            $("#contact-list").append(contact);
+        }
     }
 });
 

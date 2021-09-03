@@ -22,7 +22,14 @@
 		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
 		$stmt->execute();
 	    $result = $stmt->get_result();
-
+	if( $row = $result->fetch_assoc()  )
+			{
+				returnWithInfo($row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
+			}
+			else
+			{
+				returnWithError("No Records Found");
+			}
       $stmt->close();
       $conn->close();
 #      returnWithError("");

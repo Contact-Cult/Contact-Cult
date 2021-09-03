@@ -42,16 +42,6 @@ $(window).ready(function () {
     }
 });
 
-$("#signup-btn").on('click', function () {
-    // input validation
-
-    // Dismiss modal window
-    $('#signup-modal').modal('toggle');
-
-    // Login new user
-    login();
-});
-
 
 // Toggle blur when modal windows are dismissed
 $("#login-modal").on("hidden.bs.modal", function () {

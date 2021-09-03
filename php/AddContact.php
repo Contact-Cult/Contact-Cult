@@ -21,8 +21,26 @@
 		$stmt = $conn->prepare("INSERT INTO Contacts ( FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
 		$stmt->execute();
+	    
+	    $result = $stmt->get_result();
+
+			if( $row = $result->fetch_assoc()  )
+			{
+				returnWithInfo( $row['FirstName'], $row['LastName'], $row['ID'] );
+			}
+			else
+			{
+				returnWithError("No Records Found");
+			}
+	    
       $stmt->close();
       $conn->close();
 #      returnWithError("");
     }
+
+function returnWithInfo( $FirstName, $LastName, $ID )
+		{
+			$retValue = '{"ID":' . $ID . ',"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '","error":""}';
+			sendResultInfoAsJson( $retValue );
+		}
 ?>

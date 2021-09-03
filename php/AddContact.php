@@ -4,6 +4,7 @@
 
     $inData = getRequestInfo();
 
+    $ID = 0;	
     $FirstName = $inData["FirstName"];
     $LastName = $inData["LastName"];
     $Address = $inData["Address"];

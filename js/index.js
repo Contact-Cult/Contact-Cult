@@ -101,10 +101,6 @@ $(window).ready(function () {
     }
 });
 
-$("#login-btn").on('click', function () {
-    login();
-});
-
 $("#signup-btn").on('click', function () {
     // input validation
 
@@ -126,15 +122,6 @@ $("#contact-details").on("hidden.bs.modal", function () {
 });
 
 
-
-function login() {
-    // Test code
-    // Adding cards
-
-    // End test code
-    doLogin()
-
-}
 
 function toggleBlur() {
     $("#navbar").toggleClass("modal-blur");

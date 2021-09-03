@@ -4,20 +4,27 @@ body {
 }
 
 .navbar {
-  background-color: rgb(100, 128, 0);
+  /* background-color: rgb(100, 128, 0); */
+  /* background-color: rgb(104, 10, 180); */
+  background-color: rgb(156, 77, 221);
 }
 
 .add-btn:hover {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(172, 170, 255); */
 }
 
 .btn-color {
-  background-color: rgb(134, 201, 145);
+  /* background-color: rgb(134, 201, 145); */
+  background-color: rgb(172, 170, 255);
+}
+
+.btn-color:hover {
+    background-color: rgb(134, 138, 201);
 }
 
 .search-btn:hover {
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(214, 214, 214);
+    /* background-color: rgb(172, 170, 255); */
+  /* border-color: rgb(214, 214, 214); */
 }
 
 .card {
@@ -26,7 +33,7 @@ body {
   min-width: 345px;
   max-width: 345px;
   max-height: 110px;
-  background-color: #eeeeee;
+  background-color: #ebebeb;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;

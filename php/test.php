@@ -1,13 +1,13 @@
 <?php
-	require_once 'DBHandler.php';
-    	require_once 'functions.php';
+	#require_once 'DBHandler.php';
+    	#require_once 'functions.php';
 
 	$inData = getRequestInfo();
 	
 	$color = $inData["color"];
 	$userId = $inData["userId"];
 
-	 $conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName); 
+	 $conn = new mysqli("165.22.9.236", "APIbot", "beepboop", "ContactManager"); 
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -22,6 +22,21 @@
 		returnWithError("");
 	}
 
+	function getRequestInfo()
+	{
+		return json_decode(file_get_contents('php://input'), true);
+	}
 
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+	
+	function returnWithError( $err )
+	{
+		$retValue = '{"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
 	
 ?>

@@ -4,8 +4,11 @@
 
     $inData = getRequestInfo();
 
-    $color = $inData["color"];
-    $userId = $inData["userId"];
+    $FirstName = $inData["FirstName"];
+    $LastName = $inData["LastName"];
+    $Address = $inData["Address"];
+    $PhoneNumber = $inData["PhoneNumber"];
+    $Email = $inData["Email"];
 
    $conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName);
     if ($conn->connect_error)
@@ -14,11 +17,12 @@
     }
     else
     {
-#      $stmt = $conn->prepare("INSERT into Colors (UserId,Name) VALUES(?,?)");
-#      $stmt->bind_param("ss", $userId, $color);
-#      $stmt->execute();
-#      $stmt->close();
-#      $conn->close();
+	    
+		$stmt = $conn->prepare("INSERT INTO Contacts ( FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
+		$stmt->execute();
+      $stmt->close();
+      $conn->close();
 #      returnWithError("");
     }
 ?>

@@ -52,7 +52,7 @@ function login() {
     document.getElementById("loginResult").innerHTML = "";
 
     // var tmp = {UserName:username,Password:password};
-    var tmp = { login: login, password: hash };
+    var tmp = { login: username, password: hash };
     var jsonPayload = JSON.stringify(tmp);
 
     var url = urlBase + '/Login.' + extension;
@@ -77,13 +77,6 @@ function login() {
                 lastName = jsonObject.lastName;
 
                 saveCookie();
-
-
-                $("#contact-list").empty();
-                for (let i = 0; i < 10; i++) {
-                    $("#contact-list").append(contact);
-                }
-                $('#login-modal').modal('toggle');
             }
         };
         xhr.send(jsonPayload);

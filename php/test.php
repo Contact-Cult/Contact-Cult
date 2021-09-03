@@ -1,13 +1,13 @@
 <?php
 	#require_once 'DBHandler.php';
-    	#require_once 'functions.php';
+    	require_once 'functions.php';
 
 	$inData = getRequestInfo();
 	
 	$color = $inData["color"];
 	$userId = $inData["userId"];
 
-	 $conn = new mysqli("165.22.9.236", "APIbot", "beepboop", "ContactManager"); 
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );

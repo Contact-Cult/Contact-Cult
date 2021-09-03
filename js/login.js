@@ -36,7 +36,7 @@ function doLogin() {
     hash = md5(password);
 
     login();
-    readcookie();
+    readCookie();
 }
 
 // Login

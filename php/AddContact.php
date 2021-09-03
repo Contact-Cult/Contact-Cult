@@ -4,7 +4,7 @@
 
     $inData = getRequestInfo();
 
-    $ID = 0;	
+    $ID = $inData["ID"];;	
     $FirstName = $inData["FirstName"];
     $LastName = $inData["LastName"];
     $Address = $inData["Address"];
@@ -19,13 +19,13 @@
     else
     {
 	    
-		$stmt = $conn->prepare("INSERT INTO Contacts ( FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssss",  $FirstName, $LastName, $Address, $PhoneNumber, $Email);
+		$stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, PhoneNumber, Email) VALUES ( ?,?, ?, ?, ?, ?)");
+		$stmt->bind_param("ssssss", $ID, $FirstName, $LastName, $Address, $PhoneNumber, $Email);
 		$stmt->execute();
 	    $result = $stmt->get_result();
 	if( $row = $result->fetch_assoc()  )
 			{
-				#returnWithInfo($row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
+				 sendResultInfoAsJson($row['ID'], $row['FirstName'], $row['LastName'], $row['Address'], $row['PhoneNumber'], $row['Email']);
 			}
 			else
 			{

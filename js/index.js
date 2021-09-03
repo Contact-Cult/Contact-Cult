@@ -194,6 +194,8 @@ function doLogin()
 				var jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.ID;
 
+                console.log(userId);
+
 				if( userId < 1 || userId === undefined)
 				{
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";

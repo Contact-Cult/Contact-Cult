@@ -33,7 +33,6 @@ function doLogin() {
 
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
-    hash = md5(password);
 
     login();
 }
@@ -49,6 +48,7 @@ function login() {
     // End test code
 
     userId = 0;
+    hash = md5(password);
     document.getElementById("loginResult").innerHTML = "";
 
     // var tmp = {UserName:username,Password:password};

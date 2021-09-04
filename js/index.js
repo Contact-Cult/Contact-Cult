@@ -35,10 +35,11 @@ $(window).ready(function () {
     // $('#contact-details').modal('toggle');
 
     if (readCookie()) {
-        toggleBlur();
+
         saveCookie();
         loadContacts();
     } else {
+        toggleBlur();
         $('#login-modal').modal('toggle');
         for (let i = 0; i < 20; i++) {
             $("#contact-list").append(contact);

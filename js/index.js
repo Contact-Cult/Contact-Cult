@@ -35,11 +35,11 @@ $(window).ready(function () {
     // $('#contact-details').modal('toggle');
 
     if (readCookie()) {
-
         saveCookie();
         loadContacts();
     } else {
         toggleBlur();
+
         $('#login-modal').modal('toggle');
         for (let i = 0; i < 20; i++) {
             $("#contact-list").append(contact);
@@ -57,6 +57,11 @@ $("#contact-details").on("hidden.bs.modal", function () {
     toggleBlur();
 });
 
+$("#contact-editor").on("hidden.bs.modal", function () {
+    if(!$("#contact-details").hasClass('show')) {
+        toggleBlur();
+    }
+})
 
 
 function toggleBlur() {

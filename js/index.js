@@ -34,13 +34,10 @@ $(window).ready(function () {
     //Testcode
     // $('#contact-details').modal('toggle');
 
-
-    $('#login-modal').modal('toggle');
-
     if (readCookie()) {
-        $('#login-modal').modal('toggle');
-        console.log('read cookie true');
+
     } else {
+        $('#login-modal').modal('toggle');
         for (let i = 0; i < 20; i++) {
             $("#contact-list").append(contact);
         }

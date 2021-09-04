@@ -23,7 +23,6 @@ let contact = `
     </div>
 </div>`;
 
-let editorHTML = ``;
 var contactInfo;
 
 $(window).ready(function () {

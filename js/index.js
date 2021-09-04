@@ -35,7 +35,7 @@ $(window).ready(function () {
     // $('#contact-details').modal('toggle');
 
     if (readCookie()) {
-
+        toggleBlur();
     } else {
         $('#login-modal').modal('toggle');
         for (let i = 0; i < 20; i++) {

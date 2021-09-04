@@ -113,8 +113,6 @@ function readCookie() {
         }
     }
 
-    console.log(firstName + " " + lastName + " " + userId);
-
     if (userId > 0) {
         return true;
     }

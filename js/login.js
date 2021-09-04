@@ -40,10 +40,6 @@ function doLogin() {
 // Login
 function login() {
     // Test Code to get past login locally
-    $("#contact-list").empty();
-    for (let i = 0; i < 10; i++) {
-        $("#contact-list").append(contact);
-    }
     $('#login-modal').modal('toggle');
     // End test code
 
@@ -78,6 +74,7 @@ function login() {
                 lastName = jsonObject.LastName;
 
                 saveCookie();
+                loadContacts();
             }
         };
         xhr.send(jsonPayload);

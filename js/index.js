@@ -36,6 +36,8 @@ $(window).ready(function () {
 
     if (readCookie()) {
         toggleBlur();
+        saveCookie();
+        loadContacts();
     } else {
         $('#login-modal').modal('toggle');
         for (let i = 0; i < 20; i++) {
@@ -68,6 +70,13 @@ function addContact() {
 
     // Scroll to top where new contact is added
     $("html, body").animate({ scrollTop: 0 }, "fast");
+}
+
+function loadContacts() {
+    $("#contact-list").empty();
+    for (let i = 0; i < 10; i++) {
+        $("#contact-list").append(contact);
+    }
 }
 
 function openEditor() {

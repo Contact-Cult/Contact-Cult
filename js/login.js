@@ -99,9 +99,19 @@ function readCookie() {
     userId = -1;
     var data = document.cookie;
     var splits = data.split(",");
-    firstName = splits[0].trim().split("=")[1];;
-    lastName = splits[1].trim().split("=")[1];;
-    userId = splits[2].trim().split("=")[1];
+    for (var i = 0; i < splits.length; i++) {
+        var thisOne = splits[i].trim();
+        var tokens = thisOne.split("=");
+        if (tokens[0] == "firstName") {
+            firstName = tokens[1];
+        }
+        else if (tokens[0] == "lastName") {
+            lastName = tokens[1];
+        }
+        else if (tokens[0] == "userId") {
+            userId = parseInt(tokens[1].trim());
+        }
+    }
 
     console.log(firstName + " " + lastName + " " + userId);
 

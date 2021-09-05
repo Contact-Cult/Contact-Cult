@@ -1,4 +1,4 @@
-let contact = `
+let contact = /*html*/`
 <div id="contact-card" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
         <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
@@ -21,7 +21,8 @@ let contact = `
             </div>
         </div>
     </div>
-</div>`;
+</div>
+`;
 
 var contactInfo;
 

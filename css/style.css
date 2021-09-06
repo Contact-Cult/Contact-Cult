@@ -1,7 +1,17 @@
 body {
+  height: 100%;
   padding-top: 60px;
   /* background-color: #eeeeff; */
   background-color: rgb(141, 141, 141);
+  /* background-image: linear-gradient(white, rgb(141, 141, 141)); */
+  /* background-repeat: no-repeat;
+background-attachment: fixed; */
+}
+
+html {
+
+  height: 100%;
+
 }
 
 .navbar {

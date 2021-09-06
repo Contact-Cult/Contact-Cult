@@ -49,7 +49,6 @@ function login() {
 
     // var tmp = {UserName:username,Password:password};
     var tmp = { UserName: username, Password: hash };
-    console.log(tmp);
     var jsonPayload = JSON.stringify(tmp);
 
     var url = urlBase + '/Login.' + extension;
@@ -62,8 +61,6 @@ function login() {
             if (this.readyState == 4 && this.status == 200) {
                 var jsonObject = JSON.parse(xhr.responseText);
                 userId = jsonObject.ID;
-
-                console.log(xhr.responseText);
 
                 if (userId < 1 || userId === undefined) {
                     document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";

@@ -125,7 +125,7 @@
             </form>
 
             <button class="btn btn-color add-btn d-sm-inline-flex ms-sm-4" type="button"
-                data-bs-target="#contact-editor" data-bs-toggle="modal" id="add-btn" onclick="toggleBlur()">
+                data-bs-target="#add-contact-editor" data-bs-toggle="modal" id="add-btn" onclick="">
                 <i class="bi bi-plus"></i>
                 <span class="d-none d-sm-inline">Add</span>
             </button>
@@ -135,10 +135,10 @@
         <div id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    <div class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <span class="navbar-toggler-icon"></span>
-                    </a>
+                    </div>
 
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li>
@@ -173,18 +173,18 @@
     <!-- Contact Editor -->
     <div class="modal fade" id="contact-details" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" id="editor">
+            <div class="modal-content">
                 <div class="d-inline-flex">
                     <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
                         class="img d-inline-flex contact-img" alt="..." width="150" height="150" />
-                    <div class="ms-3 mt-3">
-                        <h5>John Doe</h5>
-                        <a href="tel:5555555555" class="tel">555-555-5555</a>
-                        <a href="mailto:John@example.com" target="_blank" class="email">John@example.com</a>
-                        <div>1234 Street Dr</div>
-                        <div>Orlando, FL 12345</div>
+                    <div class="ms-3 mt-3 container-fluid">
+                        <h5 id="details-name"></h5>
+                        <a id="details-phone" href="" class="tel"></a><br />
+                        <a id="details-email" href="" target="_blank" class="email"></a><br />
+                        <div id="details-address1"></div>
+                        <div id="details-address2"></div>
                     </div>
-                    <div class="mt-2 me-2 container-fluid">
+                    <div class="mt-2 me-2">
                         <i class="btn bi-pencil-square m-0 p-0 float-end" data-bs-target="#contact-editor"
                             data-bs-toggle="modal" style="font-size: 35px;" onclick="openEditor()"></i>
                     </div>

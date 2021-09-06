@@ -177,6 +177,9 @@ $("#contact-details").on("show.bs.modal", function (event) {
     $("#details-name").empty();
     $("#details-phone").empty();
     $("#details-email").empty();
+    $("#details-address1").empty();
+    $("#details-address2").empty();
+
     $("#details-name").append(firstName + " " + lastName);
     $("#details-phone").append(phoneNumber);
     $("#details-phone").attr("href", "tel:" + phoneNumber);

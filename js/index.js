@@ -134,7 +134,7 @@ data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-
 data-bs-city="" data-bs-state="" data-bs-zip=""
 onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
-        <img src="https://cdn.discordapp.com/attachments/588921446105874436/884558955429367828/Ryan_Bugge_ContactCult_Logo_0.2.jpg"
+        <img src="images/ContactCult_Logo_1.png"
             class="img card-img d-inline-flex" alt=""
             style="min-height: 110px; max-height: 110px; max-width: 110px; ">
 

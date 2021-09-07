@@ -21,6 +21,18 @@ html {
   background-color: rgb(189, 69, 69);
 }
 
+.navbar-brand {
+  line-height: 135%;
+}
+
+.join-btn {
+  color:rgb(189, 69, 69);
+}
+
+.join-btn:hover {
+  cursor: pointer;
+}
+
 .add-btn:hover {
   /* background-color: rgb(172, 170, 255); */
 }

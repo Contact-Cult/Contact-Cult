@@ -16,11 +16,16 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
-                <div class="modal-header">
+                <!-- <div class="modal-header">
                     <h5 class="modal-title">Login</h5>
-                </div>
+                </div> -->
 
                 <div class="modal-body">
+                    <div class="container-fluid text-center">
+                        <img src="images/ContactCult_Logo_0.png" width="200px" />
+                        <h3 class="">ContactCult</h3>
+                    </div>
+
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="username" placeholder="Username" />
                         <label for="username">Username</label>
@@ -34,11 +39,15 @@
                     <div class="text-danger" id="loginResult"></div>
                 </div>
 
-                <div class="modal-footer">
-                    <div class="btn" data-bs-target="#signup-modal" data-bs-toggle="modal" data-bs-dismiss="modal">
-                        Sign up
+                <div class="modal-footer" >
+                    <div class="d-inline-flex me-auto" style="font-size: 18px">
+                        <div>Not a member?</div>
+                        <div class="join-btn ms-2" data-bs-target="#signup-modal" data-bs-toggle="modal" data-bs-dismiss="modal">
+                            Join us
+                        </div>
                     </div>
-                    <button id="login-btn" class="btn btn-color" data-bs-target="#login-modal" onclick="doLogin()">
+
+                    <button id="login-btn d-inline-flex" class="btn btn-color" data-bs-target="#login-modal" onclick="doLogin()">
                         Login
                     </button>
                 </div>
@@ -100,14 +109,15 @@
 
 
     <!-- Navbar -->
-    <nav class="navbar navbar-shadow navbar-expand navbar-dark fixed-top container-fluid" id="navbar">
-        <a class="navbar-brand text-light" href="">
+    <nav class="navbar navbar-shadow navbar-expand navbar-dark fixed-top container-fluid p-0 pe-2" id="navbar">
+        <a class="navbar-brand text-light p-0 m-0 g-0 h-100 pt-2 ps-3" href="">
             <!-- <i class="bi-person-lines-fill ms-2  float-left" style="font-size: 23px"></i> -->
-            <img width="35px" src="https://cdn.discordapp.com/attachments/588921446105874436/884558953000869928/Ryan_Bugge_ContactCult_Logo_0.1.jpg" />
-            <p class="d-none d-sm-inline">ContactCult</p>
+            <img class="d-inline-block h-100 align-text-top" width="60px" src="images/ContactCult_Logo_0.png" />
+            <div class="d-none d-md-inline-block align-bottom p-0 pb-1 m-0 g-0" style="font-size: 30px;">ContactCult
+            </div>
         </a>
 
-        <div class="d-inline-flex container-fluid justify-content-center">
+        <div class="d-inline-flex container-fluid justify-content-center pe-0">
             <!-- Search bar -->
             <form class="d-flex">
                 <div class="input-group me-1">
@@ -128,7 +138,7 @@
             <button class="btn btn-color add-btn d-sm-inline-flex ms-sm-4" type="button"
                 data-bs-target="#add-contact-editor" data-bs-toggle="modal" id="add-btn" onclick="">
                 <i class="bi bi-plus"></i>
-                <span class="d-none d-sm-inline">Add</span>
+                <span class="d-none d-md-inline">Add</span>
             </button>
         </div>
 

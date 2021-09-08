@@ -213,7 +213,7 @@ function searchContacts() {
     xhr.send(jsonPayload);
 
     console.log(JSON.parse(xhr.responseText));
-    generateContacts(JSON.parse(xhr.responseText));
+    // generateContacts(JSON.parse(xhr.responseText));
 
 }
 

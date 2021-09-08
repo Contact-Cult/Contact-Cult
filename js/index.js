@@ -202,6 +202,10 @@ function searchContacts() {
     userID = 1;
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
+
+    let searchOption = $("#search-option").val();
+    // var tmp = { ID: userId, search: $("#search-option").val(), searchOption: $("#search").val()};
+    // var jsonPayload = JSON.stringify(tmp);
     var jsonPayload =
         '"ID":' + userId +
         ', "search": "' + $("#search-option").val() +
@@ -232,7 +236,7 @@ $(window).ready(function () {
         // for (let i = 0; i < 20; i++) {
         //     $("#contact-list").append(contact);
         // }
-        generateContacts();
+        // generateContacts();
     }
 });
 

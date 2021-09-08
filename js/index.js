@@ -204,12 +204,12 @@ function searchContacts() {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     let searchOption = $("#search-option").val();
-    // var tmp = { ID: userId, search: $("#search-option").val(), searchOption: $("#search").val()};
-    // var jsonPayload = JSON.stringify(tmp);
-    var jsonPayload =
-        '"ID":' + userId +
-        ', "search": "' + $("#search-option").val() +
-        '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
+    var tmp = { ID: 1, search: FirstName, FirstName: J};
+    var jsonPayload = JSON.stringify(tmp);
+    // var jsonPayload =
+    //     '"ID":' + userId +
+    //     ', "search": "' + $("#search-option").val() +
+    //     '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
     xhr.send(jsonPayload);
 
     console.log(JSON.parse(xhr.responseText));

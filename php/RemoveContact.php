@@ -4,7 +4,7 @@
 
     $inData = getRequestInfo();
 
-    $ID = $inData["ContactID"];
+    $ContactID = $inData["ContactID"];
 
    $conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName);
     if ($conn->connect_error)

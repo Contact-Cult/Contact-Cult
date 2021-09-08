@@ -168,7 +168,7 @@ onclick="toggleBlur()">
 `;
 
 function generateContacts(jsonObject) {
-    for (let i = 0; i < jsonObject.Contacts.length; i++) {
+    for (let i = 0; i < jsonObject.results.length; i++) {
         $("#contact-list").append(contact);
         $("#new-contact-name").append(jsonObject.Contacts[i].FirstName + " " + jsonObject.Contacts[i].LastName);
         $("#new-contact-name").attr("id", "name-" + i);

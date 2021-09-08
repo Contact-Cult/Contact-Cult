@@ -39,15 +39,17 @@
                     <div class="text-danger" id="loginResult"></div>
                 </div>
 
-                <div class="modal-footer" >
+                <div class="modal-footer">
                     <div class="d-inline-flex me-auto" style="font-size: 18px">
                         <div>Not a member?</div>
-                        <div class="join-btn ms-2" data-bs-target="#signup-modal" data-bs-toggle="modal" data-bs-dismiss="modal">
+                        <div class="join-btn ms-2" data-bs-target="#signup-modal" data-bs-toggle="modal"
+                            data-bs-dismiss="modal">
                             Join us
                         </div>
                     </div>
 
-                    <button id="login-btn d-inline-flex" class="btn btn-color" data-bs-target="#login-modal" onclick="doLogin()">
+                    <button id="login-btn d-inline-flex" class="btn btn-color" data-bs-target="#login-modal"
+                        onclick="doLogin()">
                         Login
                     </button>
                 </div>
@@ -121,7 +123,7 @@
             <!-- Search bar -->
             <form class="d-flex">
                 <div class="input-group me-1">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search" />
                     <select class="form-select" id="search-option" style="min-width: 95px; max-width: 95px;">
                         <option value="1" selected="selected">All</option>
                         <option value="2">Name</option>
@@ -186,8 +188,8 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="d-inline-flex">
-                    <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
-                        class="img d-inline-flex contact-img" alt="..." width="150" height="150" />
+                    <img id="details-img" src="" class="img d-inline-flex contact-img" alt="..." width="150"
+                        height="150" />
                     <div class="ms-3 mt-3 container-fluid">
                         <h5 id="details-name"></h5>
                         <a id="details-phone" href="" class="tel d-block"></a>
@@ -363,7 +365,7 @@
             integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
             </script>
         <script src="js/md5.js"></script>
-        <script src="js/login.js"></script>
+        <script src="js/api.js"></script>
         <script src="js/index.js"></script>
     </div>
 </body>

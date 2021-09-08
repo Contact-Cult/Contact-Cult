@@ -78,6 +78,7 @@ function login() {
     catch (err) {
         document.getElementById("loginResult").innerHTML = err.message;
     }
+    searchContacts();
 }
 
 
@@ -119,4 +120,20 @@ function doLogout() {
     lastName = "";
     document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
     window.location.href = "";
+}
+
+function searchContacts() {
+    let xhr = new XMLHttpRequest();
+    let url = 'php/SearchContact.php';
+    userID = 1;
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    var jsonPayload =
+        '"ID":' + userId +
+        ', "search": "' + $("#search-option").val() +
+        '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
+    xhr.send(jsonPayload);
+
+    generateContacts(JSON.parse(xhr.responseText));
+
 }

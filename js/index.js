@@ -11,7 +11,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "69420",
             "Email": "bobiscool@bob.com",
-            "PhoneNumber": "4078293821"
+            "PhoneNumber": "4078293821",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "2",
@@ -23,7 +24,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "34761",
             "Email": "john@example.com",
-            "PhoneNumber": "5555555555"
+            "PhoneNumber": "5555555555",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "3",
@@ -35,7 +37,8 @@ let testContactJSON = `
             "State": "NY",
             "ZipCode": "42069",
             "Email": "rcole@example.com",
-            "PhoneNumber": "1111111111"
+            "PhoneNumber": "1111111111",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "10",
@@ -47,7 +50,8 @@ let testContactJSON = `
             "State": "CA",
             "ZipCode": "11111",
             "Email": "jane@example.com",
-            "PhoneNumber": "4323457523"
+            "PhoneNumber": "4323457523",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "22",
@@ -59,7 +63,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "09090",
             "Email": "jwayne@example.com",
-            "PhoneNumber": "3213214321"
+            "PhoneNumber": "3213214321",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "9",
@@ -71,7 +76,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "69420",
             "Email": "bobiscool@bob.com",
-            "PhoneNumber": "4078293821"
+            "PhoneNumber": "4078293821",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "8",
@@ -83,7 +89,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "34761",
             "Email": "john@example.com",
-            "PhoneNumber": "5555555555"
+            "PhoneNumber": "5555555555",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "7",
@@ -95,7 +102,8 @@ let testContactJSON = `
             "State": "NY",
             "ZipCode": "42069",
             "Email": "rcole@example.com",
-            "PhoneNumber": "1111111111"
+            "PhoneNumber": "1111111111",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "11",
@@ -107,7 +115,8 @@ let testContactJSON = `
             "State": "CA",
             "ZipCode": "11111",
             "Email": "jane@example.com",
-            "PhoneNumber": "4323457523"
+            "PhoneNumber": "4323457523",
+            "img": "images/ContactCult_Logo_1.png"
         },
         {
             "ContactID": "23",
@@ -119,7 +128,8 @@ let testContactJSON = `
             "State": "FL",
             "ZipCode": "09090",
             "Email": "jwayne@example.com",
-            "PhoneNumber": "3213214321"
+            "PhoneNumber": "3213214321",
+            "img": "images/ContactCult_Logo_1.png"
         }
     ]
 }`;
@@ -131,10 +141,10 @@ let index = 0;
 let contact = /*html*/`
 <div id="new-contact" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details"
 data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-bs-address-line-1="" data-bs-address-line-2=""
-data-bs-city="" data-bs-state="" data-bs-zip=""
+data-bs-city="" data-bs-state="" data-bs-zip="" data-bs-img=""
 onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
-        <img src="images/ContactCult_Logo_1.png"
+        <img id="new-contact-img" src=""
             class="img card-img d-inline-flex" alt=""
             style="min-height: 110px; max-height: 110px; max-width: 110px; ">
 
@@ -157,8 +167,7 @@ onclick="toggleBlur()">
 </div>
 `;
 
-function generateContacts() {
-    let jsonObject = JSON.parse(testContactJSON);
+function generateContacts(jsonObject) {
     for (let i = 0; i < jsonObject.Contacts.length; i++) {
         $("#contact-list").append(contact);
         $("#new-contact-name").append(jsonObject.Contacts[i].FirstName + " " + jsonObject.Contacts[i].LastName);
@@ -170,6 +179,9 @@ function generateContacts() {
         $("#new-contact-email").append(jsonObject.Contacts[i].Email);
         $("#new-contact-email").attr("id", "email-" + i);
 
+        $("#new-contact-img").attr("src", jsonObject.Contacts[i].img);
+        $("#new-contact-img").attr("id", "img-" + i);
+
         $("#new-contact").attr("data-bs-firstName", jsonObject.Contacts[i].FirstName);
         $("#new-contact").attr("data-bs-lastName", jsonObject.Contacts[i].LastName);
         $("#new-contact").attr("data-bs-phone", jsonObject.Contacts[i].PhoneNumber);
@@ -179,6 +191,7 @@ function generateContacts() {
         $("#new-contact").attr("data-bs-city", jsonObject.Contacts[i].City);
         $("#new-contact").attr("data-bs-state", jsonObject.Contacts[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.Contacts[i].ZipCode);
+        $("#new-contact").attr("data-bs-img", jsonObject.Contacts[i].img);
         $("#new-contact").attr("id", i);
     }
 }
@@ -236,6 +249,8 @@ $("#contact-details").on("show.bs.modal", function (event) {
         card.getAttribute("data-bs-firstName") + " " +
         card.getAttribute("data-bs-lastName")
     );
+
+    $("#details-img").attr("src", card.getAttribute("data-bs-img"));
 
     $("#details-phone").text(card.getAttribute("data-bs-phone"));
     $("#details-phone").attr("href", "tel:" + card.getAttribute("data-bs-phone"));

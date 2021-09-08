@@ -13,13 +13,13 @@
     }
     else
     {
-		$stmt = $conn->prepare("DELETE FROM Contacts WHERE ContactID = ?");
-		$stmt->bind_param("i", $ContactID);
-	    $stmt->execute();
+        $stmt = $conn->prepare("DELETE FROM Contacts WHERE ContactID = ?");
+        $stmt->bind_param("i", $ContactID);
+        $stmt->execute();
 	    
         $stmt->close();
-	    $conn->close();
-	    returnWithError("");
+        $conn->close();
+        returnWithError("");
     }
 
 ?>

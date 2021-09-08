@@ -170,28 +170,28 @@ onclick="toggleBlur()">
 function generateContacts(jsonObject) {
     for (let i = 0; i < jsonObject.results.length; i++) {
         $("#contact-list").append(contact);
-        $("#new-contact-name").append(jsonObject.Contacts[i].FirstName + " " + jsonObject.Contacts[i].LastName);
+        $("#new-contact-name").append(jsonObject.results[i].FirstName + " " + jsonObject.results[i].LastName);
         $("#new-contact-name").attr("id", "name-" + i);
 
-        $("#new-contact-phone").append(jsonObject.Contacts[i].PhoneNumber);
+        $("#new-contact-phone").append(jsonObject.results[i].PhoneNumber);
         $("#new-contact-phone").attr("id", "phone-" + i);
 
-        $("#new-contact-email").append(jsonObject.Contacts[i].Email);
+        $("#new-contact-email").append(jsonObject.results[i].Email);
         $("#new-contact-email").attr("id", "email-" + i);
 
-        $("#new-contact-img").attr("src", jsonObject.Contacts[i].img);
+        $("#new-contact-img").attr("src", jsonObject.results[i].img);
         $("#new-contact-img").attr("id", "img-" + i);
 
-        $("#new-contact").attr("data-bs-firstName", jsonObject.Contacts[i].FirstName);
-        $("#new-contact").attr("data-bs-lastName", jsonObject.Contacts[i].LastName);
-        $("#new-contact").attr("data-bs-phone", jsonObject.Contacts[i].PhoneNumber);
-        $("#new-contact").attr("data-bs-email", jsonObject.Contacts[i].Email);
-        $("#new-contact").attr("data-bs-address-line-1", jsonObject.Contacts[i].Address);
-        $("#new-contact").attr("data-bs-address-line-2", jsonObject.Contacts[i].Address2);
-        $("#new-contact").attr("data-bs-city", jsonObject.Contacts[i].City);
-        $("#new-contact").attr("data-bs-state", jsonObject.Contacts[i].State);
-        $("#new-contact").attr("data-bs-zip", jsonObject.Contacts[i].ZipCode);
-        $("#new-contact").attr("data-bs-img", jsonObject.Contacts[i].img);
+        $("#new-contact").attr("data-bs-firstName", jsonObject.results[i].FirstName);
+        $("#new-contact").attr("data-bs-lastName", jsonObject.results[i].LastName);
+        $("#new-contact").attr("data-bs-phone", jsonObject.results[i].PhoneNumber);
+        $("#new-contact").attr("data-bs-email", jsonObject.results[i].Email);
+        $("#new-contact").attr("data-bs-address-line-1", jsonObject.results[i].Address);
+        $("#new-contact").attr("data-bs-address-line-2", jsonObject.results[i].Address2);
+        $("#new-contact").attr("data-bs-city", jsonObject.results[i].City);
+        $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
+        $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
+        $("#new-contact").attr("data-bs-img", jsonObject.results[i].img);
         $("#new-contact").attr("id", i);
     }
 }

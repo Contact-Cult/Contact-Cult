@@ -208,6 +208,7 @@ function searchContacts() {
         '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
     xhr.send(jsonPayload);
 
+    console.log(JSON.parse(xhr.responseText));
     generateContacts(JSON.parse(xhr.responseText));
 
 }

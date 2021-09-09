@@ -70,6 +70,8 @@ function login() {
                 lastName = jsonObject.LastName;
 
                 saveCookie();
+                $('#login-modal').modal('toggle');
+                searchContacts();
             }
         };
         xhr.send(jsonPayload);
@@ -78,8 +80,7 @@ function login() {
         document.getElementById("loginResult").innerHTML = err.message;
     }
 
-    $('#login-modal').modal('toggle');
-    searchContacts();
+
 }
 
 

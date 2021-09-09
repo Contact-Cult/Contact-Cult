@@ -40,7 +40,7 @@ function doLogin() {
 // Login
 function login() {
     // Test Code to get past login locally
-    // $('#login-modal').modal('toggle');
+    $('#login-modal').modal('toggle');
     // End test code
 
     hash = md5(password);

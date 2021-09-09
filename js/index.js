@@ -1,139 +1,3 @@
-let testContactJSON = `
-{
-    "Contacts": [
-        {
-            "ContactID": "1",
-            "FirstName": "Bob",
-            "LastName": "Smith",
-            "Address": "101 Teleuka Ln.",
-            "Address2": "APT 111",
-            "City": "Bob Central",
-            "State": "FL",
-            "ZipCode": "69420",
-            "Email": "bobiscool@bob.com",
-            "PhoneNumber": "4078293821",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "2",
-            "FirstName": "John",
-            "LastName": "Doe",
-            "Address": "1234 Street Dr",
-            "Address2": "",
-            "City": "Orlando",
-            "State": "FL",
-            "ZipCode": "34761",
-            "Email": "john@example.com",
-            "PhoneNumber": "5555555555",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "3",
-            "FirstName": "Richard",
-            "LastName": "Coleman",
-            "Address": "404 Alberquerky Rd",
-            "Address2": "",
-            "City": "New York",
-            "State": "NY",
-            "ZipCode": "42069",
-            "Email": "rcole@example.com",
-            "PhoneNumber": "1111111111",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "10",
-            "FirstName": "Jane",
-            "LastName": "Doe",
-            "Address": "123 Main St",
-            "Address2": "",
-            "City": "Los Angeles",
-            "State": "CA",
-            "ZipCode": "11111",
-            "Email": "jane@example.com",
-            "PhoneNumber": "4323457523",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "22",
-            "FirstName": "John",
-            "LastName": "Wayne",
-            "Address": "0000 Wayne Cr",
-            "Address2": "Unit 444",
-            "City": "Miami",
-            "State": "FL",
-            "ZipCode": "09090",
-            "Email": "jwayne@example.com",
-            "PhoneNumber": "3213214321",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "9",
-            "FirstName": "Bob",
-            "LastName": "Smith",
-            "Address": "101 Teleuka Ln.",
-            "Address2": "APT 111",
-            "City": "Bob Central",
-            "State": "FL",
-            "ZipCode": "69420",
-            "Email": "bobiscool@bob.com",
-            "PhoneNumber": "4078293821",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "8",
-            "FirstName": "John",
-            "LastName": "Doe",
-            "Address": "1234 Street Dr",
-            "Address2": "",
-            "City": "Orlando",
-            "State": "FL",
-            "ZipCode": "34761",
-            "Email": "john@example.com",
-            "PhoneNumber": "5555555555",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "7",
-            "FirstName": "Richard",
-            "LastName": "Coleman",
-            "Address": "404 Alberquerky Rd",
-            "Address2": "",
-            "City": "New York",
-            "State": "NY",
-            "ZipCode": "42069",
-            "Email": "rcole@example.com",
-            "PhoneNumber": "1111111111",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "11",
-            "FirstName": "Jane",
-            "LastName": "Doe",
-            "Address": "123 Main St",
-            "Address2": "",
-            "City": "Los Angeles",
-            "State": "CA",
-            "ZipCode": "11111",
-            "Email": "jane@example.com",
-            "PhoneNumber": "4323457523",
-            "img": "images/ContactCult_Logo_1.png"
-        },
-        {
-            "ContactID": "23",
-            "FirstName": "John",
-            "LastName": "Wayne",
-            "Address": "0000 Wayne Cr",
-            "Address2": "Unit 444",
-            "City": "Miami",
-            "State": "FL",
-            "ZipCode": "09090",
-            "Email": "jwayne@example.com",
-            "PhoneNumber": "3213214321",
-            "img": "images/ContactCult_Logo_1.png"
-        }
-    ]
-}`;
-
 let contactInfo;
 let card;
 let id;
@@ -141,7 +5,7 @@ let index = 0;
 
 let contact = /*html*/`
 <div id="new-contact" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details"
-data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-bs-address-line-1="" data-bs-address-line-2=""
+data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-bs-address=""
 data-bs-city="" data-bs-state="" data-bs-zip="" data-bs-img=""
 onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
@@ -186,7 +50,6 @@ function generateContacts(jsonObject) {
         $("#new-contact").attr("data-bs-phone", jsonObject.results[i].PhoneNumber);
         $("#new-contact").attr("data-bs-email", jsonObject.results[i].Email);
         $("#new-contact").attr("data-bs-address-line-1", jsonObject.results[i].Address);
-        $("#new-contact").attr("data-bs-address-line-2", jsonObject.results[i].Address2);
         $("#new-contact").attr("data-bs-city", jsonObject.results[i].City);
         $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
@@ -255,9 +118,8 @@ $("#contact-details").on("show.bs.modal", function (event) {
     $("#details-email").text(card.getAttribute("data-bs-email"));
     $("#details-email").attr("href", "mailto:" + card.getAttribute("data-bs-email"));
 
-    $("#details-address1").text(
-        card.getAttribute("data-bs-address-line-1") + ", " +
-        card.getAttribute("data-bs-address-line-2")
+    $("#details-address").text(
+        card.getAttribute("data-bs-address")
     );
     $("#details-address2").text(
         card.getAttribute("data-bs-city") + ", " +
@@ -278,8 +140,7 @@ $("#contact-editor").on("show.bs.modal", function (event) {
     $("#editPhone").val(card.getAttribute("data-bs-phone"));
     $("#editEmail").val(card.getAttribute("data-bs-email"));
 
-    $("#editAddressLine1").val(card.getAttribute("data-bs-address-line-1"));
-    $("#editAddressLine2").val(card.getAttribute("data-bs-address-line-2"));
+    $("#editAddress").val(card.getAttribute("data-bs-address"));
     $("#editCity").val(card.getAttribute("data-bs-city"));
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));

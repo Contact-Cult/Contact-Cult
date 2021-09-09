@@ -28,7 +28,7 @@
 	    $stmt->execute();
 	    
 $sid = $stmt->insert_id;
-	    returnWithError($sid);
+	    returnWithInfo($sid);
 
 	    #$stmt = $conn->prepare( SELECT SCOPE_IDENTITY);
 	    #$stmt->bind_param("sssssssss", $inData["ID"], $inData["FirstName"], $inData["LastName"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
@@ -51,9 +51,9 @@ $sid = $stmt->insert_id;
       returnWithError("");
     }
 	
-function returnWithInfo( $ID )
+function returnWithInfo( $sid )
 	{
-		$retValue = '{"New Contact ID":' . $ContactID . ',"error":""}';
+		$retValue = '{"New Contact ID":' . $sid . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

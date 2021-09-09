@@ -16,7 +16,7 @@
 	{
 		
 		
-		SELECT * FROM Contacts WHERE CONCAT(FirstName,  ' ', LastName) LIKE  '%B%' OR CONCAT(LastName,  ' ', FirstName) LIKE '%B%';
+		SELECT * FROM Contacts WHERE CONCAT(FirstName,  ' ', LastName) LIKE  'B%';
 
 		#$stmt = $conn->prepare("select * from Contacts where FirstName like ? or LastName and UserID=?");
 		#$colorName = "%" . $inData["search"] . "%";

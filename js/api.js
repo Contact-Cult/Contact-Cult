@@ -122,7 +122,7 @@ function doLogout() {
 
 function searchContacts() {
     let xhr = new XMLHttpRequest();
-    let url = 'php/SearchContact.php';
+    let url = 'php/SearchTest2.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");

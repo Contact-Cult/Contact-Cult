@@ -37,6 +37,16 @@
 
         $query = "SELECT * FROM Contacts WHERE ID =? AND ";
         switch($searchFilter) {
+            case "All":
+                $query .=   "FirstName LIKE '%" . $searchQuery .
+                            "%' OR LastName LIKE '%" . $searchQuery .
+                            "%' OR Address LIKE '%" . $searchQuery .
+                            "%' OR City LIKE '%" . $searchQuery .
+                            "%' OR State LIKE '%" . $searchQuery .
+                            "%' OR ZipCode LIKE '%" . $searchQuery .
+                            "%' OR PhoneNumber LIKE '%" . $searchQuery .
+                            "%' OR Email LIKE '%" . $searchQuery . "%'";
+                break;
             case "Name":
                 $query .=   "FirstName LIKE '%" . $searchQuery .
                             "%' OR LastName LIKE '%" . $searchQuery . "%'";

@@ -129,6 +129,7 @@ function searchContacts() {
 
     let searchOption = $("#search-option").val();
     var tmp = { ID: userId, searchFilter: "All", searchQuery: ''};
+    console.log(JSON.stringify(tmp));
     var jsonPayload = JSON.stringify(tmp);
 
 

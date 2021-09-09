@@ -306,6 +306,17 @@ function toggleBlur() {
 // }
 
 function saveContact() {
+   console.log(JSON.stringify({
+        FirstName: $("#add-firstname").val(),
+        LastName: $("#add-lastname").val(),
+        Phone: $("#add-phone").val(),
+        Email: $("#add-email").val(),
+        Address: $("#add-address").val(),
+        City: $("#add-city").val(),
+        State: $("#add-state").val(),
+        Zip: $("#add-zip").val()
+    }));
+
     newID = addContact(JSON.stringify({
         FirstName: $("#add-firstname").val(),
         LastName: $("#add-lastname").val(),
@@ -316,6 +327,8 @@ function saveContact() {
         State: $("#add-state").val(),
         Zip: $("#add-zip").val()
     }));
+
+
 
     $("#contact-list").prepend(contact);
     $("#new-contact-name").append($("#add-firstname").val() + " " + $("#add-lastname").val());

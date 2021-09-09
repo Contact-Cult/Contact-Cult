@@ -155,5 +155,6 @@ function editContact(jsonPayload) {
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
+    console.log(jsonPayload);
     xhr.send(jsonPayload);
 }

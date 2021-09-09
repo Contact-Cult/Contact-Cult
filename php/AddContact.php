@@ -25,6 +25,8 @@
 		$stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email);
 	    
+	    $stmt->execute();
+	    
 	    $stmt = $conn->prepare("SELECT ID,ContactID FROM Users WHERE ID = ? AND UserName=? AND Password =? AND Address = ? AND City = ? AND State = ? AND ZipCode = ? AND PhoneNumber = ? AND Email = ?");
 			$stmt->bind_param("ss", $inData["ID"], $inData["UserName"], $inData["Password"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
 	    

@@ -174,6 +174,8 @@ function saveEdit() {
     $("#" + id).attr("data-bs-img", "images/ContactCult_Logo_1.png");
 
     updateDetails();
+
+    console.log(id);
 }
 
 function toggleBlur() {

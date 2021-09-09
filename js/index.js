@@ -321,7 +321,7 @@ function saveContact() {
     ));
 
     newID = addContact(JSON.stringify({
-        ID: userId,
+        ID: '"' + userId + '"',
         FirstName: $("#add-firstname").val(),
         LastName: $("#add-lastname").val(),
         Address: $("#add-address").val(),

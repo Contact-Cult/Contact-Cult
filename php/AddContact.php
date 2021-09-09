@@ -24,7 +24,7 @@
 	    
 		$stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email);
-	    	returnWithInfo( $ID );
+	    	returnWithInfo( $ContactID );
 		$stmt->execute();
 	    
       $stmt->close();
@@ -32,9 +32,9 @@
       returnWithError("");
     }
 	
-function returnWithInfo( $ID )
+function returnWithInfo( $ContactID )
 	{
-		$retValue = '{"New Contact ID":[' . $ID . '],"error":""}';
+		$retValue = '{"New Contact ID":' . $ContactID . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

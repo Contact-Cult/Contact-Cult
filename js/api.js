@@ -153,7 +153,7 @@ function addContact(jsonPayload) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(jsonPayload);
 
-    console.log(JSON.parse(xhr.responseText));
+    // console.log(JSON.parse(xhr.responseText));
 
     return -1;
 }

@@ -16,10 +16,10 @@
 	else
 	{
 		
-		$query = "SELECT * FROM Contacts WHERE ID = ? AND FirstName LIKE '%" . $inData["FirstName"] . "%' ";
-		$stmt = $conn->prepare($query);
-		#$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
-		#$FirstName = "%" . $inData["search"] . "%";
+		#$query = "SELECT * FROM Contacts WHERE ID = ? AND FirstName LIKE '%" . $inData["FirstName"] . "%' ";
+		#$stmt = $conn->prepare($query);
+		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
+		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("ss", $inData["ID"], $FirstName);
 		$stmt->execute();
@@ -33,7 +33,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
+			$searchResults .= '"' . $row["FirstName"] . '"';
 		}
 		
 		if( $searchCount == 0 )

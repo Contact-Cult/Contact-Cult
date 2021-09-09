@@ -21,11 +21,17 @@
     }
     else
     {
-	    		
+	    
+	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	    $stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email);
+	    
+	    $stmt->execute();
+	    
 
 	    $stmt = $conn->prepare("SELECT ID,UserName,Password,Address,City,State,ZipCode,PhoneNumber, Email FROM Users WHERE ID = ? AND UserName=? AND Password =? AND Address = ? AND City = ? AND State = ? AND ZipCode = ? AND PhoneNumber = ? AND Email = ?");
-			$stmt->bind_param("sssssssss", $inData["ID"], $inData["UserName"], $inData["Password"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
-	    
+	    $stmt->bind_param("sssssssss", $inData["ID"], $inData["UserName"], $inData["Password"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
+	    $stmt->execute();
+	    $result = $stmt->get_result();
 	    	if( $row = $result->fetch_assoc()  )
 			{
 				returnWithInfo( $row['ContactID'] );
@@ -34,7 +40,7 @@
 			{
 				returnWithError("No Records Found");
 			}
-		$stmt->execute();
+		
 	    
       $stmt->close();
       $conn->close();

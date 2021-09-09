@@ -18,7 +18,7 @@
 		
 		#$query = "SELECT * FROM Contacts WHERE ID = ? AND FirstName LIKE '%" . $inData["FirstName"] . "%' ";
 		#$stmt = $conn->prepare($query);
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
+		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = ?");
 		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("ss", $inData["ID"], $FirstName);

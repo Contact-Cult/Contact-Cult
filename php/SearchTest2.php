@@ -35,7 +35,7 @@
     {
         $searchResult .= '"results" : [';
 
-        $query = "SELECT * FROM Contacts WHERE ID = " . $inData["ID"] . " AND ";
+        $query = "SELECT * FROM Contacts WHERE ID = " . $ID . " AND ";
         switch($searchFilter) {
             case "All":
                 $query .=   "FirstName LIKE '%" . $searchQuery .
@@ -72,7 +72,6 @@
         }
 
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $ID);
         $stmt->execute();
         $result = $stmt->get_result();
         if($row = $result->fetch_assoc())

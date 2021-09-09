@@ -134,7 +134,7 @@ function searchContacts() {
     var jsonPayload = JSON.stringify(tmp);
 
     xhr.send(jsonPayload);
-    console.log(xhr.responseText);
+
     generateContacts(JSON.parse(xhr.responseText));
 }
 
@@ -146,7 +146,14 @@ function addContact(jsonPayload) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(jsonPayload);
 
-    console.log(xhr.responseText);
+    return JSON.parse(xhr.responseText).newContactID;
+}
 
-    return -1;
+function editContact(jsonPayload) {
+    let xhr = new XMLHttpRequest();
+    let url = 'php/test.php';
+
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(jsonPayload);
 }

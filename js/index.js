@@ -101,9 +101,7 @@ $("#contact-details").on("show.bs.modal", function (event) {
     // Card that triggered details window
     card = event.relatedTarget;
 
-    // Extract contact details from card;
-    id = card.getAttribute("id");
-
+    // Extract contact details from card
     // Change window content
     $("#details-name").text(
         card.getAttribute("data-bs-firstName") + " " +
@@ -130,9 +128,10 @@ $("#contact-details").on("show.bs.modal", function (event) {
 
 
 $("#contact-editor").on("show.bs.modal", function (event) {
-    // Extract contact details from card;
-    id = card.getAttribute("id");
+    updateDetails();
+});
 
+function updateDetails() {
     // Change window content
     $("#editFirstName").val(card.getAttribute("data-bs-firstName"));
     $("#editLastName").val(card.getAttribute("data-bs-lastName"));
@@ -144,22 +143,43 @@ $("#contact-editor").on("show.bs.modal", function (event) {
     $("#editCity").val(card.getAttribute("data-bs-city"));
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
+}
 
-});
+function saveEdit() {
+    let id = card.getAttribute("id");
+
+    updateDetails();
+    editContact(JSON.stringify(
+        {
+            ID: userId,
+            ContactID: id,
+            FirstName: $("#editFirstName").val(),
+            LastName: $("#editLastName").val(),
+            Address: $("#editAddress").val(),
+            City: $("#editCity").val(),
+            State: $("#editState").val(),
+            ZipCode: $("#editZipCode").val(),
+            PhoneNumber: $("#editPhoneNumber").val(),
+            Email: $("#editEmail").val()
+        }
+    ));
+
+    // Change card display
+    $("#" + id).attr("data-bs-firstName", $("#editFirstName").val());
+    $("#" + id).attr("data-bs-lastName", $("#editLastName").val());
+    $("#" + id).attr("data-bs-phone", $("#editPhone").val());
+    $("#" + id).attr("data-bs-email", $("#editEmail").val());
+    $("#" + id).attr("data-bs-address", $("#editAddress").val());
+    $("#" + id).attr("data-bs-city", $("#editCity").val());
+    $("#" + id).attr("data-bs-state", $("#editState").val());
+    $("#" + id).attr("data-bs-zip", $("#editZip").val());
+    $("#" + id).attr("data-bs-img", "images/ContactCult_Logo_1.png");
+}
 
 function toggleBlur() {
     $("#navbar").toggleClass("modal-blur");
     $("#card-deck").toggleClass("modal-blur");
 }
-
-
-// Add contact to card deck after it is validated
-// function addContact() {
-//     $("#contact-list").prepend(contact);
-
-//     // Scroll to top where new contact is added
-//     $("html, body").animate({ scrollTop: 0 }, "fast");
-// }
 
 function saveContact() {
     newID = addContact(JSON.stringify(
@@ -175,8 +195,6 @@ function saveContact() {
             Email: $("#add-email").val()
         }
     ));
-
-
 
     $("#contact-list").prepend(contact);
     $("#new-contact-name").append($("#add-firstname").val() + " " + $("#add-lastname").val());
@@ -201,7 +219,11 @@ function saveContact() {
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
     $("#new-contact").attr("id", newID);
+
+    // Scroll to top where new contact is added
+    $("html, body").animate({ scrollTop: 0 }, "fast");
 }
+
 
 function loadContacts() {
 

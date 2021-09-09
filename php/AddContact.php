@@ -4,7 +4,7 @@
 
     $inData = getRequestInfo();
 
-    $ID = $inData["ID"];	
+    $ID = $inData["ID"];
     $FirstName = $inData["FirstName"];
     $LastName = $inData["LastName"];
     $Address = $inData["Address"];
@@ -21,12 +21,12 @@
     }
     else
     {
-	    
+
 	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	    $stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email);
-	    
+
 	    $stmt->execute();
-	    
+
 	$sid = $stmt->insert_id;
 	    returnWithInfo($sid);
 
@@ -42,18 +42,18 @@
 		#	{
 		#		returnWithError("No Records Found");
 		#	}
-	    
+
 	    #SELECT SCOPE_IDENTITY();
-		
-	    
+
+
       $stmt->close();
       $conn->close();
       #returnWithError("");
     }
-	
+
 function returnWithInfo( $sid )
 	{
-		$retValue = '{"New Contact ID":' . $sid . ',"error":""}';
+		$retValue = '{"newContactID":' . $sid . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

@@ -35,7 +35,7 @@
     {
         $searchResult .= '"results" : [';
 
-        $query = "SELECT * FROM Contacts WHERE ID = $ID";
+        $query = "SELECT * FROM Contacts WHERE ID = ?";
         switch($searchFilter) {
             case "All":
                 $query .=   "FirstName LIKE '%" . $searchQuery .

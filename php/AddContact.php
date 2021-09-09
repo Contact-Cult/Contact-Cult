@@ -32,7 +32,7 @@
 	    
 	    	if( $row = $result->fetch_assoc()  )
 			{
-				returnWithInfo( $row['ContactID'] );
+				returnWithInfo( $row['ID'] );
 			}
 			else
 			{

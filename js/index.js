@@ -162,7 +162,7 @@ function saveEdit() {
         }
     ));
 
-    // Change card display
+    // Change card data and display
     $("#" + id).attr("data-bs-firstName", $("#editFirstName").val());
     $("#" + id).attr("data-bs-lastName", $("#editLastName").val());
     $("#" + id).attr("data-bs-phone", $("#editPhone").val());
@@ -173,9 +173,17 @@ function saveEdit() {
     $("#" + id).attr("data-bs-zip", $("#editZip").val());
     $("#" + id).attr("data-bs-img", "images/ContactCult_Logo_1.png");
 
-    updateDetails();
+    $("#name-" + id).empty();
+    $("#phone-" + id).empty();
+    $("#email-" + id).empty();
+    $("#img-" + id).empty();
 
-    console.log(id);
+    $("#name-" + id).append($("#editFirstName").val() + " " + $("#editLastName").val());
+    $("#phone-" + id).append($("#editPhone").val());
+    $("#email-" + id).append($("#editEmail").val());
+    $("#img-" + id).attr("src", "images/ContactCult_Logo_1.png");
+
+    updateDetails();
 }
 
 function toggleBlur() {

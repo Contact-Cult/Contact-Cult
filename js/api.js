@@ -128,7 +128,7 @@ function searchContacts() {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     let searchOption = $("#search-option").val();
-    var tmp = { ID: 1, search: "FirstName", FirstName: "J"};
+    var tmp = { ID: userId, searchFilter: "All", searchQuery: ""};
     var jsonPayload = JSON.stringify(tmp);
 
 

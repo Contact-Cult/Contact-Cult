@@ -121,3 +121,39 @@ function doLogout() {
     document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
     window.location.href = "";
 }
+
+function searchContacts() {
+    let xhr = new XMLHttpRequest();
+    let url = 'php/SearchContact.php';
+
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    let searchOption = $("#search-option").val();
+    var tmp = { ID: 1, search: "FirstName", FirstName: "J"};
+    var jsonPayload = JSON.stringify(tmp);
+
+
+    // var jsonPayload =
+    //     '"ID":' + userId +
+    //     ', "search": "' + $("#search-option").val() +
+    //     '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
+    xhr.send(jsonPayload);
+
+    console.log(JSON.parse(xhr.responseText));
+    generateContacts(JSON.parse(xhr.responseText));
+
+}
+
+function addContact(jsonPayload) {
+    let xhr = new XMLHttpRequest();
+    let url = 'php/SearchContact.php';
+
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(jsonPayload);
+
+    console.log(JSON.parse(xhr.responseText));
+
+    return -1;
+}

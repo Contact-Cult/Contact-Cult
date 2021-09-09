@@ -138,7 +138,7 @@
             </form>
 
             <button class="btn btn-color add-btn d-sm-inline-flex ms-sm-4" type="button"
-                data-bs-target="#add-contact-editor" data-bs-toggle="modal" id="add-btn" onclick="">
+                data-bs-target="#contact-adder" data-bs-toggle="modal" id="add-btn" onclick="toggleBlur()">
                 <i class="bi bi-plus"></i>
                 <span class="d-none d-md-inline">Add</span>
             </button>
@@ -355,19 +355,143 @@
                 </div>
             </div>
         </div>
-
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-            integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
-            </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
-            integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
-            </script>
-        <script src="js/md5.js"></script>
-        <script src="js/api.js"></script>
-        <script src="js/index.js"></script>
     </div>
+
+    <div class="modal fade" id="contact-adder" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="d-inline-flex">
+
+                    <img src="https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                        class="img d-inline-flex add-img" alt="..." width="150" height="150" />
+
+
+                    <div class="container-fluid p-0 mt-3 ms-2 me-3">
+                        <div class="d-inline-flex">
+                            <input type="text" class="form-control me-1" id="add-firstname"
+                                placeholder="First Name" />
+
+                            <input type="text" class="form-control" id="add-lastname" placeholder="Last Name" />
+                        </div>
+
+
+                        <div class="p-0">
+                            <input type="tel" class="form-control mt-2" id="add-phone" placeholder="Phone Number" />
+                            <input type="email" class="form-control mt-2" id="add-email" placeholder="Email" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-3 mt-2 p-0">
+                    <input type="text" class="form-control" id="add-address" placeholder="Address Line 1" />
+
+                    <div class="d-inline-flex p-0 mt-2">
+                        <input type="text" class="form-control me-1" id="add-city" placeholder="City" />
+                        <select id="addState" class="form-select me-1 w-50">
+                            <option value="" selected="selected">State</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="GU">Guam</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UM">United States Minor Outlying Islands</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VI">Virgin Islands</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <input type="text" class="form-control w-50" id="add-zip" placeholder="Zip" />
+                    </div>
+
+                    <div class="ms-3" style="font-size: 25px">Notes</div>
+                    <hr class="m-0" />
+                    <div id="addNotes" class="ms-3 my-2">
+                        sadasdas<br />
+                        <hr class="m-0 dashed-line" />
+                        sadasdas<br />
+                        <hr class="m-0 dashed-line" />
+                        sadasdas<br />
+                        <hr class="m-0 dashed-line" />
+                        sadasdas<br />
+                        <hr class="m-0 dashed-line" />
+                        sadasdas<br />
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <i class="bi-tags-fill text-muted"></i>
+                    <span class="badge bg-primary">Primary</span>
+                    <span class="badge bg-danger">Danger</span>
+                    <span class="badge bg-info">Info</span>
+                    <span class="badge bg-warning">Warning</span>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="btn" data-bs-target="#contact-adder" data-bs-toggle="modal">Cancel</div>
+                    <button id="editSave" class="btn btn-color" data-bs-target="#contact-adder"
+                        data-bs-toggle="modal" data-bs-dismiss="modal" onclick="saveContact()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
+        </script>
+    <script src="js/md5.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

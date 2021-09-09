@@ -133,6 +133,7 @@ let testContactJSON = `
         }
     ]
 }`;
+
 let contactInfo;
 let card;
 let id;
@@ -144,9 +145,7 @@ data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-
 data-bs-city="" data-bs-state="" data-bs-zip="" data-bs-img=""
 onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
-        <img id="new-contact-img" src=""
-            class="img card-img d-inline-flex" alt=""
-            style="min-height: 110px; max-height: 110px; max-width: 110px; ">
+        <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
         <div class="ms-2 mt-1">
             <h5 class="card-title" id="new-contact-name"></h5>
@@ -192,7 +191,7 @@ function generateContacts(jsonObject) {
         $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
         $("#new-contact").attr("data-bs-img", jsonObject.results[i].img);
-        $("#new-contact").attr("id", i);
+        $("#new-contact").attr("id", jsonObject.results[i].ContactID);
     }
 }
 
@@ -228,6 +227,10 @@ $("#login-modal").on("hidden.bs.modal", function () {
 $("#contact-details").on("hidden.bs.modal", function () {
     toggleBlur();
 });
+
+$("#contact-adder").on("hidden.bs.modal", function () {
+    toggleBlur();
+})
 
 // $("#contact-editor").on("hidden.bs.modal", function () {
 //     if (!$("#contact-details").hasClass('show')) {
@@ -295,11 +298,48 @@ function toggleBlur() {
 
 
 // Add contact to card deck after it is validated
-function addContact() {
-    $("#contact-list").prepend(contact);
+// function addContact() {
+//     $("#contact-list").prepend(contact);
 
-    // Scroll to top where new contact is added
-    $("html, body").animate({ scrollTop: 0 }, "fast");
+//     // Scroll to top where new contact is added
+//     $("html, body").animate({ scrollTop: 0 }, "fast");
+// }
+
+function saveContact() {
+    newID = addContact(JSON.stringify({
+        FirstName: $("#add-firstname").val(),
+        LastName: $("#add-lastname").val(),
+        Phone: $("#add-phone").val(),
+        Email: $("#add-email").val(),
+        Address: $("#add-address").val(),
+        City: $("#add-city").val(),
+        State: $("#add-state").val(),
+        Zip: $("#add-zip").val()
+    }));
+
+    $("#contact-list").prepend(contact);
+    $("#new-contact-name").append($("#add-firstname").val() + " " + $("#add-lastname").val());
+    $("#new-contact-name").attr("id", "name-" + newID);
+
+    $("#new-contact-phone").append($("#add-phone").val());
+    $("#new-contact-phone").attr("id", "phone-" + newID);
+
+    $("#new-contact-email").append($("#add-email").val());
+    $("#new-contact-email").attr("id", "email-" + newID);
+
+    $("#new-contact-img").attr("src", "images/ContactCult_Logo_1.png");
+    $("#new-contact-img").attr("id", "img-" + newID);
+
+    $("#new-contact").attr("data-bs-firstName", $("#add-firstname").val());
+    $("#new-contact").attr("data-bs-lastName", $("#add-lastname").val());
+    $("#new-contact").attr("data-bs-phone", $("#add-phone").val());
+    $("#new-contact").attr("data-bs-email", $("#add-email").val());
+    $("#new-contact").attr("data-bs-address-line-1", $("#add-address").val());
+    $("#new-contact").attr("data-bs-city", $("#add-city").val());
+    $("#new-contact").attr("data-bs-state", $("#add-state").val());
+    $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
+    $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
+    $("#new-contact").attr("id", newID);
 }
 
 function loadContacts() {

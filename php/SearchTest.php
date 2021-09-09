@@ -16,30 +16,30 @@
 	{
 		
 		$stmt = $conn->prepare("select * FROM Contacts WHERE CONCAT(nameFirst, ' ', nameLast) LIKE 'B%';
-		$FirstName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $inData["userId"], $FirstName, $LastName);
-		$stmt->execute();
+		#$FirstName = "%" . $inData["search"] . "%";
+		#$stmt->bind_param("sss", $inData["userId"], $FirstName, $LastName);
+		#$stmt->execute();
 		
-		$result = $stmt->get_result();
+		#$result = $stmt->get_result();
 		
-		while($row = $result->fetch_assoc())
-		{
-			if( $searchCount > 0 )
-			{
-				$searchResults .= ",";
-			}
-			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
-		}
+		#while($row = $result->fetch_assoc())
+		#{
+		#	if( $searchCount > 0 )
+		#	{
+		#		$searchResults .= ",";
+		#	}
+		#	$searchCount++;
+		#	$searchResults .= '"' . $row["Name"] . '"';
+		#}
 		
-		if( $searchCount == 0 )
-		{
-			returnWithError( "No Records Found" );
-		}
-		else
-		{
-			returnWithInfo( $searchResults );
-		}
+		#if( $searchCount == 0 )
+		#{
+		#	returnWithError( "No Records Found" );
+		#}
+		#else
+		#{
+		#	returnWithInfo( $searchResults );
+		#}
 		
 		$stmt->close();
 		$conn->close();

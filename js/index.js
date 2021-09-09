@@ -306,26 +306,28 @@ function toggleBlur() {
 // }
 
 function saveContact() {
-   console.log(JSON.stringify({
+    console.log(JSON.stringify({
+        ID: userId,
         FirstName: $("#add-firstname").val(),
         LastName: $("#add-lastname").val(),
-        Phone: $("#add-phone").val(),
-        Email: $("#add-email").val(),
         Address: $("#add-address").val(),
         City: $("#add-city").val(),
         State: $("#add-state").val(),
-        Zip: $("#add-zip").val()
+        ZipCode: $("#add-zip").val(),
+        PhoneNumber: $("#add-phone").val(),
+        Email: $("#add-email").val()
     }));
 
     newID = addContact(JSON.stringify({
+        ID: userId,
         FirstName: $("#add-firstname").val(),
         LastName: $("#add-lastname").val(),
-        Phone: $("#add-phone").val(),
-        Email: $("#add-email").val(),
         Address: $("#add-address").val(),
         City: $("#add-city").val(),
         State: $("#add-state").val(),
-        Zip: $("#add-zip").val()
+        ZipCode: $("#add-zip").val(),
+        PhoneNumber: $("#add-phone").val(),
+        Email: $("#add-email").val()
     }));
 
 

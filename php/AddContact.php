@@ -27,8 +27,8 @@
 	    
 	    $stmt->execute();
 	    
-	    $stmt = $conn->prepare("SELECT ID,ContactID FROM Users WHERE ID = ? AND UserName=? AND Password =? AND Address = ? AND City = ? AND State = ? AND ZipCode = ? AND PhoneNumber = ? AND Email = ?");
-			$stmt->bind_param("ss", $inData["ID"], $inData["UserName"], $inData["Password"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
+	    $stmt = $conn->prepare("SELECT ID,UserName,Password,Address,City,State,ZipCode,PhoneNumber, Email FROM Users WHERE ID = ? AND UserName=? AND Password =? AND Address = ? AND City = ? AND State = ? AND ZipCode = ? AND PhoneNumber = ? AND Email = ?");
+			$stmt->bind_param("sssssssss", $inData["ID"], $inData["UserName"], $inData["Password"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
 	    
 	    	if( $row = $result->fetch_assoc()  )
 			{

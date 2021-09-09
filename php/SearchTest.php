@@ -16,8 +16,8 @@
 	{
 		
 		$stmt = $conn->prepare("select * FROM Contacts WHERE CONCAT(nameFirst, ' ', nameLast) LIKE 'B%';
-		#$colorName = "%" . $inData["search"] . "%";
-		#$stmt->bind_param("ss", $colorName, $inData["userId"]);
+		$FirstName = "%" . $inData["search"] . "%";
+		$stmt->bind_param("sss", $inData["userId"], $FirstName, $LastName);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();

@@ -69,9 +69,9 @@ $(window).ready(function () {
 
     if (readCookie()) {
         saveCookie();
+        login();
     } else {
         toggleBlur();
-
         $('#login-modal').modal('toggle');
     }
 });

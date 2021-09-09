@@ -77,6 +77,8 @@ function login() {
     catch (err) {
         document.getElementById("loginResult").innerHTML = err.message;
     }
+
+    $('#login-modal').modal('toggle');
     searchContacts();
 }
 

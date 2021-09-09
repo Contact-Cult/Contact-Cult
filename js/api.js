@@ -40,7 +40,7 @@ function doLogin() {
 // Login
 function login() {
     // Test Code to get past login locally
-    $('#login-modal').modal('toggle');
+    // $('#login-modal').modal('toggle');
     // End test code
 
     hash = md5(password);
@@ -127,16 +127,10 @@ function searchContacts() {
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
 
-    let searchOption = $("#search-option").val();
     var tmp = { ID: userId, searchFilter: "All", searchQuery: ''};
-    console.log(JSON.stringify(tmp));
+
     var jsonPayload = JSON.stringify(tmp);
 
-
-    // var jsonPayload =
-    //     '"ID":' + userId +
-    //     ', "search": "' + $("#search-option").val() +
-    //     '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
     xhr.send(jsonPayload);
     console.log(xhr.responseText);
     generateContacts(JSON.parse(xhr.responseText));

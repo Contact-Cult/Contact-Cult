@@ -196,27 +196,6 @@ function generateContacts(jsonObject) {
     }
 }
 
-function searchContacts() {
-    let xhr = new XMLHttpRequest();
-    let url = 'php/SearchContact.php';
-    userID = 1;
-    xhr.open("POST", url, false);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    let searchOption = $("#search-option").val();
-    var tmp = { ID: 1, search: "FirstName", FirstName: "J"};
-    var jsonPayload = JSON.stringify(tmp);
-    // var jsonPayload =
-    //     '"ID":' + userId +
-    //     ', "search": "' + $("#search-option").val() +
-    //     '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
-    xhr.send(jsonPayload);
-
-    console.log(JSON.parse(xhr.responseText));
-    generateContacts(JSON.parse(xhr.responseText));
-
-}
-
 
 $(window).ready(function () {
     // Check if user is logged in

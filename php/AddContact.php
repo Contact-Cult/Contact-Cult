@@ -28,7 +28,7 @@
 	    $stmt->execute();
 	    
 $sid = $stmt->insert_id;
-	    printf("Last inserted record has id %d\n", mysql_insert_id());
+	    returnWithError($sid);
 
 	    #$stmt = $conn->prepare( SELECT SCOPE_IDENTITY);
 	    #$stmt->bind_param("sssssssss", $inData["ID"], $inData["FirstName"], $inData["LastName"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);

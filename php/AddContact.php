@@ -32,9 +32,9 @@
       returnWithError("");
     }
 	
-function returnWithInfo( $searchResults )
+function returnWithInfo( $ID )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
+		$retValue = '{"New Contact ID":[' . $ID . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

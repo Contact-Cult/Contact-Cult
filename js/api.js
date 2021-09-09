@@ -137,6 +137,7 @@ function searchContacts() {
     //     ', "search": "' + $("#search-option").val() +
     //     '", "'+ $("#search-option").val() + '": "' + $("#search").val() + '"';
     xhr.send(jsonPayload);
+    console.log(xhr.responseText);
     generateContacts(JSON.parse(xhr.responseText));
 }
 

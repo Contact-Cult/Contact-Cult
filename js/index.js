@@ -147,8 +147,6 @@ function updateDetails() {
 
 function saveEdit() {
     let id = card.getAttribute("id");
-
-    updateDetails();
     editContact(JSON.stringify(
         {
             ID: userId,
@@ -174,6 +172,8 @@ function saveEdit() {
     $("#" + id).attr("data-bs-state", $("#editState").val());
     $("#" + id).attr("data-bs-zip", $("#editZip").val());
     $("#" + id).attr("data-bs-img", "images/ContactCult_Logo_1.png");
+
+    updateDetails();
 }
 
 function toggleBlur() {

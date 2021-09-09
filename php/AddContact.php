@@ -28,8 +28,7 @@
 	    $stmt->execute();
 	    
 
-	    SELECT ContactID FROM Contacts;
-	    SELECT SCOPE_IDENTITY() AS [Last-Inserted Identity Value];
+	    SELECT IDENT_CURRENT('ContactID')-IDENT_INCR('ContactID');
   
 	    #$stmt = $conn->prepare( SELECT SCOPE_IDENTITY);
 	    #$stmt->bind_param("sssssssss", $inData["ID"], $inData["FirstName"], $inData["LastName"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);

@@ -16,8 +16,9 @@
 	else
 	{
 		
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
-		$FirstName = "%" . $inData["search"] . "%";
+		#$stmt = $conn->prepare("SELECT * FROM Contacts WHERE CONCAT(FirstName, ' ', LastName) LIKE 'B%'");
+		#$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
+		#$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("ss", $inData["ID"], $FirstName);
 		$stmt->execute();

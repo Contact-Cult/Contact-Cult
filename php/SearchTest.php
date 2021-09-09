@@ -4,6 +4,7 @@
 
 	$inData = getRequestInfo();
 	
+	$ID = $inData["ID"];	
 	$searchResults = "";
 	$searchCount = 0;
 
@@ -15,10 +16,12 @@
 	else
 	{
 		
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =?");
+		#$query = "SELECT * FROM Contacts WHERE ID = ? AND FirstName LIKE '%" . $inData["FirstName"] . "%' ";
+		#$stmt = $conn->prepare($query);
+		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
 		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $inData["userId"], $FirstName);
+		$stmt->bind_param("ss", $inData["ID"], $FirstName);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -30,7 +33,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
+			$searchResults .= '"' . $row["FirstName"] . '"';
 		}
 		
 		if( $searchCount == 0 )

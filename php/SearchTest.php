@@ -15,38 +15,36 @@
 	else
 	{
 		
-		
-		SELECT * FROM Contacts WHERE CONCAT(FirstName,  ' ', LastName) LIKE  'B%';
-
-		#$stmt = $conn->prepare("select * from Contacts where FirstName like ? or LastName and UserID=?");
+		$stmt = $conn->prepare("select * FROM Contacts WHERE CONCAT(nameFirst, ' ', nameLast) LIKE 'B%';
 		#$colorName = "%" . $inData["search"] . "%";
 		#$stmt->bind_param("ss", $colorName, $inData["userId"]);
-		#$stmt->execute();
+		$stmt->execute();
 		
-		#$result = $stmt->get_result();
+		$result = $stmt->get_result();
 		
-		#while($row = $result->fetch_assoc())
-		#{
-		#	if( $searchCount > 0 )
-		#	{
-		#		$searchResults .= ",";
-		#	}
-		#	$searchCount++;
-		#	$searchResults .= '"' . $row["Name"] . '"';
-		#}
+		while($row = $result->fetch_assoc())
+		{
+			if( $searchCount > 0 )
+			{
+				$searchResults .= ",";
+			}
+			$searchCount++;
+			$searchResults .= '"' . $row["Name"] . '"';
+		}
 		
-		#if( $searchCount == 0 )
-		#{
-		#	returnWithError( "No Records Found" );
-		#}
-		#else
-		#{
-		#	returnWithInfo( $searchResults );
-		#}
+		if( $searchCount == 0 )
+		{
+			returnWithError( "No Records Found" );
+		}
+		else
+		{
+			returnWithInfo( $searchResults );
+		}
 		
 		$stmt->close();
 		$conn->close();
 	}
+
 
 	function returnWithInfo( $searchResults )
 	{

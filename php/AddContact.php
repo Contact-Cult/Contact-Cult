@@ -28,7 +28,7 @@
 	    $stmt->execute();
 	    
 
-	    $stmt = $conn->prepare( SCOPE_IDENTITY);
+	    $stmt = $conn->prepare( SELECT SCOPE_IDENTITY);
 	    #$stmt->bind_param("sssssssss", $inData["ID"], $inData["FirstName"], $inData["LastName"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
 	    $stmt->execute();
 	    $result = $stmt->get_result();
@@ -41,7 +41,7 @@
 				returnWithError("No Records Found");
 			}
 	    
-	    SELECT SCOPE_IDENTITY();
+	    #SELECT SCOPE_IDENTITY();
 		
 	    
       $stmt->close();

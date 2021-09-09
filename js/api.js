@@ -108,7 +108,6 @@ function readCookie() {
     }
 
     if (userId > 0) {
-        console.log(userId);
         return true;
     }
 

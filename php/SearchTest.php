@@ -4,6 +4,7 @@
 
 	$inData = getRequestInfo();
 	
+	$ID = $inData["ID"];	
 	$searchResults = "";
 	$searchCount = 0;
 
@@ -15,8 +16,8 @@
 	else
 	{
 		
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =?");
-		#$FirstName = "%" . $inData["search"] . "%";
+		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
+		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
 		$stmt->bind_param("sss", $inData["userId"], $FirstName);
 		$stmt->execute();

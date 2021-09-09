@@ -49,7 +49,7 @@ function generateContacts(jsonObject) {
         $("#new-contact").attr("data-bs-lastName", jsonObject.results[i].LastName);
         $("#new-contact").attr("data-bs-phone", jsonObject.results[i].PhoneNumber);
         $("#new-contact").attr("data-bs-email", jsonObject.results[i].Email);
-        $("#new-contact").attr("data-bs-address-line-1", jsonObject.results[i].Address);
+        $("#new-contact").attr("data-bs-address", jsonObject.results[i].Address);
         $("#new-contact").attr("data-bs-city", jsonObject.results[i].City);
         $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
@@ -103,6 +103,25 @@ $("#contact-details").on("show.bs.modal", function (event) {
 
     // Extract contact details from card
     // Change window content
+    updateDetails();
+});
+
+
+$("#contact-editor").on("show.bs.modal", function (event) {
+    // Change window content
+    $("#editFirstName").val(card.getAttribute("data-bs-firstName"));
+    $("#editLastName").val(card.getAttribute("data-bs-lastName"));
+
+    $("#editPhone").val(card.getAttribute("data-bs-phone"));
+    $("#editEmail").val(card.getAttribute("data-bs-email"));
+
+    $("#editAddress").val(card.getAttribute("data-bs-address"));
+    $("#editCity").val(card.getAttribute("data-bs-city"));
+    $("#editState").val(card.getAttribute("data-bs-state"));
+    $("#editZip").val(card.getAttribute("data-bs-zip"));
+});
+
+function updateDetails() {
     $("#details-name").text(
         card.getAttribute("data-bs-firstName") + " " +
         card.getAttribute("data-bs-lastName")
@@ -124,25 +143,6 @@ $("#contact-details").on("show.bs.modal", function (event) {
         card.getAttribute("data-bs-state") + " " +
         card.getAttribute("data-bs-zip")
     );
-});
-
-
-$("#contact-editor").on("show.bs.modal", function (event) {
-    updateDetails();
-});
-
-function updateDetails() {
-    // Change window content
-    $("#editFirstName").val(card.getAttribute("data-bs-firstName"));
-    $("#editLastName").val(card.getAttribute("data-bs-lastName"));
-
-    $("#editPhone").val(card.getAttribute("data-bs-phone"));
-    $("#editEmail").val(card.getAttribute("data-bs-email"));
-
-    $("#editAddress").val(card.getAttribute("data-bs-address"));
-    $("#editCity").val(card.getAttribute("data-bs-city"));
-    $("#editState").val(card.getAttribute("data-bs-state"));
-    $("#editZip").val(card.getAttribute("data-bs-zip"));
 }
 
 function saveEdit() {
@@ -156,7 +156,7 @@ function saveEdit() {
             Address: $("#editAddress").val(),
             City: $("#editCity").val(),
             State: $("#editState").val(),
-            ZipCode: $("#editZipCode").val(),
+            ZipCode: $("#editZip").val(),
             PhoneNumber: $("#editPhoneNumber").val(),
             Email: $("#editEmail").val()
         }
@@ -223,7 +223,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-lastName", $("#add-lastname").val());
     $("#new-contact").attr("data-bs-phone", $("#add-phone").val());
     $("#new-contact").attr("data-bs-email", $("#add-email").val());
-    $("#new-contact").attr("data-bs-address-line-1", $("#add-address").val());
+    $("#new-contact").attr("data-bs-address", $("#add-address").val());
     $("#new-contact").attr("data-bs-city", $("#add-city").val());
     $("#new-contact").attr("data-bs-state", $("#add-state").val());
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());

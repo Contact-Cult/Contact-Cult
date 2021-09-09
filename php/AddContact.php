@@ -28,18 +28,18 @@
 	    $stmt->execute();
 	    
 
-	    #$stmt = $conn->prepare("SELECT ContactID WHERE ID = $ID AND FirstName=? AND LastName =? AND Address = ? AND City = ? AND State = ? AND ZipCode = ? AND PhoneNumber = ? AND Email = ?");
+	    $stmt = $conn->prepare( SCOPE_IDENTITY);
 	    #$stmt->bind_param("sssssssss", $inData["ID"], $inData["FirstName"], $inData["LastName"],$inData["Address"],$inData["City"],$inData["State"],$inData["ZipCode"],$inData["PhoneNumber"],$inData["Email"]);
-	    #$stmt->execute();
-	    #$result = $stmt->get_result();
-	    	#if( $row = $result->fetch_assoc()  )
-		#	{
-		#		returnWithInfo( $row['ContactID'] );
-		#	}
-		#	else
-		#	{
-		#		returnWithError("No Records Found");
-		#	}
+	    $stmt->execute();
+	    $result = $stmt->get_result();
+	    	if( $row = $result->fetch_assoc()  )
+			{
+				returnWithInfo( $row['ContactID'] );
+			}
+			else
+			{
+				returnWithError("No Records Found");
+			}
 	    
 	    SELECT SCOPE_IDENTITY();
 		

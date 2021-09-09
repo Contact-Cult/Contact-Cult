@@ -147,7 +147,7 @@ function searchContacts() {
 
 function addContact(jsonPayload) {
     let xhr = new XMLHttpRequest();
-    let url = 'php/SearchContact.php';
+    let url = 'php/AddContact.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");

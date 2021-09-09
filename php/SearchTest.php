@@ -19,7 +19,7 @@
 		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =? AND ID = $ID");
 		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $inData["userId"], $FirstName);
+		$stmt->bind_param("ss", $inData["userId"], $FirstName);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();

@@ -40,10 +40,9 @@ function doLogin() {
 // Login
 function login() {
     // Test Code to get past login locally
-    $('#login-modal').modal('toggle');
+    // $('#login-modal').modal('toggle');
     // End test code
 
-    userId = 0;
     hash = md5(password);
     document.getElementById("loginResult").innerHTML = "";
 
@@ -90,7 +89,6 @@ function saveCookie() {
 }
 
 function readCookie() {
-    userId = -1;
     var data = document.cookie;
     var splits = data.split(",");
     for (var i = 0; i < splits.length; i++) {

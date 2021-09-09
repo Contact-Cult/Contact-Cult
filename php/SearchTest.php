@@ -15,10 +15,10 @@
 	else
 	{
 		
-		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? OR LastName =?");
+		$stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM Contacts WHERE FirstName=? AND LastName =?");
 		$FirstName = "%" . $inData["search"] . "%";
 		#$LastName = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sss", $inData["userId"], $FirstName, $LastName);
+		$stmt->bind_param("sss", $inData["userId"], $FirstName);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();

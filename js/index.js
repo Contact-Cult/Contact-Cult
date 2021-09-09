@@ -34,16 +34,16 @@ function generateContacts(jsonObject) {
     for (let i = 0; i < jsonObject.results.length; i++) {
         $("#contact-list").append(contact);
         $("#new-contact-name").append(jsonObject.results[i].FirstName + " " + jsonObject.results[i].LastName);
-        $("#new-contact-name").attr("id", "name-" + i);
+        $("#new-contact-name").attr("id", "name-" + jsonObject.results[i].ContactID);
 
         $("#new-contact-phone").append(jsonObject.results[i].PhoneNumber);
-        $("#new-contact-phone").attr("id", "phone-" + i);
+        $("#new-contact-phone").attr("id", "phone-" + jsonObject.results[i].ContactID);
 
         $("#new-contact-email").append(jsonObject.results[i].Email);
-        $("#new-contact-email").attr("id", "email-" + i);
+        $("#new-contact-email").attr("id", "email-" + jsonObject.results[i].ContactID);
 
         $("#new-contact-img").attr("src", jsonObject.results[i].img);
-        $("#new-contact-img").attr("id", "img-" + i);
+        $("#new-contact-img").attr("id", "img-" + jsonObject.results[i].ContactID);
 
         $("#new-contact").attr("data-bs-firstName", jsonObject.results[i].FirstName);
         $("#new-contact").attr("data-bs-lastName", jsonObject.results[i].LastName);

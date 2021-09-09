@@ -48,7 +48,7 @@ $sid = $stmt->insert_id;
 	    
       $stmt->close();
       $conn->close();
-      returnWithError("");
+      #returnWithError("");
     }
 	
 function returnWithInfo( $sid )

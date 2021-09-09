@@ -34,7 +34,7 @@
 	
 function returnWithInfo( $ContactID )
 	{
-		$retValue = '{"New Contact ID":' [. $ContactID . ]',"error":""}';
+		$retValue = '{"New Contact ID":' . $ContactID . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

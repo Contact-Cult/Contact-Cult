@@ -206,15 +206,10 @@ $(window).ready(function () {
 
     if (readCookie()) {
         saveCookie();
-        loadContacts();
     } else {
         toggleBlur();
 
         $('#login-modal').modal('toggle');
-        // for (let i = 0; i < 20; i++) {
-        //     $("#contact-list").append(contact);
-        // }
-        // generateContacts();
     }
 });
 
@@ -348,10 +343,7 @@ function saveContact() {
 }
 
 function loadContacts() {
-    $("#contact-list").empty();
-    for (let i = 0; i < 10; i++) {
-        $("#contact-list").append(contact);
-    }
+
 }
 
 function openEditor() {

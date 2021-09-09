@@ -157,7 +157,7 @@ function saveEdit() {
             City: $("#editCity").val(),
             State: $("#editState").val(),
             ZipCode: $("#editZip").val(),
-            PhoneNumber: $("#editPhoneNumber").val(),
+            PhoneNumber: $("#editPhone").val(),
             Email: $("#editEmail").val()
         }
     ));

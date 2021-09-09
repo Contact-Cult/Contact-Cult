@@ -28,7 +28,7 @@
 	    $stmt->execute();
 	    
 
-	    
+	    SELECT ContactID FROM Contacts;
 	    SELECT SCOPE_IDENTITY() AS [Last-Inserted Identity Value];
   
 	    #$stmt = $conn->prepare( SELECT SCOPE_IDENTITY);

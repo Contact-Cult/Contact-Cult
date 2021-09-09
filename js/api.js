@@ -71,6 +71,7 @@ function login() {
 
                 saveCookie();
                 $('#login-modal').modal('toggle');
+                console.log("reached");
                 searchContacts();
             }
         };
@@ -79,8 +80,6 @@ function login() {
     catch (err) {
         document.getElementById("loginResult").innerHTML = err.message;
     }
-
-
 }
 
 

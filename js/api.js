@@ -72,7 +72,7 @@ function login() {
                 saveCookie();
                 $('#login-modal').modal('toggle');
                 console.log("reached");
-                searchContacts();
+                searchContacts("All", "");
             }
         };
         xhr.send(jsonPayload);
@@ -122,14 +122,14 @@ function doLogout() {
     window.location.href = "";
 }
 
-function searchContacts() {
+function searchContacts(filter, query) {
     let xhr = new XMLHttpRequest();
     let url = 'php/SearchTest2.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
 
-    var tmp = { ID: userId, searchFilter: "All", searchQuery: ''};
+    var tmp = { ID: userId, searchFilter: filter, searchQuery: query};
 
     var jsonPayload = JSON.stringify(tmp);
 

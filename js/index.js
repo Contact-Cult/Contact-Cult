@@ -235,7 +235,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-state", $("#add-state").val());
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
-    $("#new-contact").attr("data-bs-img", $("#add-notes").val);
+    $("#new-contact").attr("data-bs-img", $("#add-notes").val());
     $("#new-contact").attr("id", newID);
 
     // Scroll to top where new contact is added

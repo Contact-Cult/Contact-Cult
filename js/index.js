@@ -244,7 +244,7 @@ function saveContact() {
 
 function search(form, e) {
     e.preventDefault();
-    searchContacts(form.filter, form.query);
+    searchContacts(form.filter.value, form.query.value);
 }
 
 function openEditor() {

@@ -142,11 +142,7 @@ function searchContacts(filter, query) {
 
     var tmp = { ID: userId, searchFilter: filter, searchQuery: query};
 
-    console.log(tmp);
-
     var jsonPayload = JSON.stringify(tmp);
-
-    console.log(jsonPayload);
 
     xhr.send(jsonPayload);
 

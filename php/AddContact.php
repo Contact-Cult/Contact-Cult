@@ -13,6 +13,8 @@
     $ZipCode = $inData["ZipCode"];
     $PhoneNumber = $inData["PhoneNumber"];
     $Email = $inData["Email"];
+    $Notes = $inData["Notes"];
+    $Image = $inData["Image"];
 
    $conn = new mysqli($serverName, $dBUsername, $dBPassword, $dBName);
     if ($conn->connect_error)
@@ -22,8 +24,8 @@
     else
     {
 
-	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	    $stmt->bind_param("sssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email);
+	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Notes,Image) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	    $stmt->bind_param("sssssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email, $Notes, $Image);
 
 	    $stmt->execute();
 

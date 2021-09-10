@@ -242,9 +242,14 @@ function saveContact() {
     $("html, body").animate({ scrollTop: 0 }, "fast");
 }
 
+$(document).on('submit', '#search-form', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+})
 
 function search(form, e) {
     e.preventDefault();
+    e.stopPropagation();
     searchContacts(form.filter.value, form.query.value);
 }
 

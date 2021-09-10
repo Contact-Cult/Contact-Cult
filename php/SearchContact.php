@@ -49,25 +49,25 @@
                 break;
             case "Name":
                 $query .=   "FirstName LIKE '%" . $searchQuery .
-                            "%' OR LastName LIKE '%" . $searchQuery . "%'";
+                            "%' OR LastName LIKE '%" . $searchQuery . "%')";
                 break;
             case "First":
-                $query .=   "FirstName LIKE '%" . $searchQuery . "%'";
+                $query .=   "FirstName LIKE '%" . $searchQuery . "%')";
                 break;
             case "Last":
-                $query .=   "LastName LIKE '%" . $searchQuery . "%'";
+                $query .=   "LastName LIKE '%" . $searchQuery . "%')";
                 break;
             case "Address":
                 $query .=   "Address LIKE '%" . $searchQuery .
                             "%' OR City LIKE '%" . $searchQuery .
                             "%' OR State LIKE '%" . $searchQuery .
-                            "%' OR ZipCode LIKE '%" . $searchQuery . "%'";
+                            "%' OR ZipCode LIKE '%" . $searchQuery . "%')";
                 break;
             case "Phone":
-                $query .=   "PhoneNumber LIKE '%" . $searchQuery . "%'";
+                $query .=   "PhoneNumber LIKE '%" . $searchQuery . "%')";
                 break;
             case "Email":
-                $query .=   "Email LIKE '%" . $searchQuery . "%'";
+                $query .=   "Email LIKE '%" . $searchQuery . "%')";
                 break;
         }
 

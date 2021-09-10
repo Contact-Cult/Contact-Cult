@@ -96,12 +96,12 @@
                         </div>
                         <div class="d-inline-flex mb-4">
                             <div class="form-floating me-2">
-                                <input type="password" class="form-control" name="password" placeholder="Password" />
+                                <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="new-password" />
                                 <label for="signupPassword">Password</label>
                             </div>
                             <div class="form-floating">
                                 <input type="password" class="form-control" name="passwordConfirm"
-                                    placeholder="Confirm Password" />
+                                    placeholder="Confirm Password" autocomplete="new-password" />
                                 <label for="signupPasswordConfirm">Confirm Password</label>
                             </div>
                         </div>
@@ -127,17 +127,17 @@
 
         <div class="d-inline-flex container-fluid justify-content-center pe-0 me-md-5">
             <!-- Search bar -->
-            <form class="d-flex">
+            <form class="d-flex" onSubmit="search(this, event)">
                 <div class="input-group me-1">
-                    <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                    <select class="form-select" id="search-option" style="min-width: 95px; max-width: 95px;">
+                    <input name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <select class="form-select" name="filter" style="min-width: 95px; max-width: 95px;">
                         <option value="1" selected="selected">All</option>
                         <option value="2">Name</option>
                         <option value="3">First</option>
                         <option value="4">Last</option>
                         <option value="5">Tag</option>
                     </select>
-                    <button class="btn btn-color" type="button">
+                    <button class="btn btn-color" type="submit">
                         <i class="bi-search"></i>
                     </button>
                 </div>
@@ -241,24 +241,24 @@
 
                     <div class="container-fluid p-0 mt-3 ms-2 me-3">
                         <div class="d-inline-flex">
-                            <input type="text" class="form-control me-1" id="editFirstName" placeholder="First Name" />
+                            <input type="text" class="form-control me-1" id="editFirstName" placeholder="First Name" autocomplete="off" />
 
-                            <input type="text" class="form-control" id="editLastName" placeholder="Last Name" />
+                            <input type="text" class="form-control" id="editLastName" placeholder="Last Name" autocomplete="off" />
                         </div>
 
 
                         <div class="p-0">
-                            <input type="tel" class="form-control mt-2" id="editPhone" placeholder="Phone Number" />
-                            <input type="email" class="form-control mt-2" id="editEmail" placeholder="Email" />
+                            <input type="tel" class="form-control mt-2" id="editPhone" placeholder="Phone Number" autocomplete="off" />
+                            <input type="email" class="form-control mt-2" id="editEmail" placeholder="Email" autocomplete="off" />
                         </div>
                     </div>
                 </div>
 
                 <div class="mx-3 mt-2 p-0">
-                    <input type="text" class="form-control" id="editAddress" placeholder="Address" />
+                    <input type="text" class="form-control" id="editAddress" placeholder="Address" autocomplete="off" />
 
                     <div class="d-inline-flex p-0 mt-2">
-                        <input type="text" class="form-control me-1" id="editCity" placeholder="City" />
+                        <input type="text" class="form-control me-1" id="editCity" placeholder="City" autocomplete="off" />
                         <select id="editState" class="form-select me-1 w-50">
                             <option value="" selected="selected">State</option>
                             <option value="AK">Alaska</option>
@@ -319,7 +319,7 @@
                             <option value="WV">West Virginia</option>
                             <option value="WY">Wyoming</option>
                         </select>
-                        <input type="text" class="form-control w-50" id="editZip" placeholder="Zip" />
+                        <input type="text" class="form-control w-50" id="editZip" placeholder="Zip" autocomplete="off" />
                     </div>
 
                     <div class="ms-3" style="font-size: 25px">Notes</div>
@@ -355,24 +355,24 @@
 
                     <div class="container-fluid p-0 mt-3 ms-2 me-3">
                         <div class="d-inline-flex">
-                            <input type="text" class="form-control me-1" id="add-firstname" placeholder="First Name" />
+                            <input type="text" class="form-control me-1" id="add-firstname" placeholder="First Name" autocomplete="off" />
 
-                            <input type="text" class="form-control" id="add-lastname" placeholder="Last Name" />
+                            <input type="text" class="form-control" id="add-lastname" placeholder="Last Name" autocomplete="off" />
                         </div>
 
 
                         <div class="p-0">
-                            <input type="tel" class="form-control mt-2" id="add-phone" placeholder="Phone Number" />
-                            <input type="email" class="form-control mt-2" id="add-email" placeholder="Email" />
+                            <input type="tel" class="form-control mt-2" id="add-phone" placeholder="Phone Number" autocomplete="off" />
+                            <input type="email" class="form-control mt-2" id="add-email" placeholder="Email" autocomplete="off" />
                         </div>
                     </div>
                 </div>
 
                 <div class="mx-3 mt-2 p-0">
-                    <input type="text" class="form-control" id="add-address" placeholder="Address" />
+                    <input type="text" class="form-control" id="add-address" placeholder="Address" autocomplete="off" />
 
                     <div class="d-inline-flex p-0 mt-2">
-                        <input type="text" class="form-control me-1" id="add-city" placeholder="City" />
+                        <input type="text" class="form-control me-1" id="add-city" placeholder="City" autocomplete="off" />
                         <select id="add-state" class="form-select me-1 w-50">
                             <option value="" selected="selected">State</option>
                             <option value="AK">Alaska</option>
@@ -433,7 +433,7 @@
                             <option value="WV">West Virginia</option>
                             <option value="WY">Wyoming</option>
                         </select>
-                        <input type="text" class="form-control w-50" id="add-zip" placeholder="Zip" />
+                        <input type="text" class="form-control w-50" id="add-zip" placeholder="Zip" autocomplete="off" />
                     </div>
 
                     <div class="ms-3" style="font-size: 25px">Notes</div>

@@ -242,8 +242,9 @@ function saveContact() {
 }
 
 
-function loadContacts() {
-
+function search(form, e) {
+    e.preventDefault();
+    searchContacts(form.filter, form.query);
 }
 
 function openEditor() {

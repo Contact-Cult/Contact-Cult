@@ -69,7 +69,7 @@ $(window).ready(function () {
 
     if (readCookie()) {
         saveCookie();
-        searchContacts();
+        searchContacts("All", "");
     } else {
         toggleBlur();
         $('#login-modal').modal('toggle');

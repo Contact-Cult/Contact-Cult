@@ -31,6 +31,7 @@ onclick="toggleBlur()">
 `;
 
 function generateContacts(jsonObject) {
+    $("#contact-list").empty();
     for (let i = 0; i < jsonObject.results.length; i++) {
         $("#contact-list").append(contact);
         $("#new-contact-name").append(jsonObject.results[i].FirstName + " " + jsonObject.results[i].LastName);

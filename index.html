@@ -129,8 +129,8 @@
             <!-- Search bar -->
             <form class="d-flex" onSubmit="search(this, event)">
                 <div class="input-group me-1">
-                    <input name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                    <select class="form-select" name="filter" style="min-width: 95px; max-width: 95px;">
+                    <input name="query" class="form-control" type="search" placeholder="Search" aria-label="Search" autocomplete="off" />
+                    <select class="form-select" name="filter" style="min-width: 95px; max-width: 95px;" autocomplete="off" >
                         <option value="All" selected="selected">All</option>
                         <option value="Name">Name</option>
                         <option value="First">First</option>
@@ -262,7 +262,7 @@
 
                     <div class="d-inline-flex p-0 mt-2">
                         <input type="text" class="form-control me-1" id="editCity" placeholder="City" autocomplete="off" />
-                        <select id="editState" class="form-select me-1 w-50">
+                        <select id="editState" class="form-select me-1 w-50" autocomplete="off" >
                             <option value="" selected="selected">State</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -376,7 +376,7 @@
 
                     <div class="d-inline-flex p-0 mt-2">
                         <input type="text" class="form-control me-1" id="add-city" placeholder="City" autocomplete="off" />
-                        <select id="add-state" class="form-select me-1 w-50">
+                        <select id="add-state" class="form-select me-1 w-50" autocomplete="off" >
                             <option value="" selected="selected">State</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>

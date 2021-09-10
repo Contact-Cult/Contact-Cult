@@ -144,6 +144,8 @@ function searchContacts(filter, query) {
 
     var jsonPayload = JSON.stringify(tmp);
 
+    console.log(jsonPayload);
+
     xhr.send(jsonPayload);
 
     generateContacts(JSON.parse(xhr.responseText));

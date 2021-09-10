@@ -17,6 +17,7 @@
   $ZipCode = "";
   $PhoneNumber = "";
   $Email = "";
+  $Notes = "";
 
   # establish connection to MySQL server to access database and handle failed
   # connection error case
@@ -62,6 +63,9 @@
         $stmt = $conn->prepare("UPDATE Contacts SET Email=? WHERE ID=? AND ContactID=?");
         $stmt->bind_param("sii", $inData["Email"],$ID,$ContactID);
         break;
+      case "Notes":
+        $stmt = $conn->prepare("UPDATE Contacts SET Notes=? WHERE ID=? AND ContactID=?");
+        $stmt->bind_param("sii", $inData["Notes"],$ID,$ContactID);
       default:
         break;
     }

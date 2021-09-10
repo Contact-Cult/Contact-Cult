@@ -135,14 +135,18 @@ function doLogout() {
 
 function searchContacts(filter, query) {
     let xhr = new XMLHttpRequest();
-    let url = 'php/SearchTest2.php';
+    let url = 'php/SearchContact.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     var tmp = { ID: userId, searchFilter: filter, searchQuery: query};
 
+
+
     var jsonPayload = JSON.stringify(tmp);
+
+    console.log(jsonPayload);
 
     xhr.send(jsonPayload);
 
@@ -162,7 +166,7 @@ function addContact(jsonPayload) {
 
 function editContact(jsonPayload) {
     let xhr = new XMLHttpRequest();
-    let url = 'php/test.php';
+    let url = 'php/EditContact.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");

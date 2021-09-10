@@ -8,31 +8,42 @@ var hash = "";
 var username = "";
 var password = "";
 
+// TODO: Input validation
+function doSignup(form, e) {
+    e.preventDefault();
+    firstName = form.firstName.value;
+    lastName = form.lastName.value;
+    username = form.username.value;
+    password = form.password.value;
+    let passwordConfirm = form.passwordConfirm.value;
+    let email = form.email.value;
 
-function doSignup() {
-    firstName = document.getElementById("signupFirstName").value;
-    lastName = document.getElementById("signupLastName").value;
-    username = document.getElementById("signupUsername").value;
-    password = document.getElementById("signupPassword").value;
     hash = md5(password);
     let xhr = new XMLHttpRequest();
     let url = 'php/CreateUser.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");
-    var jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "UserName" : "' + username + '", "Password" : "' + hash + '"}';
+    let jsonPayload = '{"FirstName" : "' + firstName + '", "LastName" : "' + lastName + '", "UserName" : "' + username + '", "Password" : "' + hash + '"}';
     xhr.send(jsonPayload);
+
+
+    // Validate here
+
 
     $('#signup-modal').modal('toggle');
     login();
 }
 
-function doLogin() {
+function doLogin(form, e) {
+    e.preventDefault();
     firstName = "";
-    lastName = "";
+    lastName = ""
 
-    username = document.getElementById("username").value;
-    password = document.getElementById("password").value;
+    username = form.username.value;
+    password = form.password.value;
+
+    console.log(username + " " + password);
 
     login();
 }

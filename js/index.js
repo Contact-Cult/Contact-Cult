@@ -107,7 +107,7 @@ $("#contact-details").on("show.bs.modal", function (event) {
 });
 
 
-$("#contact-editor").on("show.bs.modal", function (event) {
+$("#contact-editor").on("show.bs.modal", function () {
     // Change window content
     $("#editFirstName").val(card.getAttribute("data-bs-firstName"));
     $("#editLastName").val(card.getAttribute("data-bs-lastName"));
@@ -119,6 +119,10 @@ $("#contact-editor").on("show.bs.modal", function (event) {
     $("#editCity").val(card.getAttribute("data-bs-city"));
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
+});
+
+$("#contact-adder").on("show.bs.modal", function () {
+    $("#add-save").attr("onClick", "saveContact(); this.onclick=null;");
 });
 
 function updateDetails() {
@@ -202,7 +206,9 @@ function saveContact() {
             State: $("#add-state").val(),
             ZipCode: $("#add-zip").val(),
             PhoneNumber: $("#add-phone").val(),
-            Email: $("#add-email").val()
+            Email: $("#add-email").val(),
+            Image: "images/ContactCult_Logo_1.png", // put random image path
+            Notes: $("#add-notes").val()
         }
     ));
 
@@ -228,6 +234,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-state", $("#add-state").val());
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
+    $("#new-contact").attr("data-bs-img", $("#add-notes").val);
     $("#new-contact").attr("id", newID);
 
     // Scroll to top where new contact is added

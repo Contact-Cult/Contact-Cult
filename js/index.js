@@ -60,7 +60,7 @@ function generateContacts(jsonObject) {
 }
 
 
-$(window).load(function () {
+$(document).ready(function () {
     // Check if user is logged in
 
     // Otherwise open Login window

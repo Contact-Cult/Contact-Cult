@@ -15,13 +15,15 @@ onclick="toggleBlur()">
             <h5 class="card-title" id="new-contact-name"></h5>
 
             <div class="card-text">
-                <div class="d-inline">
-                    <i class="bi-telephone me-2"></i>
-                    <div id="new-contact-phone"></div>
-                </div>
-                <div class="d-inline">
-                    <i class="bi-envelope me-2"></i>
-                    <div id="new-contact-email"></div>
+                <div>
+                    <div class="d-inline-flex">
+                        <i class="bi-telephone me-2"></i>
+                        <div id="new-contact-phone"></div>
+                    </div>
+                    <div class="d-inline-flex">
+                        <i class="bi-envelope me-2"></i>
+                        <div id="new-contact-email"></div>
+                    </div>
                 </div>
                 <div id="new-contact-tags">
                     <i class="bi-tags-fill text-muted"></i>
@@ -128,7 +130,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
     $("#editImg").attr("src", card.getAttribute("data-bs-img"));
-    $("#editNotes").attr("src", card.getAttribute("data-bs-notes"));
+    $("#editNotes").val(card.getAttribute("data-bs-notes"));
 });
 
 $("#contact-adder").on("show.bs.modal", function () {

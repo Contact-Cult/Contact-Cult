@@ -6,7 +6,7 @@ let index = 0;
 let contact = /*html*/`
 <div id="new-contact" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details"
 data-bs-firstName="" data-bs-lastName="" data-bs-phone="" data-bs-email="" data-bs-address=""
-data-bs-city="" data-bs-state="" data-bs-zip="" data-bs-img=""
+data-bs-city="" data-bs-state="" data-bs-zip="" data-bs-img="" data-bs-notes=""
 onclick="toggleBlur()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
@@ -55,6 +55,7 @@ function generateContacts(jsonObject) {
         $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
         $("#new-contact").attr("data-bs-img", jsonObject.results[i].img);
+        $("#new-contact").attr("data-bs-notes", jsonObject.results[i].Notes);
         $("#new-contact").attr("id", jsonObject.results[i].ContactID);
     }
 }
@@ -148,6 +149,9 @@ function updateDetails() {
         card.getAttribute("data-bs-state") + " " +
         card.getAttribute("data-bs-zip")
     );
+
+    $("#details-notes").text(card.getAttribute("data-bs-notes"));
+    $("#details-img").attr("src", card.getAttribute("data-bs-img"));
 }
 
 function saveEdit() {
@@ -163,7 +167,9 @@ function saveEdit() {
             State: $("#editState").val(),
             ZipCode: $("#editZip").val(),
             PhoneNumber: $("#editPhone").val(),
-            Email: $("#editEmail").val()
+            Email: $("#editEmail").val(),
+            Notes: $("#editNotes").val(),
+            Image: $("#editImage").val()
         }
     ));
 
@@ -176,7 +182,8 @@ function saveEdit() {
     $("#" + id).attr("data-bs-city", $("#editCity").val());
     $("#" + id).attr("data-bs-state", $("#editState").val());
     $("#" + id).attr("data-bs-zip", $("#editZip").val());
-    $("#" + id).attr("data-bs-img", "images/ContactCult_Logo_1.png");
+    $("#" + id).attr("data-bs-img", $("#editImage").val());
+    $("#" + id).attr("data-bs-notes", $("#editNotes").val());
 
     $("#name-" + id).empty();
     $("#phone-" + id).empty();
@@ -186,7 +193,7 @@ function saveEdit() {
     $("#name-" + id).append($("#editFirstName").val() + " " + $("#editLastName").val());
     $("#phone-" + id).append($("#editPhone").val());
     $("#email-" + id).append($("#editEmail").val());
-    $("#img-" + id).attr("src", "images/ContactCult_Logo_1.png");
+    $("#img-" + id).attr("src", $("#editImage").attr("src"));
 
     updateDetails();
 }
@@ -236,6 +243,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
     $("#new-contact").attr("data-bs-img", $("#add-notes").val());
+    $("#new-contact").attr("data-bs-notes", $("#add-notes").val());
     $("#new-contact").attr("id", newID);
 
     // Scroll to top where new contact is added

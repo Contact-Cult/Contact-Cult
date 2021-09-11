@@ -15,11 +15,11 @@ onclick="toggleBlur()">
             <h5 class="card-title" id="new-contact-name"></h5>
 
             <div class="card-text">
-                <div>
+                <div class="d-inline-flex">
                     <i class="bi-telephone"></i>
                     <div id="new-contact-phone"></div>
                 </div>
-                <div>
+                <div class="d-inline-flex">
                     <i class="bi-envelope"></i>
                     <div id="new-contact-email"></div>
                 </div>

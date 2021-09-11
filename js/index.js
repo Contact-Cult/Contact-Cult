@@ -43,7 +43,7 @@ function generateContacts(jsonObject) {
         $("#new-contact-email").append(jsonObject.results[i].Email);
         $("#new-contact-email").attr("id", "email-" + jsonObject.results[i].ContactID);
 
-        $("#new-contact-img").attr("src", jsonObject.results[i].img);
+        $("#new-contact-img").attr("src", jsonObject.results[i].Image);
         $("#new-contact-img").attr("id", "img-" + jsonObject.results[i].ContactID);
 
         $("#new-contact").attr("data-bs-firstName", jsonObject.results[i].FirstName);
@@ -54,7 +54,7 @@ function generateContacts(jsonObject) {
         $("#new-contact").attr("data-bs-city", jsonObject.results[i].City);
         $("#new-contact").attr("data-bs-state", jsonObject.results[i].State);
         $("#new-contact").attr("data-bs-zip", jsonObject.results[i].ZipCode);
-        $("#new-contact").attr("data-bs-img", jsonObject.results[i].img);
+        $("#new-contact").attr("data-bs-img", jsonObject.results[i].Image);
         $("#new-contact").attr("data-bs-notes", jsonObject.results[i].Notes);
         $("#new-contact").attr("id", jsonObject.results[i].ContactID);
     }

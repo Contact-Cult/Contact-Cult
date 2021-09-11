@@ -160,7 +160,8 @@ function updateDetails() {
         card.getAttribute("data-bs-zip")
     );
 
-    $("#details-notes").text(card.getAttribute("data-bs-notes"));
+    $("#details-notes").empty();
+    $("#details-notes").append(card.getAttribute("data-bs-notes"));
     $("#details-img").attr("src", card.getAttribute("data-bs-img"));
 }
 

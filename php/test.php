@@ -16,6 +16,8 @@
   $ZipCode = $inData["ZipCode"];
   $PhoneNumber = $inData["PhoneNumber"];
   $Email = $inData["Email"];
+  // $Image = $inData["Image"];
+  $Notes = $inData["Notes"];
 
   # establish connection to MySQL server to access database and handle failed
   # connection error case
@@ -26,8 +28,8 @@
   }
   else
   {
-    $stmt = $conn->prepare("UPDATE Contacts SET FirstName=?, LastName=?, Address=?, City=?, State=?, ZipCode=?, PhoneNumber=?, Email=? WHERE ID=? AND ContactID=?");
-    $stmt->bind_param("ssssssssss", $FirstName,$LastName,$Address,$City,$State,$ZipCode,$PhoneNumber,$Email,$ID,$ContactID);
+    $stmt = $conn->prepare("UPDATE Contacts SET FirstName=?, LastName=?, Address=?, City=?, State=?, ZipCode=?, PhoneNumber=?, Email=?, Notes=? WHERE ID=? AND ContactID=?");
+    $stmt->bind_param("sssssssssss", $FirstName,$LastName,$Address,$City,$State,$ZipCode,$PhoneNumber,$Email,$Notes,$ID,$ContactID);
 
     $stmt->execute();
     $stmt->close();

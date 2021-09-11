@@ -19,6 +19,8 @@
     $ZipCode = "";
     $PhoneNumber = "";
     $Email = "";
+	$Image = "";
+	$Notes = "";
 
     # establish connection to MySQL server to access database and handle failed
     # connection error case
@@ -85,7 +87,9 @@
             $searchResult .= '"State" : "' . $row["State"] . '", ';
             $searchResult .= '"ZipCode" : "' . $row["ZipCode"] . '", ';
             $searchResult .= '"PhoneNumber" : "' . $row["PhoneNumber"] . '", ';
-            $searchResult .= '"Email" : "' . $row["Email"] .  '"';
+            $searchResult .= '"Email" : "' . $row["Email"] .  '", ';
+			$searchResult .= '"Image" : "' . $row["Image"] . '", ';
+			$searchResult .= '"Notes" : "' . $row["Notes"] . '"';
             $searchResult .= '}';
             $resultCount++;
 

@@ -164,7 +164,7 @@ function addContact(jsonPayload) {
 
 function editContact(jsonPayload) {
     let xhr = new XMLHttpRequest();
-    let url = 'php/EditContact.php';
+    let url = 'php/test.php';
 
     xhr.open("POST", url, false);
     xhr.setRequestHeader("Content-Type", "application/json");

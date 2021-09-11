@@ -24,7 +24,7 @@
     else
     {
 
-	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Notes,Image) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	    $stmt = $conn->prepare("INSERT INTO Contacts ( ID, FirstName, LastName, Address, City, State, ZipCode, PhoneNumber, Email, Notes, Image) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	    $stmt->bind_param("sssssssssss", $ID, $FirstName, $LastName, $Address, $City, $State, $ZipCode, $PhoneNumber, $Email, $Notes, $Image);
 
 	    $stmt->execute();

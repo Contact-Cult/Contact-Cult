@@ -160,12 +160,14 @@ function updateDetails() {
         card.getAttribute("data-bs-zip")
     );
 
-    $("#details-notes").text(card.getAttribute("data-bs-notes"));
+    $("#details-notes").text((card.getAttribute("data-bs-notes")).replace('<br />', /\r?\n/g));
     $("#details-img").attr("src", card.getAttribute("data-bs-img"));
 }
 
 function saveEdit() {
     let id = card.getAttribute("id");
+    let notes = $("#editNotes").val();
+    notes = notes.replace(/\r?\n/g, '<br />');
     editContact(JSON.stringify(
         {
             ID: userId,
@@ -178,7 +180,7 @@ function saveEdit() {
             ZipCode: $("#editZip").val(),
             PhoneNumber: $("#editPhone").val(),
             Email: $("#editEmail").val(),
-            Notes: $("#editNotes").val(),
+            Notes: notes,
             Image: $("#editImage").val()
         }
     ));
@@ -193,7 +195,7 @@ function saveEdit() {
     $("#" + id).attr("data-bs-state", $("#editState").val());
     $("#" + id).attr("data-bs-zip", $("#editZip").val());
     $("#" + id).attr("data-bs-img", $("#editImage").val());
-    $("#" + id).attr("data-bs-notes", $("#editNotes").val());
+    $("#" + id).attr("data-bs-notes", notes);
 
     $("#name-" + id).empty();
     $("#phone-" + id).empty();
@@ -214,6 +216,9 @@ function toggleBlur() {
 }
 
 function saveContact() {
+    let notes = $("#add-notes").val();
+    notes = notes.replace(/\r?\n/g, '<br />');
+
     newID = addContact(JSON.stringify(
         {
             ID: userId,
@@ -226,7 +231,7 @@ function saveContact() {
             PhoneNumber: $("#add-phone").val(),
             Email: $("#add-email").val(),
             Image: "images/ContactCult_Logo_1.png", // put random image path
-            Notes: $("#add-notes").val()
+            Notes: notes
         }
     ));
 
@@ -253,7 +258,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
     $("#new-contact").attr("data-bs-img", $("#add-img").val());
-    $("#new-contact").attr("data-bs-notes", $("#add-notes").val());
+    $("#new-contact").attr("data-bs-notes", notes);
     $("#new-contact").attr("id", newID);
 
     // Scroll to top where new contact is added

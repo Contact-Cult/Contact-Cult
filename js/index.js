@@ -15,12 +15,12 @@ onclick="toggleBlur()">
             <h5 class="card-title" id="new-contact-name"></h5>
 
             <div class="card-text">
-                <div class="d-inline-flex">
-                    <i class="bi-telephone"></i>
+                <div class="d-inline">
+                    <i class="bi-telephone me-2"></i>
                     <div id="new-contact-phone"></div>
                 </div>
-                <div class="d-inline-flex">
-                    <i class="bi-envelope"></i>
+                <div class="d-inline">
+                    <i class="bi-envelope me-2"></i>
                     <div id="new-contact-email"></div>
                 </div>
                 <div id="new-contact-tags">
@@ -128,10 +128,12 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
     $("#editImg").attr("src", card.getAttribute("data-bs-img"));
+    $("#editNotes").attr("src", card.getAttribute("data-bs-notes"));
 });
 
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "saveContact(); this.onclick=null;");
+    $("#add-notes").val("");
 });
 
 function updateDetails() {
@@ -249,7 +251,7 @@ function saveContact() {
     $("#new-contact").attr("data-bs-state", $("#add-state").val());
     $("#new-contact").attr("data-bs-zip", $("#add-zip").val());
     $("#new-contact").attr("data-bs-img", "images/ContactCult_Logo_1.png");
-    $("#new-contact").attr("data-bs-img", $("#add-notes").val());
+    $("#new-contact").attr("data-bs-img", $("#add-img").val());
     $("#new-contact").attr("data-bs-notes", $("#add-notes").val());
     $("#new-contact").attr("id", newID);
 

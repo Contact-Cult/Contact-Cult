@@ -15,16 +15,14 @@ onclick="toggleBlur()">
             <h5 class="card-title" id="new-contact-name"></h5>
 
             <div class="card-text">
-                <div>
-                    <div class="d-inline-flex">
-                        <i class="bi-telephone me-2"></i>
-                        <div id="new-contact-phone"></div>
+                    <div>
+                        <i class="bi-telephone me-2 d-inline-flex"></i>
+                        <div id="new-contact-phone" class="d-inline-flex"></div>
                     </div>
-                    <div class="d-inline-flex">
-                        <i class="bi-envelope me-2"></i>
-                        <div id="new-contact-email"></div>
+                    <div>
+                        <i class="bi-envelope me-2 d-inline-flex"></i>
+                        <div id="new-contact-email" class="d-inline-flex"></div>
                     </div>
-                </div>
                 <div id="new-contact-tags">
                     <i class="bi-tags-fill text-muted"></i>
                     <span class="badge bg-primary" style="font-size: 8px">Primary</span>

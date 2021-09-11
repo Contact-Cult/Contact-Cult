@@ -110,7 +110,9 @@
                 $searchResult .= '"State" : "' . $row["State"] . '", ';
                 $searchResult .= '"ZipCode" : "' . $row["ZipCode"] . '", ';
                 $searchResult .= '"PhoneNumber" : "' . $row["PhoneNumber"] . '", ';
-                $searchResult .= '"Email" : "' . $row["Email"] .  '"';
+				$searchResult .= '"Email" : "' . $row["Email"] .  '", ';
+				$searchResult .= '"Image" : "' . $row["Image"] . '", ';
+				$searchResult .= '"Notes" : "' . $row["Notes"] . '"';
                 $searchResult .= '}';
             }
             $searchResult .= ']';

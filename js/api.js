@@ -148,6 +148,8 @@ function searchContacts(filter, query) {
 
     xhr.send(jsonPayload);
 
+    console.log(xhr.responseText);
+
     generateContacts(JSON.parse(xhr.responseText));
 }
 

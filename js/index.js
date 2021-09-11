@@ -121,6 +121,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#editCity").val(card.getAttribute("data-bs-city"));
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
+    $("#editImg").attr("src", card.getAttribute("data-bs-img"));
 });
 
 $("#contact-adder").on("show.bs.modal", function () {

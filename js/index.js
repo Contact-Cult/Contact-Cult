@@ -154,8 +154,10 @@ function updateDetails() {
         card.getAttribute("data-bs-address")
     );
     $("#details-address2").text(
-        card.getAttribute("data-bs-city") + ", " +
-        card.getAttribute("data-bs-state") + " " +
+        card.getAttribute("data-bs-city") +
+        ((card.getAttribute("data-bs-city") != "")? ", " : "") +
+        card.getAttribute("data-bs-state") +
+        ((card.getAttribute("data-bs-city") != "")? " " : "") +
         card.getAttribute("data-bs-zip")
     );
 

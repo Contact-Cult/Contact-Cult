@@ -128,7 +128,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#editState").val(card.getAttribute("data-bs-state"));
     $("#editZip").val(card.getAttribute("data-bs-zip"));
     $("#editImg").attr("src", card.getAttribute("data-bs-img"));
-    $("#editNotes").val(card.getAttribute("data-bs-notes"));
+    $("#editNotes").val(card.getAttribute("data-bs-notes").replace('<br />', '\r\n\g'));
 });
 
 $("#contact-adder").on("show.bs.modal", function () {
@@ -160,7 +160,7 @@ function updateDetails() {
         card.getAttribute("data-bs-zip")
     );
 
-    $("#details-notes").text((card.getAttribute("data-bs-notes")).replace('<br />', "\r\n\g"));
+    $("#details-notes").text(card.getAttribute("data-bs-notes"));
     $("#details-img").attr("src", card.getAttribute("data-bs-img"));
 }
 

@@ -15,8 +15,14 @@ onclick="toggleBlur()">
             <h5 class="card-title" id="new-contact-name"></h5>
 
             <div class="card-text">
-                <div id="new-contact-phone"></div>
-                <div id="new-contact-email"></div>
+                <div>
+                    <i class="bi-telephone"></i>
+                    <div id="new-contact-phone"></div>
+                </div>
+                <div>
+                    <i class="bi-envelope"></i>
+                    <div id="new-contact-email"></div>
+                </div>
                 <div id="new-contact-tags">
                     <i class="bi-tags-fill text-muted"></i>
                     <span class="badge bg-primary" style="font-size: 8px">Primary</span>
@@ -251,7 +257,7 @@ function saveContact() {
     $("html, body").animate({ scrollTop: 0 }, "fast");
 }
 
-$(document).on('submit', '#search-form', function(e) {
+$(document).on('submit', '#search-form', function (e) {
     e.preventDefault();
     e.stopPropagation();
 })

@@ -39,10 +39,16 @@ onclick="addBlur()">
 </div>
 `;
 
-$("#card-menu").on("click", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+$("#card-menu").on("click", function() {
+    $("#contact-details").addClass("stop-modal");
+})
+
+$("#contact-details").on("show.bs.modal", function() {
+    if($("#contact-details").hasClass("stop-modal")) {
+        $("#contact-details").modal('hide');
+        removeBlur();
+        $("#contact-details").removeClass("stop-modal");
+    }
 })
 
 function newContactCard(info, index) {

@@ -221,6 +221,9 @@ function searchContacts(filter, query, e) {
         searchQuery: query
     }));
 
+
+    console.log(contactList);
+
     generateContactCards();
 }
 

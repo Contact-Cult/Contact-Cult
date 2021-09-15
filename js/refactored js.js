@@ -28,7 +28,7 @@ onclick="addBlur()">
 
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
-                <i class="bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown" style="font-size: 18px"></i>
+                <i class="bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" z-index="2000"></i>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>

@@ -190,9 +190,11 @@
                         <div id="details-address"></div>
                         <div id="details-address2"></div>
                     </div>
-                    <div class="mt-2 me-2">
+                    <div class="btn-group-vertical mt-2 me-2">
                         <i class="btn bi-pencil-square m-0 p-0 float-end" data-bs-target="#contact-editor"
-                            data-bs-toggle="modal" style="font-size: 35px;" onclick="openEditor()"></i>
+                            data-bs-toggle="modal" style="font-size: 35px;"></i>
+                        <i class="btn bi-trash m-0 mt-5 p-0 float-end" data-bs-target="#contact-editor"
+                            data-bs-toggle="modal" style="font-size: 35px;"></i>
                     </div>
                 </div>
 
@@ -312,14 +314,6 @@
                 </div>
 
                 <div class="modal-footer">
-                    <i class="bi-tags-fill text-muted"></i>
-                    <span class="badge bg-primary">Primary</span>
-                    <span class="badge bg-danger">Danger</span>
-                    <span class="badge bg-info">Info</span>
-                    <span class="badge bg-warning">Warning</span>
-                </div>
-
-                <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-editor" data-bs-toggle="modal">Cancel</div>
                     <button id="edit-save" class="btn btn-color" data-bs-target="#contact-editor" data-bs-toggle="modal"
                         data-bs-dismiss="modal" onclick="editContact()">Save</button>
@@ -430,14 +424,6 @@
                     <div style="font-size: 25px">Notes</div>
                     <hr class="m-0" />
                     <textarea class="form-control px-3 my-2" id="add-notes" rows="3" autocomplete="off"></textarea>
-                </div>
-
-                <div class="modal-footer">
-                    <i class="bi-tags-fill text-muted"></i>
-                    <span class="badge bg-primary">Primary</span>
-                    <span class="badge bg-danger">Danger</span>
-                    <span class="badge bg-info">Info</span>
-                    <span class="badge bg-warning">Warning</span>
                 </div>
 
                 <div class="modal-footer">

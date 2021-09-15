@@ -41,9 +41,18 @@
 			$stmt = $conn->prepare("INSERT INTO Users (DateCreated, FirstName, LastName, UserName, Password, Email) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("ssssss", $DateCreated, $FirstName, $LastName, $UserName, $Password, $Email);
             $stmt->execute();
+	   $sid = $stmt->insert_id;
+	    returnWithInfo($sid);
             $stmt->close();
             $conn->close();
+	    
             returnWithError("");
 		}
+	}
+
+function returnWithInfo( $sid )
+	{
+		$retValue = '{"newContactID":' . $sid . ',"error":""}';
+		sendResultInfoAsJson( $retValue );
 	}
 ?>

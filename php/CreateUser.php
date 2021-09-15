@@ -45,13 +45,13 @@
 	    returnWithInfo($sid);
             $stmt->close();
             $conn->close();
-	    
+
 		}
 	}
 
 function returnWithInfo( $sid )
 	{
-		$retValue = '{"newContactID":' . $sid . ',"error":""}';
+		$retValue = '{"newUserID":' . $sid . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

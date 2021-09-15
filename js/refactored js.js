@@ -278,7 +278,7 @@ function signup(form, e) {
             UserName: form.username.value,
             Password: md5(form.password.value)
         }
-    ));
+    )).newUserID;
 
     console.log(userId);
 

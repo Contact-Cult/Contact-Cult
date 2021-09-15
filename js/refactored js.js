@@ -106,7 +106,7 @@ $("#contact-editor").on("hidden.bs.modal", function () {
 
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
-    $("#add-save").attr("onClick", "saveContact(); this.onclick=null;");
+    $("#add-save").attr("onClick", "addContact(); this.onclick=null;");
     $("#add-notes").val("");
 });
 

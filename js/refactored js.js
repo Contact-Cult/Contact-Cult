@@ -40,7 +40,7 @@ onclick="addBlur()">
 `;
 
 function dismissDetails() {
-    $("#contact-details").modal('hide');
+    $("#contact-details").addClass("stop-modal");
 }
 
 function newContactCard(info, index) {
@@ -142,6 +142,14 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "addContact(); this.onclick=null;");
     $("#add-notes").val("");
+});
+
+$("#contact-details").on("show.bs.modal", function (e) {
+    if($("#contact-details").hasClass("stop-modal")) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        $("#contact-details").removeClass("stop-modal");
+    }
 });
 
 // When contact details are opened,

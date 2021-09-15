@@ -121,11 +121,7 @@ $("#contact-deleter").on("show.bs.modal", function () {
 $("#contact-deleter").on("hidden.bs.modal", function () {
     if ($("#contact-details").hasClass('show')) {
         $("#contact-details").toggleClass("modal-blur");
-    } else {
-        if ($("#navbar").hasClass("modal-blur")) {
-            toggleBlur();
-        }
-    }
+    };
 });
 
 // Enable add button when window is opened
@@ -239,6 +235,9 @@ function deleteContact() {
     $("#" + currentCard.ContactID).remove();
 
     $("#contact-details").modal('hide');
+    // if ($("#navbar").hasClass("modal-blur")) {
+    //     toggleBlur();
+    // }
 }
 
 function searchContacts(filter, query, e) {

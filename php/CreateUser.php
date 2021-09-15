@@ -10,6 +10,7 @@
     $LastName = $inData["LastName"];
     $UserName = $inData["UserName"];
     $Password = $inData["Password"];
+    $Email = $inData["Email"];
 
 
     # establish connection to MySQL server to access database and handle failed
@@ -37,8 +38,8 @@
 		}
 		else
         {
-			$stmt = $conn->prepare("INSERT INTO Users (DateCreated, FirstName, LastName, UserName, Password) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $DateCreated, $FirstName, $LastName, $UserName, $Password);
+			$stmt = $conn->prepare("INSERT INTO Users (DateCreated, FirstName, LastName, UserName, Password, Email) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssss", $DateCreated, $FirstName, $LastName, $UserName, $Password, $Email);
             $stmt->execute();
             $stmt->close();
             $conn->close();

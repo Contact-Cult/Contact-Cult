@@ -122,7 +122,9 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
     if ($("#contact-details").hasClass('show')) {
         $("#contact-details").toggleClass("modal-blur");
     } else {
-        toggleBlur();
+        if ($("#navbar").hasClass("modal-blur")) {
+            toggleBlur();
+        }
     }
 });
 
@@ -236,10 +238,7 @@ function deleteContact() {
 
     $("#" + currentCard.ContactID).remove();
 
-    if (!$("#contact-details").hasClass('show')) {
-        $("#contact-details").modal('hide');
-    }
-
+    $("#contact-details").modal('hide');
 }
 
 function searchContacts(filter, query, e) {
@@ -305,12 +304,12 @@ function signup(form, e) {
     }
 
     userId = apiHandler("CreateUser", JSON.stringify({
-            FirstName: form.firstName.value,
-            LastName: form.lastName.value,
-            Email: form.email.value,
-            UserName: form.username.value,
-            Password: md5(form.password.value)
-        })).newUserID;
+        FirstName: form.firstName.value,
+        LastName: form.lastName.value,
+        Email: form.email.value,
+        UserName: form.username.value,
+        Password: md5(form.password.value)
+    })).newUserID;
 
     // Log in new user
     $("#signup-modal").modal('toggle');

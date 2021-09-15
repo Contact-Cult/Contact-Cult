@@ -40,7 +40,11 @@ function newContactCard(info, index) {
 }
 
 function updateContactCard(id, info) {
-    $("#name-" + id).text(info.FirstName + " " + info.LastName);
+    // if names are too long, truncate to fit on card in 2 lines
+    $("#name-" + id).text(
+        ((info.firstName.length > 10) ? info.firstName.substring(0, 10) + "..." : info.firstName) +
+        ((info.lastName.length > 10) ? info.lastName.substring(0, 10) + "..." : info.lastName)
+    );
     $("#phone-" + id).text(info.PhoneNumber);
     $("#phone-" + id).attr("id", "phone-" + info.ContactID);
     $("#email-" + id).text(info.Email);

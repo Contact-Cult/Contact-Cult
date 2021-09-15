@@ -43,12 +43,13 @@ $("#card-menu").on("click", function() {
 });
 
 function openDetails() {
-    if($("#contact-details").hasClass("stop-modal")) {
-        $("#contact-details").removeClass("stop-modal");
-    } else {
+    // if($("#contact-details").hasClass("stop-modal")) {
+    //     $("#contact-details").removeClass("stop-modal");
+    //     removeBlur();
+    // } else {
         addBlur();
         $("#contact-details").modal('show');
-    }
+    // }
 }
 
 function newContactCard(info, index) {

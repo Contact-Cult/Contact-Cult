@@ -115,17 +115,11 @@ $("#contact-editor").on("hidden.bs.modal", function () {
     }
 });
 
-$("#contact-editor").on("show.bs.modal", function () {
+$("#contact-deleter").on("show.bs.modal", function () {
     if ($("#contact-details").hasClass('show')) {
         $("#contact-details").toggleClass("delete-blur");
     } else {
         toggleBlur();
-    }
-});
-
-$("#contact-editor").on("hidden.bs.modal", function () {
-    if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").toggleClass("delete-blur");
     }
 });
 

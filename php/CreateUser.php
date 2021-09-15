@@ -46,7 +46,6 @@
             $stmt->close();
             $conn->close();
 	    
-            returnWithError("");
 		}
 	}
 

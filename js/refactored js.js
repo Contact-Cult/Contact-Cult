@@ -39,9 +39,9 @@ onclick="addBlur()">
 </div>
 `;
 
-function dismissDetails() {
-    $("#contact-details").addClass("stop-modal");
-}
+$("#card-menu").on("click", function(e) {
+    e.stopPropagation();
+})
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);
@@ -142,14 +142,6 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "addContact(); this.onclick=null;");
     $("#add-notes").val("");
-});
-
-$("#contact-details").on("show.bs.modal", function (e) {
-    if($("#contact-details").hasClass("stop-modal")) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        $("#contact-details").removeClass("stop-modal");
-    }
 });
 
 // When contact details are opened,

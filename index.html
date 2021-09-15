@@ -193,7 +193,7 @@
                     <div class="btn-group-vertical mt-2 me-2">
                         <i class="btn bi-pencil-square m-0 p-0 float-end" data-bs-target="#contact-editor"
                             data-bs-toggle="modal" style="font-size: 35px;"></i>
-                        <i class="btn bi-trash m-0 mt-4 p-0 float-end text-danger" data-bs-target="#contact-delete"
+                        <i class="btn bi-trash m-0 mt-4 p-0 float-end text-danger" data-bs-target="#contact-deleter"
                             data-bs-toggle="modal" style="font-size: 35px;"></i>
                     </div>
                 </div>
@@ -434,6 +434,22 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="contact-deleter" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>Delete ?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mr-auto" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        onClick="deleteContact()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"

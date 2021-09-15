@@ -247,6 +247,12 @@ function login(form, e) {
     }
 }
 
+function logout() {
+    userId = 0;
+    document.cookie = "userId= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+    window.location.href = "";
+}
+
 function signup(form, e) {
     e.preventDefault();
     e.stopPropagation();

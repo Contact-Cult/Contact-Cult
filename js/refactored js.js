@@ -231,10 +231,11 @@ function addContact() {
 
 function deleteContact() {
     apiHandler("RemoveContact", JSON.stringify({
-        ContactID: currentContact.ContactID
+        ContactID: currentCard.ContactID
     }));
 
-    $("#" + currentContact.ContactID).remove();
+    $("#" + currentCard.ContactID).remove();
+    $("#contact-details").modal('hide');
 }
 
 function searchContacts(filter, query, e) {

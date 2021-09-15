@@ -51,7 +51,6 @@ function updateContactCard(id, info) {
 function generateContactCards() {
     $("#contact-list").empty();
 
-    console.log(contactList.length);
     for (let i = 0; i < contactList.length; i++) {
         newContactCard(contactList[i], i);
     }
@@ -221,8 +220,7 @@ function searchContacts(filter, query, e) {
         searchQuery: query
     })).results;
 
-
-    console.log(contactList);
+    if (contactList === undefined) contactList = [];
 
     generateContactCards();
 }
@@ -281,6 +279,8 @@ function signup(form, e) {
             Password: md5(form.password.value)
         }
     ));
+
+    console.log(userId);
 
     // Log in new user
     $("#signup-modal").modal('toggle');

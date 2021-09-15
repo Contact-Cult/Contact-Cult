@@ -198,8 +198,7 @@
 
                 <div class="ms-3" style="font-size: 25px">Notes</div>
                 <hr class="m-0 mx-3" />
-                <div id="details-notes" class="ms-3 my-2 text-wrap text-break">
-                </div>
+                <div id="details-notes" class="ms-3 my-2 text-wrap text-break"></div>
                 <div class="modal-footer">
                     <button class="btn btn-color" data-bs-target="#contact-details" data-bs-toggle="modal"
                         data-bs-dismiss="modal">Close</button>
@@ -214,35 +213,36 @@
             <div class="modal-content" id="editor-content">
                 <div class="d-inline-flex">
 
-                    <img src="" id="editImg" class="img d-inline-flex contact-img" width="150" height="150" />
+                    <img src="" id="edit-img" class="img d-inline-flex contact-img" width="150" height="150" />
 
 
                     <div class="container-fluid p-0 mt-3 ms-2 me-3">
                         <div class="d-inline-flex">
-                            <input type="text" class="form-control me-1" id="editFirstName" placeholder="First Name"
+                            <input type="text" class="form-control me-1" id="edit-firstname" placeholder="First Name"
                                 autocomplete="off" />
 
-                            <input type="text" class="form-control" id="editLastName" placeholder="Last Name"
+                            <input type="text" class="form-control" id="edit-lastname" placeholder="Last Name"
                                 autocomplete="off" />
                         </div>
 
 
                         <div class="p-0">
-                            <input type="tel" class="form-control mt-2" id="editPhone" placeholder="Phone Number"
+                            <input type="tel" class="form-control mt-2" id="edit-phone" placeholder="Phone Number"
                                 autocomplete="off" />
-                            <input type="email" class="form-control mt-2" id="editEmail" placeholder="Email"
+                            <input type="email" class="form-control mt-2" id="edit-email" placeholder="Email"
                                 autocomplete="off" />
                         </div>
                     </div>
                 </div>
 
                 <div class="mx-3 mt-2 p-0">
-                    <input type="text" class="form-control" id="editAddress" placeholder="Address" autocomplete="off" />
+                    <input type="text" class="form-control" id="edit-address" placeholder="Address"
+                        autocomplete="off" />
 
                     <div class="d-inline-flex p-0 mt-2">
-                        <input type="text" class="form-control me-1" id="editCity" placeholder="City"
+                        <input type="text" class="form-control me-1" id="edit-city" placeholder="City"
                             autocomplete="off" />
-                        <select id="editState" class="form-select me-1 w-50" autocomplete="off">
+                        <select id="edit-state" class="form-select me-1 w-50" autocomplete="off">
                             <option value="" selected="selected">State</option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -308,7 +308,7 @@
 
                     <div style="font-size: 25px">Notes</div>
                     <hr class="m-0" />
-                    <textarea class="form-control px-3 my-2" id="editNotes" rows="3" autocomplete="off"></textarea>
+                    <textarea class="form-control px-3 my-2" id="edit-notes" rows="3" autocomplete="off"></textarea>
                 </div>
 
                 <div class="modal-footer">
@@ -321,8 +321,8 @@
 
                 <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-editor" data-bs-toggle="modal">Cancel</div>
-                    <button id="editSave" class="btn btn-color" data-bs-target="#contact-editor" data-bs-toggle="modal"
-                        data-bs-dismiss="modal" onclick="saveEdit()">Save</button>
+                    <button id="edit-save" class="btn btn-color" data-bs-target="#contact-editor" data-bs-toggle="modal"
+                        data-bs-dismiss="modal" onclick="editContact()">Save</button>
                 </div>
             </div>
         </div>
@@ -334,8 +334,8 @@
             <div class="modal-content">
                 <div class="d-inline-flex">
 
-                    <img src="images/ContactCult_Logo_1.png" id="add-img" class="img d-inline-flex contact-img" alt="..."
-                        width="150" height="150" />
+                    <img src="images/ContactCult_Logo_1.png" id="add-img" class="img d-inline-flex contact-img"
+                        alt="..." width="150" height="150" />
 
 
                     <div class="container-fluid p-0 mt-3 ms-2 me-3">
@@ -443,7 +443,7 @@
                 <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-adder" data-bs-toggle="modal">Cancel</div>
                     <button id="add-save" class="btn btn-color" data-bs-target="#contact-adder" data-bs-toggle="modal"
-                        data-bs-dismiss="modal" onclick="saveContact(); this.onclick=null;">Save</button>
+                        data-bs-dismiss="modal" onclick="addContact(); this.onclick=null;">Save</button>
                 </div>
             </div>
         </div>
@@ -457,8 +457,9 @@
         integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
         </script>
     <script src="js/md5.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/index.js"></script>
+    <!-- <script src="js/api.js"></script> -->
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/refactored js.js"></script>
 </body>
 
 </html>

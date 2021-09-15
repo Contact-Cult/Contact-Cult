@@ -36,8 +36,6 @@ function newContactCard(info, index) {
     $("#new-contact-email").attr("id", "email-" + info.ContactID);
     $("#new-contact-img").attr("id", "img-" + info.ContactID);
 
-    console.log(info);
-
     updateContactCard(info.ContactID, info);
 }
 
@@ -52,6 +50,8 @@ function updateContactCard(id, info) {
 
 function generateContactCards() {
     $("#contact-list").empty();
+
+    console.log(contactList.length);
     for (let i = 0; i < contactList.length; i++) {
         newContactCard(contactList[i], i);
     }
@@ -221,7 +221,6 @@ function searchContacts(filter, query, e) {
         searchQuery: query
     }));
 
-    console.log(contactList);
     generateContactCards();
 }
 

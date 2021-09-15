@@ -87,40 +87,43 @@ $(document).ready(function () {
 });
 
 // Toggle blur when modal windows are dismissed
-function toggleBlur() {
-    $("#navbar").toggleClass("modal-blur");
-    $("#card-deck").toggleClass("modal-blur");
+function addBlur() {
+    $("#navbar").addClass("modal-blur");
+    $("#card-deck").addClass("modal-blur");
+}
+
+function removeBlur() {
+    $("#navbar").removeClass("modal-blur");
+    $("#card-deck").removeClass("modal-blur");
 }
 
 $("#login-modal").on("hidden.bs.modal", function () {
-    toggleBlur();
+    removeBlur();
 });
 
 $("#contact-details").on("hidden.bs.modal", function () {
-    toggleBlur();
+    removeBlur();
 });
 
 $("#contact-adder").on("hidden.bs.modal", function () {
-    toggleBlur();
+    removeBlur();
 });
 
 $("#contact-editor").on("hidden.bs.modal", function () {
-    if (!$("#contact-details").hasClass('show')) {
-        toggleBlur();
-    }
+    removeBlur();
 });
 
 $("#contact-deleter").on("show.bs.modal", function () {
     if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").toggleClass("modal-blur");
+        $("#contact-details").addClass("modal-blur");
     } else {
-        toggleBlur();
+        addBlur();
     }
 });
 
 $("#contact-deleter").on("hidden.bs.modal", function () {
     if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").toggleClass("modal-blur");
+        $("#contact-details").removeClass("modal-blur");
     };
 });
 
@@ -235,9 +238,6 @@ function deleteContact() {
     $("#" + currentCard.ContactID).remove();
 
     $("#contact-details").modal('hide');
-    if ($("#navbar").hasClass("modal-blur")) {
-        toggleBlur();
-    }
 }
 
 function searchContacts(filter, query, e) {

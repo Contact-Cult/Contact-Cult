@@ -115,22 +115,21 @@ $("#contact-editor").on("hidden.bs.modal", function () {
     }
 });
 
-// $("#contact-deleter").on("show.bs.modal", function () {
-//     $("#contact-details").toggleClass("delete-blur");
-//     if ($("#contact-details").hasClass('show')) {
-//         // $("#contact-details").toggleClass("delete-blur");
-//     } else {
-//         toggleBlur();
-//     }
-// });
+$("#contact-deleter").on("show.bs.modal", function () {
+    if ($("#contact-details").hasClass('show')) {
+        $("#contact-details").toggleClass("modal-blur");
+    } else {
+        toggleBlur();
+    }
+});
 
-// $("#contact-deleter").on("hidden.bs.modal", function () {
-//     if ($("#contact-details").hasClass('show')) {
-//         $("#contact-details").toggleClass("delete-blur");
-//     } else {
-//         toggleBlur();
-//     }
-// });
+$("#contact-deleter").on("hidden.bs.modal", function () {
+    if ($("#contact-details").hasClass('show')) {
+        $("#contact-details").toggleClass("modal-blur");
+    } else {
+        toggleBlur();
+    }
+});
 
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {

@@ -81,14 +81,6 @@ body {
   filter: blur(10px);
 }
 
-.delete-blur {
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
-}
-
 .modal-content {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

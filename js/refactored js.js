@@ -115,6 +115,20 @@ $("#contact-editor").on("hidden.bs.modal", function () {
     }
 });
 
+$("#contact-editor").on("show.bs.modal", function () {
+    if ($("#contact-details").hasClass('show')) {
+        $("#contact-details").toggleClass("delete-blur");
+    } else {
+        toggleBlur();
+    }
+});
+
+$("#contact-editor").on("hidden.bs.modal", function () {
+    if ($("#contact-details").hasClass('show')) {
+        $("#contact-details").toggleClass("delete-blur");
+    }
+});
+
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "addContact(); this.onclick=null;");

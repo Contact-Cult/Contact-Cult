@@ -213,6 +213,8 @@ function searchContacts(filter, query) {
         searchFilter: filter,
         searchQuery: query
     }));
+
+    console.log(contactList);
     generateContactCards();
 }
 

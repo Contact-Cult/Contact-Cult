@@ -116,8 +116,9 @@ $("#contact-editor").on("hidden.bs.modal", function () {
 });
 
 $("#contact-deleter").on("show.bs.modal", function () {
+    $("#contact-details").toggleClass("delete-blur");
     if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").toggleClass("delete-blur");
+        // $("#contact-details").toggleClass("delete-blur");
     } else {
         toggleBlur();
     }

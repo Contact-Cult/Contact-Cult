@@ -81,7 +81,7 @@ $(document).ready(function () {
         saveCookie();
         searchContacts("All", "");
     } else {
-        toggleBlur();
+        addBlur();
         $('#login-modal').modal('toggle');
     }
 });
@@ -114,17 +114,12 @@ $("#contact-editor").on("hidden.bs.modal", function () {
 });
 
 $("#contact-deleter").on("show.bs.modal", function () {
-    if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").addClass("modal-blur");
-    } else {
-        addBlur();
-    }
+    $("#contact-details").addClass("modal-blur");
+    addBlur();
 });
 
 $("#contact-deleter").on("hidden.bs.modal", function () {
-    if ($("#contact-details").hasClass('show')) {
-        $("#contact-details").removeClass("modal-blur");
-    };
+    $("#contact-details").removeClass("modal-blur");
 });
 
 // Enable add button when window is opened

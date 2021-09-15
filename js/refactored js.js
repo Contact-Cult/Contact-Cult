@@ -235,9 +235,9 @@ function deleteContact() {
     $("#" + currentCard.ContactID).remove();
 
     $("#contact-details").modal('hide');
-    // if ($("#navbar").hasClass("modal-blur")) {
-    //     toggleBlur();
-    // }
+    if ($("#navbar").hasClass("modal-blur")) {
+        toggleBlur();
+    }
 }
 
 function searchContacts(filter, query, e) {

@@ -24,15 +24,15 @@ onclick="addBlur()">
                         </div>
                 </div>
             </div>
+        </div>
 
-            <div class="d-inline-flex">
-                <div class="dropdown">
-                    <i class="dropdown-toggle bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="">Edit</a></li>
-                        <li><a class="dropdown-item text-danger" href="">Delete</a></li>
-                    </ul>
-                </div>
+        <div class="d-inline-flex">
+            <div class="dropdown">
+                <i class="dropdown-toggle bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown"></i>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="">Edit</a></li>
+                    <li><a class="dropdown-item text-danger" href="">Delete</a></li>
+                </ul>
             </div>
         </div>
     </div>

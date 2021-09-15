@@ -48,7 +48,7 @@ function openDetails() {
     //     removeBlur();
     // } else {
         // addBlur();
-        $("#contact-details").modal('show');
+        $("#contact-details").modal();
     // }
 }
 

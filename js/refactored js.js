@@ -219,7 +219,7 @@ function searchContacts(filter, query, e) {
         ID: userId,
         searchFilter: filter,
         searchQuery: query
-    }));
+    })).results;
 
 
     console.log(contactList);

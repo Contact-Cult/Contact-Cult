@@ -40,11 +40,6 @@ function newContactCard(info, index) {
 }
 
 function updateContactCard(id, info) {
-    console.log(
-        ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
-        + " " +
-        ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)
-    );
     // if names are too long, truncate to fit on card in 2 lines
     $("#name-" + id).text(
         ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
@@ -234,8 +229,16 @@ function addContact() {
     $("html, body").animate({ scrollTop: 0 }, "fast");
 }
 
+function deleteContact() {
+    apiHandler("RemoveContact", JSON.stringify({
+        ContactID: currentContact.ContactID
+    }));
+
+    $("#" + currentContact.ContactID).remove();
+}
+
 function searchContacts(filter, query, e) {
-    if(e !== undefined) {
+    if (e !== undefined) {
         e.preventDefault();
         e.stopPropagation();
     }
@@ -296,17 +299,13 @@ function signup(form, e) {
         return;
     }
 
-    userId = apiHandler("CreateUser", JSON.stringify(
-        {
+    userId = apiHandler("CreateUser", JSON.stringify({
             FirstName: form.firstName.value,
             LastName: form.lastName.value,
             Email: form.email.value,
             UserName: form.username.value,
             Password: md5(form.password.value)
-        }
-    )).newUserID;
-
-    console.log(userId);
+        })).newUserID;
 
     // Log in new user
     $("#signup-modal").modal('toggle');

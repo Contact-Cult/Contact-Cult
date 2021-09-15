@@ -4,7 +4,8 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" onclick="openDetails()">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details"
+onclick="addBlur()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -38,19 +39,17 @@ let contact = /*html*/`
 </div>
 `;
 
-$("#card-menu").on("click", function() {
-    $("#contact-details").addClass("stop-modal");
-});
+// $("#card-menu").on("click", function() {
+//     $("#contact-details").addClass("stop-modal");
+// })
 
-function openDetails() {
-    // if($("#contact-details").hasClass("stop-modal")) {
-    //     $("#contact-details").removeClass("stop-modal");
-    //     removeBlur();
-    // } else {
-        // addBlur();
-        $("#contact-details").modal();
-    // }
-}
+// $("#contact-details").on("show.bs.modal", function() {
+//     if($("#contact-details").hasClass("stop-modal")) {
+//         $("#contact-details").modal('hide');
+//         removeBlur();
+//         $("#contact-details").removeClass()
+//     }
+// })
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);

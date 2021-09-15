@@ -36,6 +36,8 @@ function newContactCard(info, index) {
     $("#new-contact-email").attr("id", "email-" + info.ContactID);
     $("#new-contact-img").attr("id", "img-" + info.ContactID);
 
+    console.log(info);
+
     updateContactCard(info.ContactID, info);
 }
 
@@ -207,7 +209,12 @@ function addContact() {
     $("html, body").animate({ scrollTop: 0 }, "fast");
 }
 
-function searchContacts(filter, query) {
+function searchContacts(filter, query, e) {
+    if(e !== undefined) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     contactList = apiHandler("SearchContact", JSON.stringify({
         ID: userId,
         searchFilter: filter,

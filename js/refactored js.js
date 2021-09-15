@@ -123,6 +123,14 @@ $("#contact-deleter").on("show.bs.modal", function () {
     }
 });
 
+$("#contact-deleter").on("hidden.bs.modal", function () {
+    if ($("#contact-details").hasClass('show')) {
+        $("#contact-details").toggleClass("delete-blur");
+    } else {
+        toggleBlur();
+    }
+});
+
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "addContact(); this.onclick=null;");

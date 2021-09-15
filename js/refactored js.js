@@ -9,18 +9,30 @@ onclick="addBlur()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
-        <div class="ms-2 mt-1">
-            <h5 class="card-title text-wrap text-break" id="new-contact-name"></h5>
+        <div class="container-fluid">
+            <div class="ms-2 mt-1">
+                <h5 class="card-title text-wrap text-break" id="new-contact-name"></h5>
 
-            <div class="card-text">
-                    <div>
-                        <i class="bi-telephone me-2 d-inline-flex"></i>
-                        <div id="new-contact-phone" class="d-inline-flex"></div>
-                    </div>
-                    <div>
-                        <i class="bi-envelope me-2 d-inline-flex"></i>
-                        <div id="new-contact-email" class="d-inline-flex"></div>
-                    </div>
+                <div class="card-text">
+                        <div>
+                            <i class="bi-telephone me-2 d-inline-flex"></i>
+                            <div id="new-contact-phone" class="d-inline-flex"></div>
+                        </div>
+                        <div>
+                            <i class="bi-envelope me-2 d-inline-flex"></i>
+                            <div id="new-contact-email" class="d-inline-flex"></div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="d-inline-flex">
+                <div class="dropdown">
+                    <i class="dropdown-toggle bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="">Edit</a></li>
+                        <li><a class="dropdown-item text-danger" href="">Delete</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

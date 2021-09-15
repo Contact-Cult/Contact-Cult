@@ -235,7 +235,11 @@ function deleteContact() {
     }));
 
     $("#" + currentCard.ContactID).remove();
-    $("#contact-details").modal('hide');
+
+    if (!$("#contact-details").hasClass('show')) {
+        $("#contact-details").modal('hide');
+    }
+
 }
 
 function searchContacts(filter, query, e) {

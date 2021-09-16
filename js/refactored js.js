@@ -62,7 +62,7 @@ function cardMenu(e) {
 function openDetails(e) {
     addBlur();
     console.log(e)
-    $("#contact-details").modal('show');
+    $("#contact-details").show();
 }
 
 function newContactCard(info, index) {

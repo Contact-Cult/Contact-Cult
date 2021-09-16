@@ -4,7 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2"onclick="openDetails()">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="openDetails()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -42,22 +42,22 @@ let contact = /*html*/`
 //     $("#contact-details").addClass("stop-modal");
 // })
 
-// $("#contact-details").on("show.bs.modal", function() {
-//     if(relatedTarget == $("#card-menu")) {
-
-//     }
-// })
+$("#contact-details").on("show.bs.modal", function(e) {
+    if(relatedTarget == $("#card-menu")) {
+        return false;
+    }
+})
 
 //  data-bs-toggle="modal" data-bs-target="#contact-details"
 
-function openDetails() {
-    addBlur();
-    var myModalEl = document.getElementById('contact-details');
+// function openDetails() {
+//     addBlur();
+//     var myModalEl = document.getElementById('contact-details');
 
-    var modal = new bootstrap.Modal(myModalEl);
+//     var modal = new bootstrap.Modal(myModalEl);
 
-    modal.show();
-}
+//     modal.show();
+// }
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);

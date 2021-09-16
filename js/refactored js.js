@@ -39,15 +39,14 @@ let contact = /*html*/`
 `;
 
 $("#card-menu").on("click", function(e) {
+    $("#contact-details").addClass("stop-modal");
     e.preventDefault();
     e.stopPropagation();
     e.stopImmediatePropagation();
-    $("#contact-details").addClass("stop-modal");
 })
 
-$("#contact-details").on("show.bs.modal", function(e) {
-    console.log(e.relatedTarget);
-    if(e.relatedTarget.classList.includes("stop-modal")) {
+$("#contact-details").on("show.bs.modal", function() {
+    if($("#contact-details").hasClass("stop-modal")) {
         return false;
     } else {
         addBlur();

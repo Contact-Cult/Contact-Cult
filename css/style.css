@@ -109,10 +109,6 @@ body {
   border-radius: 9px 0 10px 0;
 }
 
-.dashed-line {
-  border: none;
-  border-top: 1px dashed rgb(114, 107, 70);
-  color: #fff;
-  background-color: #fff;
-  width: 97%;
+.dropdown-item {
+  width: 50px!important;
 }

@@ -162,6 +162,9 @@ $("#contact-deleter").on("show.bs.modal", function () {
 
 $("#contact-deleter").on("hidden.bs.modal", function () {
     $("#contact-details").removeClass("modal-blur");
+    if (!$("#contact-details").hasClass("show")) {
+        removeBlur();
+    }
 });
 
 // Enable add button when window is opened

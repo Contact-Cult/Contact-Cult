@@ -4,8 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details"
-onclick="addBlur()">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" onclick="openDetails()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -29,7 +28,7 @@ onclick="addBlur()">
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation()" style="font-size: 24px"></i>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu-sm">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>
                 </ul>
@@ -50,6 +49,11 @@ onclick="addBlur()">
 //         $("#contact-details").removeClass()
 //     }
 // })
+
+function openDetails() {
+    addBlur();
+    $("#contact-details").modal('toggle');
+}
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);

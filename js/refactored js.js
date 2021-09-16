@@ -53,7 +53,6 @@ function openEditor(target, e) {
     e.stopPropagation();
     addBlur();
     currentCard = contactList[target.parent().parent().parent().parent().parent().attr("data-bs-index")];
-    console.log(currentCard);
     (new bootstrap.Modal(document.getElementById('contact-editor'))).show();
 }
 

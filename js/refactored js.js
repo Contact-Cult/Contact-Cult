@@ -33,7 +33,7 @@ let contact = /*html*/`
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu($(this), event)"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li class="dropdown-item" onclick="openEditor(event)">Edit</li>
-                    <li class="dropdown-item text-danger" onclick=("openDelete(event)")>Delete</li>
+                    <li class="dropdown-item text-danger" onclick="openDelete(event)">Delete</li>
                 </ul>
             </div>
         </div>

@@ -50,8 +50,8 @@ let contact = /*html*/`
 
 function openDetails() {
     addBlur();
-    var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
-    myModal.show();
+    var modal = new bootstrap.Modal('#contact-details');
+    modal.show();
 }
 
 function newContactCard(info, index) {

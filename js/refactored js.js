@@ -46,8 +46,11 @@ function cardMenu(e) {
     e.stopImmediatePropagation();
 }
 
-$("#contact-details").on("show.bs.modal", function() {
+$("#contact-details").on("show.bs.modal", function(e) {
     if($("#contact-details").hasClass("stop-modal")) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         return false;
     } else {
         addBlur();

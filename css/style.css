@@ -108,3 +108,7 @@ body {
   -ms-border-radius: 9px 0 10px 0;
   border-radius: 9px 0 10px 0;
 }
+
+.form-select::after {
+  display: none !important;
+}

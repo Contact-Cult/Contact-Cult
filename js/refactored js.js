@@ -28,7 +28,7 @@ onclick="addBlur()">
 
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
-                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation()" style="font-size: 24px"></i>
+                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation(); event.stopImmediatePropagation();" style="font-size: 24px"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>

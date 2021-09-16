@@ -111,5 +111,5 @@ body {
 
 .dropdown-menu {
   min-width:inherit;
-  /* width: 50px!important; */
+  width: 20px!important;
 }

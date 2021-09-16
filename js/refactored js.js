@@ -61,6 +61,7 @@ function cardMenu(e) {
 
 function openDetails(e) {
     addBlur();
+    console.log(e);
     var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
     myModal.show(e);
 

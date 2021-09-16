@@ -193,7 +193,7 @@ function updateDetails() {
 // Fill inputs with current contact details
 $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-firstname").val(currentCard.FirstName);
-    $("#edit-lastame").val(currentCard.LastName);
+    $("#edit-lastname").val(currentCard.LastName);
     $("#edit-phone").val(currentCard.PhoneNumber);
     $("#edit-email").val(currentCard.Email);
     $("#edit-address").val(currentCard.Address);

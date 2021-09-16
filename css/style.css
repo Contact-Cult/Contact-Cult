@@ -108,3 +108,7 @@ body {
   -ms-border-radius: 9px 0 10px 0;
   border-radius: 9px 0 10px 0;
 }
+
+.dropdown-menu {
+  width: 20%!important;
+}

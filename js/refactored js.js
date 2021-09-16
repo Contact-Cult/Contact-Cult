@@ -29,7 +29,7 @@ let contact = /*html*/`
             <div class="dropdown d-inline-block">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li class="dropdown-item" onclick="openDetails($(this).parent().parent().parent().parent()">Edit</li>
+                    <li class="dropdown-item" onclick="openEditor($(this).parent().parent().parent().parent()">Edit</li>
                     <li class="dropdown-item text-danger">Delete</li>
                 </ul>
             </div>
@@ -45,10 +45,12 @@ function cardMenu(e) {
 
 function openDetails(e) {
     addBlur();
-    console.log(e);
-    var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
-    myModal.show(e);
+    (new bootstrap.Modal(document.getElementById('contact-details'))).show(e);
+}
 
+function openEditor(e) {
+    addBlur();
+    (new bootstrap.Modal(document.getElementById('contact-editor'))).show(e);
 }
 
 function newContactCard(info, index) {

@@ -10,7 +10,7 @@ let contact = /*html*/`
 
         <div class="container-fluid">
             <div class="ms-2 mt-1 d-block">
-                <span class="card-title d-inline-block text-truncate" id="new-contact-name" style="max-width: 200px; font-size: 18px;"></span>
+                <h5 class="card-title d-inline-block text-truncate" id="new-contact-name" style="max-width: 200px;"></h5>
 
                 <div class="card-text">
                         <div>

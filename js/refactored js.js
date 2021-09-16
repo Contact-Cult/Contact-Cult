@@ -42,8 +42,9 @@ let contact = /*html*/`
 //     $("#contact-details").addClass("stop-modal");
 // })
 
-$("#contact-details").on("show.bs.modal", function(e) {
+$("#contact-details").on("show.bs.modal", function() {
     if(relatedTarget == $("#card-menu")) {
+        removeBlur();
         return false;
     }
 })

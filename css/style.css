@@ -108,12 +108,3 @@ body {
   -ms-border-radius: 9px 0 10px 0;
   border-radius: 9px 0 10px 0;
 }
-
-.dropdown-menu {
-  max-width: 20px;
-}
-.dropdown-menu li {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}

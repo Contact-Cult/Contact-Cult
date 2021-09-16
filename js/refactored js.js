@@ -26,7 +26,7 @@ let contact = /*html*/`
         </div>
 
         <div class="d-inline-flex mt-2 me-2">
-            <div class="dropdown">
+            <div class="dropdown w-25">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation();" style="font-size: 24px"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="">Edit</a></li>
@@ -50,7 +50,7 @@ let contact = /*html*/`
 
 function openDetails() {
     addBlur();
-    var myModal = new bootstrap.Modal(document.getElementById("contact-details"), {});
+    var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
     myModal.show();
 }
 

@@ -9,7 +9,7 @@ let contact = /*html*/`
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
         <div class="container-fluid">
-            <div class="ms-2 mt-1 d-inline-block">
+            <div class="ms-2 mt-1 d-block">
                 <h5 class="card-title text-truncate" id="new-contact-name"></h5>
 
                 <div class="card-text">

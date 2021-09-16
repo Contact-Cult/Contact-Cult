@@ -11,9 +11,8 @@ let contact = /*html*/`
         <div class="container-fluid">
             <div class="ms-2 mt-1">
                 <div class="d-block">
-                    <h5 class="card-title d-inline-block text-truncate" id="new-contact-firstname" style="max-width: 200px;"></h5>
-                    <span class="d-inline-block"> </span>
-                    <h5 class="card-title d-inline-block text-truncate" id="new-contact-lastname" style="max-width: 200px;"></h5>
+                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px;"></h5>
+                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px;"></h5>
                 </div>
 
                 <div class="card-text">
@@ -76,7 +75,7 @@ function newContactCard(info, index) {
 function updateContactCard(id, info) {
     // if names are too long, truncate to fit on card in 2 lines
     $("#firstname-" + id).text(
-        info.FirstName
+        info.FirstName + " "
         // ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
         // + " " +
         // ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)

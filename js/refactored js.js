@@ -52,7 +52,7 @@ function openEditor(target, e) {
     e.preventDefault();
     e.stopPropagation();
     addBlur();
-    currentCard = target.parent().parent().parent().parent();
+    currentCard = target.parent().parent().parent().parent().parent();
     (new bootstrap.Modal(document.getElementById('contact-editor'))).show();
 }
 

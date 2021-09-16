@@ -110,5 +110,5 @@ body {
 }
 
 .dropdown-menu {
-  width: 20%!important;
+  min-width: 0px!important;
 }

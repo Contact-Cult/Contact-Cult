@@ -28,7 +28,7 @@ let contact = /*html*/`
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
-                <ul class="dropdown-menu dropdown-menu-end w-25">
+                <ul class="dropdown-menu dropdown-menu-end" width="100px">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>
                 </ul>
@@ -39,24 +39,9 @@ let contact = /*html*/`
 `;
 
 function cardMenu(e) {
-    // $("#contact-details").addClass("stop-modal");
-    console.log(e)
     e.preventDefault();
     e.stopPropagation();
 }
-
-// $("#contact-details").on("show.bs.modal", function(e) {
-//     if($("#contact-details").hasClass("stop-modal")) {
-//         e.preventDefault();
-//         e.stopPropagation();
-//         e.stopImmediatePropagation();
-//         return false;
-//     } else {
-//         addBlur();
-//     }
-// })
-
-//  data-bs-toggle="modal" data-bs-target="#contact-details"
 
 function openDetails(e) {
     addBlur();

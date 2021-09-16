@@ -10,7 +10,7 @@ let contact = /*html*/`
 
         <div class="container-fluid">
             <div class="ms-2 mt-1">
-                <h5 class="card-title text-wrap text-break" id="new-contact-name"></h5>
+                <h5 class="card-title text-truncate" id="new-contact-name"></h5>
 
                 <div class="card-text">
                         <div>
@@ -71,9 +71,10 @@ function newContactCard(info, index) {
 function updateContactCard(id, info) {
     // if names are too long, truncate to fit on card in 2 lines
     $("#name-" + id).text(
-        ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
-        + " " +
-        ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)
+        info.FirstName + " " + info.LastName
+        // ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
+        // + " " +
+        // ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)
     );
     $("#phone-" + id).text(info.PhoneNumber);
     $("#phone-" + id).attr("id", "phone-" + info.ContactID);

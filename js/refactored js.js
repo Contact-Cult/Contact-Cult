@@ -9,8 +9,12 @@ let contact = /*html*/`
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
         <div class="container-fluid">
-            <div class="ms-2 mt-1 d-block">
-                <h5 class="card-title d-inline-block text-wrap text-truncate" id="new-contact-name" style="max-width: 200px; max-height: 50px;"></h5>
+            <div class="ms-2 mt-1">
+                <div class="d-block">
+                    <h5 class="card-title d-inline-block text-truncate" id="new-contact-firstname" style="max-width: 200px;"></h5>
+                    <span class="d-inline-block"> </span>
+                    <h5 class="card-title d-inline-block text-truncate" id="new-contact-lastname" style="max-width: 200px;"></h5>
+                </div>
 
                 <div class="card-text">
                         <div>
@@ -60,7 +64,8 @@ function newContactCard(info, index) {
     $("#contact-list").prepend(contact);
     $("#new-contact").attr("data-bs-index", index);
     $("#new-contact").attr("id", info.ContactID);
-    $("#new-contact-name").attr("id", "name-" + info.ContactID);
+    $("#new-contact-firstname").attr("id", "firstname-" + info.ContactID);
+    $("#new-contact-lastname").attr("id", "lastname-" + info.ContactID);
     $("#new-contact-phone").attr("id", "phone-" + info.ContactID);
     $("#new-contact-email").attr("id", "email-" + info.ContactID);
     $("#new-contact-img").attr("id", "img-" + info.ContactID);
@@ -70,12 +75,13 @@ function newContactCard(info, index) {
 
 function updateContactCard(id, info) {
     // if names are too long, truncate to fit on card in 2 lines
-    $("#name-" + id).text(
-        info.FirstName + " " + info.LastName
+    $("#firstname-" + id).text(
+        info.FirstName
         // ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
         // + " " +
         // ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)
     );
+    $("#lastname-" + id).text(info.LastName);
     $("#phone-" + id).text(info.PhoneNumber);
     $("#phone-" + id).attr("id", "phone-" + info.ContactID);
     $("#email-" + id).text(info.Email);

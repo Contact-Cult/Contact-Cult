@@ -4,7 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" onclick="openDetails(event)">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" onclick="openDetails(this)">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 

@@ -11,7 +11,7 @@ let contact = /*html*/`
         <div class="container-fluid">
             <div class="ms-2 mt-1">
                 <div class="d-block">
-                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px;"></h5>
+                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-cont5act-firstname" style="max-width: 200px;"></h5>
                     <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px;"></h5>
                 </div>
 
@@ -32,7 +32,7 @@ let contact = /*html*/`
             <div class="dropdown d-inline-block">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li class="dropdown-item" onclick="openEditor($(this), event)">Edit</li>
+                    <li class="dropdown-item" onclick="openEditor(event)">Edit</li>
                     <li class="dropdown-item text-danger">Delete</li>
                 </ul>
             </div>
@@ -41,9 +41,10 @@ let contact = /*html*/`
 </div>
 `;
 
-function cardMenu(e) {
+function cardMenu(target, e) {
     e.preventDefault();
     e.stopPropagation();
+    currentCard = contactList[target.closest("[data-bs-index]").attr("data-bs-index")];
 }
 
 function openDetails(target) {
@@ -51,11 +52,10 @@ function openDetails(target) {
     (new bootstrap.Modal(document.getElementById('contact-details'))).show(target);
 }
 
-function openEditor(target, e) {
+function openEditor(e) {
     e.preventDefault();
     e.stopPropagation();
     addBlur();
-    currentCard = contactList[target.parent().parent().parent().parent().parent().attr("data-bs-index")];
     (new bootstrap.Modal(document.getElementById('contact-editor'))).show();
 }
 

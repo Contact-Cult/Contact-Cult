@@ -4,8 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-target="#contact-details" data-bs-toggle="modal"
-onclick="addBlur()">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" onclick="openDetails()">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -28,7 +27,7 @@ onclick="addBlur()">
 
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
-                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation(); event.stopImmediatePropagation();" style="font-size: 24px"></i>
+                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="event.stopPropagation();" style="font-size: 24px"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>
@@ -44,17 +43,16 @@ onclick="addBlur()">
 // })
 
 // $("#contact-details").on("show.bs.modal", function() {
-//     if($("#contact-details").hasClass("stop-modal")) {
-//         $("#contact-details").modal('hide');
-//         removeBlur();
-//         $("#contact-details").removeClass()
+//     if(relatedTarget == $("#card-menu")) {
+
 //     }
 // })
 
-// function openDetails() {
-//     addBlur();
-//     document.getElementById('contact-details').show();
-// }
+function openDetails() {
+    addBlur();
+    var myModal = new bootstrap.Modal(document.getElementById("contact-details"), {});
+    myModal.show();
+}
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);

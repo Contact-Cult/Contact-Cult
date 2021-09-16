@@ -28,7 +28,7 @@ let contact = /*html*/`
         <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
-                <ul class="dropdown-menu dropdown-menu-end" width="100px">
+                <ul class="dropdown-menu dropdown-menu-end" width="50px">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>
                 </ul>

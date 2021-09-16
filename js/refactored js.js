@@ -38,9 +38,12 @@ let contact = /*html*/`
 </div>
 `;
 
-// $("#card-menu").on("click", function() {
-//     $("#contact-details").addClass("stop-modal");
-// })
+$("#card-menu").on("click", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    $("#contact-details").addClass("stop-modal");
+})
 
 $("#contact-details").on("show.bs.modal", function(e) {
     console.log(e);

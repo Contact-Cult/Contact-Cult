@@ -5,12 +5,12 @@ let remember = true;
 
 let contact = /*html*/`
 <div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" onclick="openDetails(this)">
-    <div class="container-fluid d-inline-flex" >
+    <div class="container-fluid d-inline-block" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
         <div class="container-fluid">
             <div class="ms-2 mt-1">
-                <h5 class="card-title text-truncate d-inline-block" id="new-contact-name"></h5>
+                <h5 class="card-title text-truncate" id="new-contact-name"></h5>
 
                 <div class="card-text">
                         <div>

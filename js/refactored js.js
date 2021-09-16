@@ -53,6 +53,7 @@ function openEditor(target, e) {
     e.stopPropagation();
     addBlur();
     currentCard = target.parent().parent().parent().parent().parent();
+    console.log(currentCard);
     (new bootstrap.Modal(document.getElementById('contact-editor'))).show();
 }
 

@@ -43,6 +43,7 @@ let contact = /*html*/`
 // })
 
 $("#contact-details").on("show.bs.modal", function(e) {
+    console.log(e);
     if(e == $("#card-menu")) {
         return false;
     } else {

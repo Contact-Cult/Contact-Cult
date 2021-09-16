@@ -52,7 +52,7 @@ let contact = /*html*/`
 
 function openDetails() {
     addBlur();
-    $("#contact-details").show();
+    document.getElementById('myModal').show();
 }
 
 function newContactCard(info, index) {

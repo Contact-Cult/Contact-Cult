@@ -59,10 +59,11 @@ function cardMenu(e) {
 
 //  data-bs-toggle="modal" data-bs-target="#contact-details"
 
-function openDetails(e) {
+function openDetails() {
     addBlur();
-    console.log(e)
-    $("#contact-details").show();
+    var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
+    myModal.toggle();
+
 }
 
 function newContactCard(info, index) {

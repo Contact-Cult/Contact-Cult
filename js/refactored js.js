@@ -32,7 +32,7 @@ let contact = /*html*/`
             <div class="dropdown d-inline-block">
                 <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li class="dropdown-item" onclick="openEditor(event)">Edit</li>
+                    <li class="dropdown-item" onclick="openEditor($(this), event)">Edit</li>
                     <li class="dropdown-item text-danger">Delete</li>
                 </ul>
             </div>
@@ -41,10 +41,9 @@ let contact = /*html*/`
 </div>
 `;
 
-function cardMenu(target, e) {
+function cardMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    currentCard = contactList[target.closest("[data-bs-index]").attr("data-bs-index")];
 }
 
 function openDetails(target) {
@@ -52,10 +51,11 @@ function openDetails(target) {
     (new bootstrap.Modal(document.getElementById('contact-details'))).show(target);
 }
 
-function openEditor(e) {
+function openEditor(target, e) {
     e.preventDefault();
     e.stopPropagation();
     addBlur();
+    currentCard = contactList[target.closest("[data-bs-index]").attr("data-bs-index")];
     (new bootstrap.Modal(document.getElementById('contact-editor'))).show();
 }
 

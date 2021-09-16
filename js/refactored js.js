@@ -4,7 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" onclick="openDetails(this)">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" onclick="openDetails(this)">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -25,9 +25,9 @@ let contact = /*html*/`
             </div>
         </div>
 
-        <div class="d-inline-flex mt-2 me-2" data-bs-dismiss="modal" data-bs-target="#contact-details">
+        <div class="d-inline-flex mt-2 me-2">
             <div class="dropdown w-25">
-                <i class="bi-three-dots-vertical pe-none" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
+                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px" onclick="cardMenu(event)"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>

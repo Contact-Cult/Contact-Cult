@@ -59,10 +59,10 @@ function cardMenu(e) {
 
 //  data-bs-toggle="modal" data-bs-target="#contact-details"
 
-function openDetails() {
+function openDetails(e) {
     addBlur();
     var myModal = new bootstrap.Modal(document.getElementById('contact-details'));
-    myModal.toggle();
+    myModal.show(e);
 
 }
 
@@ -171,9 +171,9 @@ $("#contact-adder").on("show.bs.modal", function () {
 // get index of the card that opened it
 // and update content of the window with that contact
 $("#contact-details").on("show.bs.modal", function (event) {
-    // let cardIndex = event.relatedTarget.getAttribute("data-bs-index")
-    // currentCard = contactList[cardIndex];
-    // updateDetails();
+    let cardIndex = event.relatedTarget.getAttribute("data-bs-index")
+    currentCard = contactList[cardIndex];
+    updateDetails();
 });
 
 // Retrieve details from currentCard

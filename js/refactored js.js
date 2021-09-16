@@ -27,7 +27,7 @@ let contact = /*html*/`
 
         <div class="d-inline-flex mt-2 me-2" data-bs-dismiss="modal" data-bs-target="#contact-details">
             <div class="dropdown w-25">
-                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" onClick="cardMenu()" style="font-size: 24px"></i>
+                <i class="bi-three-dots-vertical" id="card-menu" data-bs-toggle="dropdown" style="font-size: 24px"></i>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="">Edit</a></li>
                     <li><a class="dropdown-item text-danger" href="">Delete</a></li>
@@ -42,8 +42,8 @@ let contact = /*html*/`
 //     $("#contact-details").addClass("stop-modal");
 // })
 
-$("#contact-details").on("show.bs.modal", function() {
-    if(relatedTarget == $("#card-menu")) {
+$("#contact-details").on("show.bs.modal", function(e) {
+    if(e == $("#card-menu")) {
         return false;
     } else {
         addBlur();

@@ -40,6 +40,7 @@ let contact = /*html*/`
 
 $("#card-menu").on("click", function(e) {
     $("#contact-details").addClass("stop-modal");
+    console.log(e);
     e.preventDefault();
     e.stopPropagation();
     e.stopImmediatePropagation();

@@ -4,7 +4,7 @@ var userId = 0;
 let remember = true;
 
 let contact = /*html*/`
-<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" data-bs-target="#contact-details" onclick="">
+<div id="new-contact" data-bs-index="" class="card border-0 h-100 g-0 mt-2 ms-2" data-bs-toggle="modal" onclick="openDetails(event)">
     <div class="container-fluid d-inline-flex" >
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
@@ -39,34 +39,31 @@ let contact = /*html*/`
 `;
 
 function cardMenu(e) {
-    $("#contact-details").addClass("stop-modal");
+    // $("#contact-details").addClass("stop-modal");
     console.log(e)
     e.preventDefault();
     e.stopPropagation();
     e.stopImmediatePropagation();
 }
 
-$("#contact-details").on("show.bs.modal", function(e) {
-    if($("#contact-details").hasClass("stop-modal")) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        return false;
-    } else {
-        addBlur();
-    }
-})
+// $("#contact-details").on("show.bs.modal", function(e) {
+//     if($("#contact-details").hasClass("stop-modal")) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//         e.stopImmediatePropagation();
+//         return false;
+//     } else {
+//         addBlur();
+//     }
+// })
 
 //  data-bs-toggle="modal" data-bs-target="#contact-details"
 
-// function openDetails() {
-//     addBlur();
-//     var myModalEl = document.getElementById('contact-details');
-
-//     var modal = new bootstrap.Modal(myModalEl);
-
-//     modal.show();
-// }
+function openDetails(e) {
+    addBlur();
+    console.log(e)
+    $("#contact-details").modal();
+}
 
 function newContactCard(info, index) {
     $("#contact-list").prepend(contact);

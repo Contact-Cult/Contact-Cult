@@ -109,6 +109,7 @@ body {
   border-radius: 9px 0 10px 0;
 }
 
-.form-select::after {
+.filter-select::after {
   display: none !important;
+  background: none !important
 }

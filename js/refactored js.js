@@ -47,7 +47,7 @@ $("#card-menu").on("click", function(e) {
 
 $("#contact-details").on("show.bs.modal", function(e) {
     console.log(e);
-    if(e.relatedTarget.hasClass("stop-modal")) {
+    if(e.relatedTarget.classList.includes("stop-modal")) {
         return false;
     } else {
         addBlur();

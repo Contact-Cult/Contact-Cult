@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form id="signup-form" class="" onSubmit="signup(this, event)">
+                    <form id="signup-form" onSubmit="signup(this, event)">
                         <div class="d-inline-flex mb-3">
                             <div class="form-floating me-2">
                                 <input type="text" class="form-control" name="firstName" placeholder="First Name"
@@ -224,105 +224,107 @@
     <div class="modal fade" id="contact-editor" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" id="editor-content">
-                <div class="d-inline-flex">
+                <form onSubmit="event.preventDefault();">
+                    <div class="d-inline-flex">
 
-                    <img src="" id="edit-img" class="img d-inline-flex contact-img" width="150" height="150" />
+                        <img src="" id="edit-img" class="img d-inline-flex contact-img" width="150" height="150" />
 
 
-                    <div class="container-fluid p-0 mt-3 ms-2 me-3">
-                        <div class="d-inline-flex">
-                            <input type="text" class="form-control me-1" id="edit-firstname" placeholder="First Name"
+                        <div class="container-fluid p-0 mt-3 ms-2 me-3">
+                            <div class="d-inline-flex">
+                                <input type="text" class="form-control me-1" id="edit-firstname"
+                                    placeholder="First Name" autocomplete="off" />
+
+                                <input type="text" class="form-control" id="edit-lastname" placeholder="Last Name"
+                                    autocomplete="off" />
+                            </div>
+
+
+                            <div class="p-0">
+                                <input type="tel" class="form-control mt-2" id="edit-phone" placeholder="Phone Number"
+                                    autocomplete="off" />
+                                <input type="email" class="form-control mt-2" id="edit-email" placeholder="Email"
+                                    autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mx-3 mt-2 p-0">
+                        <input type="text" class="form-control" id="edit-address" placeholder="Address"
+                            autocomplete="off" />
+
+                        <div class="d-inline-flex p-0 mt-2">
+                            <input type="text" class="form-control me-1" id="edit-city" placeholder="City"
                                 autocomplete="off" />
-
-                            <input type="text" class="form-control" id="edit-lastname" placeholder="Last Name"
+                            <select id="edit-state" class="form-select me-1 w-50" autocomplete="off">
+                                <option value="" selected="selected">State</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="GU">Guam</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="IA">Iowa</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MD">Maryland</option>
+                                <option value="ME">Maine</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MT">Montana</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NY">New York</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UM">United States Minor Outlying Islands</option>
+                                <option value="UT">Utah</option>
+                                <option value="VA">Virginia</option>
+                                <option value="VI">Virgin Islands</option>
+                                <option value="VT">Vermont</option>
+                                <option value="WA">Washington</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <input type="text" class="form-control w-50" id="edit-zip" placeholder="Zip"
                                 autocomplete="off" />
                         </div>
 
-
-                        <div class="p-0">
-                            <input type="tel" class="form-control mt-2" id="edit-phone" placeholder="Phone Number"
-                                autocomplete="off" />
-                            <input type="email" class="form-control mt-2" id="edit-email" placeholder="Email"
-                                autocomplete="off" />
-                        </div>
+                        <div style="font-size: 25px">Notes</div>
+                        <hr class="m-0" />
+                        <textarea class="form-control px-3 my-2" id="edit-notes" rows="3" autocomplete="off"></textarea>
                     </div>
-                </div>
-
-                <div class="mx-3 mt-2 p-0">
-                    <input type="text" class="form-control" id="edit-address" placeholder="Address"
-                        autocomplete="off" />
-
-                    <div class="d-inline-flex p-0 mt-2">
-                        <input type="text" class="form-control me-1" id="edit-city" placeholder="City"
-                            autocomplete="off" />
-                        <select id="edit-state" class="form-select me-1 w-50" autocomplete="off">
-                            <option value="" selected="selected">State</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="DE">Delaware</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="GU">Guam</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="IA">Iowa</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MD">Maryland</option>
-                            <option value="ME">Maine</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MP">Northern Mariana Islands</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MT">Montana</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NY">New York</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="PR">Puerto Rico</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UM">United States Minor Outlying Islands</option>
-                            <option value="UT">Utah</option>
-                            <option value="VA">Virginia</option>
-                            <option value="VI">Virgin Islands</option>
-                            <option value="VT">Vermont</option>
-                            <option value="WA">Washington</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        <input type="text" class="form-control w-50" id="edit-zip" placeholder="Zip"
-                            autocomplete="off" />
-                    </div>
-
-                    <div style="font-size: 25px">Notes</div>
-                    <hr class="m-0" />
-                    <textarea class="form-control px-3 my-2" id="edit-notes" rows="3" autocomplete="off"></textarea>
-                </div>
+                </form>
 
                 <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-editor" data-bs-toggle="modal">Cancel</div>
@@ -337,105 +339,108 @@
     <div class="modal fade" id="contact-adder" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="d-inline-flex">
+                <form onSubmit="event.preventDefault();">
+                    <div class="d-inline-flex">
 
-                    <img src="images/ContactCult_Logo_1.png" id="add-img" class="img d-inline-flex contact-img"
-                        alt="..." width="150" height="150" />
+                        <img src="images/ContactCult_Logo_1.png" id="add-img" class="img d-inline-flex contact-img"
+                            alt="..." width="150" height="150" />
 
 
-                    <div class="container-fluid p-0 mt-3 ms-2 me-3">
-                        <div class="d-inline-flex">
-                            <input type="text" class="form-control me-1" id="add-firstname" placeholder="First Name"
+                        <div class="container-fluid p-0 mt-3 ms-2 me-3">
+                            <div class="d-inline-flex">
+                                <input type="text" class="form-control me-1" id="add-firstname" placeholder="First Name"
+                                    autocomplete="off" />
+
+                                <input type="text" class="form-control" id="add-lastname" placeholder="Last Name"
+                                    autocomplete="off" />
+                            </div>
+
+
+                            <div class="p-0">
+                                <input type="tel" class="form-control mt-2" id="add-phone" placeholder="Phone Number"
+                                    autocomplete="off" />
+                                <input type="email" class="form-control mt-2" id="add-email" placeholder="Email"
+                                    autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mx-3 mt-2 p-0">
+                        <input type="text" class="form-control" id="add-address" placeholder="Address"
+                            autocomplete="off" />
+
+                        <div class="d-inline-flex p-0 mt-2">
+                            <input type="text" class="form-control me-1" id="add-city" placeholder="City"
                                 autocomplete="off" />
-
-                            <input type="text" class="form-control" id="add-lastname" placeholder="Last Name"
+                            <select id="add-state" class="form-select me-1 w-50" autocomplete="off">
+                                <option value="" selected="selected">State</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="GU">Guam</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="IA">Iowa</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MD">Maryland</option>
+                                <option value="ME">Maine</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MT">Montana</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NY">New York</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UM">United States Minor Outlying Islands</option>
+                                <option value="UT">Utah</option>
+                                <option value="VA">Virginia</option>
+                                <option value="VI">Virgin Islands</option>
+                                <option value="VT">Vermont</option>
+                                <option value="WA">Washington</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <input type="text" class="form-control w-50" id="add-zip" placeholder="Zip"
                                 autocomplete="off" />
                         </div>
 
-
-                        <div class="p-0">
-                            <input type="tel" class="form-control mt-2" id="add-phone" placeholder="Phone Number"
-                                autocomplete="off" />
-                            <input type="email" class="form-control mt-2" id="add-email" placeholder="Email"
-                                autocomplete="off" />
-                        </div>
+                        <div style="font-size: 25px">Notes</div>
+                        <hr class="m-0" />
+                        <textarea class="form-control px-3 my-2" id="add-notes" rows="3" autocomplete="off"></textarea>
                     </div>
-                </div>
-
-                <div class="mx-3 mt-2 p-0">
-                    <input type="text" class="form-control" id="add-address" placeholder="Address" autocomplete="off" />
-
-                    <div class="d-inline-flex p-0 mt-2">
-                        <input type="text" class="form-control me-1" id="add-city" placeholder="City"
-                            autocomplete="off" />
-                        <select id="add-state" class="form-select me-1 w-50" autocomplete="off">
-                            <option value="" selected="selected">State</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="DE">Delaware</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="GU">Guam</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="IA">Iowa</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MD">Maryland</option>
-                            <option value="ME">Maine</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MP">Northern Mariana Islands</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MT">Montana</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NY">New York</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="PR">Puerto Rico</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UM">United States Minor Outlying Islands</option>
-                            <option value="UT">Utah</option>
-                            <option value="VA">Virginia</option>
-                            <option value="VI">Virgin Islands</option>
-                            <option value="VT">Vermont</option>
-                            <option value="WA">Washington</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        <input type="text" class="form-control w-50" id="add-zip" placeholder="Zip"
-                            autocomplete="off" />
-                    </div>
-
-                    <div style="font-size: 25px">Notes</div>
-                    <hr class="m-0" />
-                    <textarea class="form-control px-3 my-2" id="add-notes" rows="3" autocomplete="off"></textarea>
-                </div>
+                </form>
 
                 <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-adder" data-bs-toggle="modal">Cancel</div>

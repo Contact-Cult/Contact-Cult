@@ -125,8 +125,6 @@ $(document).ready(function () {
     } else {
         addBlur();
         $('#login-modal').modal('toggle');
-        $('#edit-phone').mask('(999) 999-9999');
-        $('#add-phone').mask('(999) 999-9999');
     }
 });
 
@@ -173,6 +171,7 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").attr("onClick", "addContact(); this.onclick=null;");
     $("#add-notes").val("");
+    $("#add-phone").mask('(999) 999-9999');
 });
 
 // When contact details are opened,
@@ -219,6 +218,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-zip").val(currentCard.ZipCode);
     $("#edit-img").attr("src", currentCard.Image);
     $("#edit-notes").val(currentCard.Notes.replace('<br />', '\r\n\g'));
+    $("#edit-phone").mask('(999) 999-9999');
 });
 
 // Create an object with values from selected form ("#edit" or "#add")

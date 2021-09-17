@@ -39,11 +39,6 @@ body {
   border-radius: 10px;
 }
 
-.card-title {
-  max-width: 200px;
-  line-height: 140%;
-}
-
 .dropdown-menu {
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -169,7 +169,7 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
-    $("#add-save").attr("onClick", "addContact(); this.onclick=null;");
+    $("#add-save").disabled = false;
     $("#add-notes").val("");
     $("#add-phone").mask('(999) 999-9999');
 });
@@ -258,7 +258,8 @@ function editContact() {
     apiHandler("EditContact", JSON.stringify(contactInfo));
 }
 
-function addContact() {
+function addContact(button) {
+    button.disabled = true;
     let contactInfo = generateInfo("#add");
 
     let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).ContactID;

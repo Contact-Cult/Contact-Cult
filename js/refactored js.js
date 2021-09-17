@@ -152,7 +152,9 @@ $("#contact-adder").on("hidden.bs.modal", function () {
 });
 
 $("#contact-editor").on("hidden.bs.modal", function () {
-    removeBlur();
+    if (!$("#contact-details").hasClass("show")) {
+        removeBlur();
+    }
 });
 
 $("#contact-deleter").on("show.bs.modal", function () {

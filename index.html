@@ -77,23 +77,27 @@
                     <form id="signup-form" class="" onSubmit="signup(this, event)">
                         <div class="d-inline-flex mb-3">
                             <div class="form-floating me-2">
-                                <input type="text" class="form-control" name="firstName" placeholder="First Name" />
+                                <input type="text" class="form-control" name="firstName" placeholder="First Name"
+                                    autocomplete="off" />
                                 <label for="signupFirstName">First Name</label>
                             </div>
                             <div class="form-floating">
-                                <input type="text" class="form-control" name="lastName" placeholder="Last Name" />
+                                <input type="text" class="form-control" name="lastName" placeholder="Last Name"
+                                    autocomplete="off" />
                                 <label for="signupLastName">Last Name</label>
                             </div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="username" placeholder="Username" />
+                            <input type="text" class="form-control" name="username" placeholder="Username"
+                                autocomplete="off" />
                             <label for="signupUsername">Username</label>
                             <div id="usernameResult" class="text-danger"></div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address" />
+                            <input type="email" class="form-control" name="email" placeholder="Email Address"
+                                autocomplete="off" />
                             <label for="signupEmail">Email Address</label>
                             <div id="emailResult" class="text-danger"></div>
                         </div>
@@ -101,12 +105,12 @@
                         <div class="d-inline-flex">
                             <div class="form-floating me-2">
                                 <input type="password" class="form-control" name="password" placeholder="Password"
-                                    autocomplete="new-password" />
+                                    autocomplete="off" />
                                 <label for="signupPassword">Password</label>
                             </div>
                             <div class="form-floating">
                                 <input type="password" class="form-control" name="passwordConfirm"
-                                    placeholder="Confirm Password" autocomplete="new-password" />
+                                    placeholder="Confirm Password" autocomplete="off" />
                                 <label for="signupPasswordConfirm">Confirm Password</label>
                             </div>
                         </div>
@@ -442,6 +446,7 @@
         </div>
     </div>
 
+    <!-- Contact Deleter -->
     <div class="modal fade" id="contact-deleter" tabindex="-1">
         <div class="modal-sm modal-dialog modal-dialog-centered">
             <div class="modal-content">

@@ -125,6 +125,8 @@ $(document).ready(function () {
     } else {
         addBlur();
         $('#login-modal').modal('toggle');
+        $('#edit-phone').mask('(999) 999-9999');
+        $('#add-phone').mask('(999) 999-9999');
     }
 });
 

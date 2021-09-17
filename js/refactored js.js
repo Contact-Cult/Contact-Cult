@@ -257,8 +257,11 @@ function editContact() {
 
     apiHandler("EditContact", JSON.stringify(contactInfo));
 }
-
-function addContact() {
+// data-bs-target="#contact-adder" data-bs-toggle="modal"
+// data-bs-dismiss="modal"
+function addContact(e) {
+    e.preventDefault();
+    e.stopPropagation();
     let contactInfo = generateInfo("#add");
 
     let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).ContactID;

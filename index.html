@@ -339,7 +339,7 @@
     <div class="modal fade" id="contact-adder" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form onSubmit="event.preventDefault();">
+                <form id="add-dorm" onSubmit="addContact(event)">
                     <div class="d-inline-flex">
 
                         <img src="images/ContactCult_Logo_1.png" id="add-img" class="img d-inline-flex contact-img"
@@ -444,8 +444,7 @@
 
                 <div class="modal-footer">
                     <div class="btn" data-bs-target="#contact-adder" data-bs-toggle="modal">Cancel</div>
-                    <button id="add-save" class="btn btn-color" data-bs-target="#contact-adder" data-bs-toggle="modal"
-                        data-bs-dismiss="modal" onclick="addContact(); this.onclick=null;">Save</button>
+                    <button type="submit" form="add-form" id="add-save" class="btn btn-color">Save</button>
                 </div>
             </div>
         </div>

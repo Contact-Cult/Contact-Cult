@@ -169,7 +169,7 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
-    $("#add-save").disabled = false;
+    $("#add-save").prop("disabled", false);
     $("#add-notes").val("");
     $("#add-phone").mask('(999) 999-9999');
 });

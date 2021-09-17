@@ -264,7 +264,7 @@ function addContact(button) {
     button.disabled = true;
     let contactInfo = generateInfo("#add");
 
-    let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).ContactID;
+    let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).newContactID;
     contactInfo.ContactID = newID;
 
     contactList.push(contactInfo);

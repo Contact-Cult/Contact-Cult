@@ -9,10 +9,10 @@ let contact = /*html*/`
         <img id="new-contact-img" src="" class="img card-img d-inline-flex" alt="">
 
         <div class="container-fluid">
-            <div class="ms-2 mt-1">
+            <div class="ms-2">
                 <div class="d-block">
-                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px; line-height: 1.2em;"></h5>
-                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px; line-height: 1.2em;"></h5>
+                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px; line-height: 1.25em;"></h5>
+                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px; line-height: 1.25em;"></h5>
                 </div>
 
                 <div class="card-text">
@@ -21,7 +21,7 @@ let contact = /*html*/`
                             <div id="new-contact-phone" class="d-inline-flex"></div>
                         </div>
                         <div>
-                            <i class="bi-envelope me-2 d-inline-flex"></i>
+                            <i class="bi-envelope me-2 d-inline"></i>
                             <div id="new-contact-email" class="d-inline-block text-truncate" style="max-width: 170px;"></div>
                         </div>
                 </div>

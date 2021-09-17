@@ -167,6 +167,15 @@ $("#contact-deleter").on("hidden.bs.modal", function () {
 // Enable add button when window is opened
 $("#contact-adder").on("show.bs.modal", function () {
     $("#add-save").prop("disabled", false);
+    $("#add-firstname").val("");
+    $("#add-lastname").val("");
+    $("#add-phone").val("");
+    $("#add-email").val("");
+    $("#add-address").val("");
+    $("#add-city").val("");
+    $("#add-state").val("");
+    $("#add-zip").val("");
+    $("#add-img").attr("src", "images/ContactCult_Logo_1.png"); // random image here
     $("#add-notes").val("");
     $("#add-phone").mask('(999) 999-9999');
 });

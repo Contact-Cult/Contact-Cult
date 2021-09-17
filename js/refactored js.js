@@ -81,12 +81,7 @@ function newContactCard(info, index) {
 
 function updateContactCard(id, info) {
     // if names are too long, truncate to fit on card in 2 lines
-    $("#firstname-" + id).text(
-        info.FirstName + " "
-        // ((info.FirstName.length > 10) ? info.FirstName.substring(0, 10) + "..." : info.FirstName)
-        // + " " +
-        // ((info.LastName.length > 10) ? info.LastName.substring(0, 10) + "..." : info.LastName)
-    );
+    $("#firstname-" + id).text(info.FirstName + " ");
     $("#lastname-" + id).text(info.LastName);
     $("#phone-" + id).text(info.PhoneNumber);
     $("#phone-" + id).attr("id", "phone-" + info.ContactID);
@@ -204,7 +199,6 @@ function updateDetails() {
     $("#details-address").text(currentCard.Address);
     $("#details-address2").text(
         currentCard.City + " " +
-        // ((card.getAttribute("data-bs-city") != "")? ", " : "") +
         currentCard.State + " " +
         currentCard.ZipCode
     );

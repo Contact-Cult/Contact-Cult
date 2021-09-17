@@ -326,11 +326,12 @@ function logout() {
 function signup(form, e) {
     e.preventDefault();
     e.stopPropagation();
+    let error = false;
 
     // No username was entered
     if (form.username.value == "") {
         $("#usernameResult").text("Please enter a username");
-        return;
+        error = true;
     } else {
         $("#usernameResult").text("");
     }
@@ -338,26 +339,23 @@ function signup(form, e) {
     // Invalid email
     if (!form.email.value.includes("@")) {
         $("#emailResult").text("Please enter an email");
-        return;
+        error = true;
     } else {
         $("#emailResult").text("");
     }
 
-    // No password was entered
+    // No password was entered or passwords do not match
     if (form.password.value != form.passwordConfirm.value) {
         $("#passwordResult").text("Please enter a password");
-        return;
+        error = true;
+    } else if (form.password.value != form.passwordConfirm.value) {
+        $("#passwordResult").text("Passwords do not match");
+        error = true;
     } else {
         $("#passwordResult").text("");
     }
 
-    // Passwords do not match
-    if (form.password.value != form.passwordConfirm.value) {
-        $("#passwordResult").text("Passwords do not match");
-        return;
-    } else {
-        $("#passwordResult").text("");
-    }
+    if (error) return;
 
     userId = apiHandler("CreateUser", JSON.stringify({
         FirstName: form.firstName.value,

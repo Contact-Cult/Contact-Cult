@@ -11,8 +11,8 @@ let contact = /*html*/`
         <div class="container-fluid">
             <div class="ms-2">
                 <div class="d-block">
-                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px; line-height: 1.25em;"></h5>
-                    <h5 class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px; line-height: 1.25em;"></h5>
+                    <span class="card-title d-inline-block text-truncate m-0" id="new-contact-firstname" style="max-width: 200px; font-size: 16px"></span>
+                    <span class="card-title d-inline-block text-truncate m-0" id="new-contact-lastname" style="max-width: 200px; font-size: 16px"></span>
                 </div>
 
                 <div class="card-text">

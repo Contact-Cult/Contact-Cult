@@ -329,17 +329,34 @@ function signup(form, e) {
 
     // No username was entered
     if (form.username.value == "") {
+        $("#usernameResult").text("Please enter a username");
         return;
+    } else {
+        $("#usernameResult").text("");
     }
 
     // Invalid email
     if (!form.email.value.includes("@")) {
+        $("#emailResult").text("Please enter an email");
         return;
+    } else {
+        $("#emailResult").text("");
+    }
+
+    // No password was entered
+    if (form.password.value != form.passwordConfirm.value) {
+        $("#passwordResult").text("Please enter a password");
+        return;
+    } else {
+        $("#passwordResult").text("");
     }
 
     // Passwords do not match
     if (form.password.value != form.passwordConfirm.value) {
+        $("#passwordResult").text("Passwords do not match");
         return;
+    } else {
+        $("#passwordResult").text("");
     }
 
     userId = apiHandler("CreateUser", JSON.stringify({

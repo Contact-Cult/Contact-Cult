@@ -85,14 +85,19 @@
                                 <label for="signupLastName">Last Name</label>
                             </div>
                         </div>
+
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="username" placeholder="Username" />
                             <label for="signupUsername">Username</label>
+                            <div id="usernameResult" class="text-danger"></div>
                         </div>
+
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" name="email" placeholder="Email Address" />
                             <label for="signupEmail">Email Address</label>
+                            <div id="emailResult" class="text-danger"></div>
                         </div>
+
                         <div class="d-inline-flex mb-4">
                             <div class="form-floating me-2">
                                 <input type="password" class="form-control" name="password" placeholder="Password"
@@ -105,6 +110,8 @@
                                 <label for="signupPasswordConfirm">Confirm Password</label>
                             </div>
                         </div>
+
+                        <div id="passwordResult" class="text-danger"></div>
                     </form>
                 </div>
 

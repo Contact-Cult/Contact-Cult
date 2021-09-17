@@ -185,6 +185,10 @@ $("#contact-details").on("show.bs.modal", function (event) {
     updateDetails();
 });
 
+$("#contact-deleter").on("show.bs.modal", function () {
+    $("#delete-name").text("Delete " + currentCard.FirstName + " " + currentCard.LastName);
+});
+
 // Retrieve details from currentCard
 function updateDetails() {
     $("#details-name").text(currentCard.FirstName + " " + currentCard.LastName);

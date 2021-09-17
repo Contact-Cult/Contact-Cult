@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form id="signup-form" onSubmit="signup(this, event)">
+                    <form id="signup-form" class="mb-4" onSubmit="signup(this, event)">
                         <div class="d-inline-flex mb-3">
                             <div class="form-floating me-2">
                                 <input type="text" class="form-control" name="firstName" placeholder="First Name" />
@@ -98,7 +98,7 @@
                             <div id="emailResult" class="text-danger"></div>
                         </div>
 
-                        <div class="d-inline-flex mb-4">
+                        <div class="d-inline-flex">
                             <div class="form-floating me-2">
                                 <input type="password" class="form-control" name="password" placeholder="Password"
                                     autocomplete="new-password" />
@@ -110,7 +110,6 @@
                                 <label for="signupPasswordConfirm">Confirm Password</label>
                             </div>
                         </div>
-
                         <div id="passwordResult" class="text-danger"></div>
                     </form>
                 </div>

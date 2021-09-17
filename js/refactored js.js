@@ -345,7 +345,7 @@ function signup(form, e) {
     }
 
     // No password was entered or passwords do not match
-    if (form.password.value != form.passwordConfirm.value) {
+    if (form.password.value == "" || form.passwordConfirm.value == "") {
         $("#passwordResult").text("Please enter a password");
         error = true;
     } else if (form.password.value != form.passwordConfirm.value) {

@@ -69,8 +69,7 @@ function updateDetails() {
         currentCard.ZipCode
     );
 
-    $("#details-notes").empty();
-    $("#details-notes").append(currentCard.Notes.replaceAll('\\r\\n', '<br />'));
+    $("#details-notes").val(currentCard.Notes.replaceAll('\\r\\n', '\r\n'));
 }
 
 // Create an object with values from selected form ("#edit" or "#add")
@@ -87,7 +86,7 @@ function generateInfo(form) {
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
         Image: $(form + "-img").attr("src"),
-        Notes: $(form + "-notes").val().replaceAll('\n', '\\r\\n')
+        Notes: $(form + "-notes").val().replaceAll(/\r?\n/g, '\\r\\n')
     }
 }
 

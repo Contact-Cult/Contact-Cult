@@ -32,7 +32,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-state").val(currentCard.State);
     $("#edit-zip").val(currentCard.ZipCode);
     $("#edit-img").attr("src", currentCard.Image);
-    $("#edit-notes").val(currentCard.Notes.replace('<br />', '\r\n'));
+    $("#edit-notes").val(currentCard.Notes.replace('<br />', '/\r?\n/g'));
 
     $("#edit-phone").mask('(999) 999-9999');
 });

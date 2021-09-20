@@ -47,6 +47,7 @@
                             "%' OR State LIKE '%" . $searchQuery .
                             "%' OR ZipCode LIKE '%" . $searchQuery .
                             "%' OR PhoneNumber LIKE '%" . $searchQuery .
+                            "%' OR Notes LIKE '%" . $searchQuery .
                             "%' OR Email LIKE '%" . $searchQuery . "%')";
                 break;
             case "Name":
@@ -70,6 +71,9 @@
                 break;
             case "Email":
                 $query .=   "Email LIKE '%" . $searchQuery . "%')";
+                break;
+            case "Notes":
+                $query .=   "Notes LIKE '%" . $searchQuery . "%')";
                 break;
         }
 

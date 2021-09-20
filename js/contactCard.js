@@ -13,12 +13,12 @@ let contact = /*html*/`
 
                 <div class="card-text">
                         <div>
-                            <i class="bi-telephone me-2 d-inline-flex"></i>
-                            <div id="new-contact-phone" class="d-inline-flex"></div>
+                            <i class="bi-telephone me-2 d-inline-flex align-middle"></i>
+                            <div id="new-contact-phone" class="d-inline-flex align-middle"></div>
                         </div>
-                        <div class="d-inline-block">
-                            <i class="bi-envelope me-2 d-inline-block"></i>
-                            <div id="new-contact-email" class="d-inline-block text-truncate" style="max-width: 165px;"></div>
+                        <div>
+                            <i class="bi-envelope me-2 d-inline-block align-middle"></i>
+                            <div id="new-contact-email" class="d-inline-block text-truncate align-middle" style="max-width: 165px;"></div>
                         </div>
                 </div>
             </div>

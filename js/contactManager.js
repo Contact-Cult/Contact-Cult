@@ -87,7 +87,7 @@ function generateInfo(form) {
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
         Image: $(form + "-img").attr("src"),
-        Notes: $(form + "-notes").val().replaceAll(/\r?\n/g, '\\r\\n')
+        Notes: $(form + "-notes").val().replaceAll('\n', '\\r\\n')
     }
 }
 

@@ -1,5 +1,11 @@
 let contactList = [];
 
+function prepareInfo(info) {
+    let temp = info;
+    temp.Notes = info.Notes.replace(/\r?\n/g, '\\r\\n');
+    return temp;
+}
+
 // Enable add button when window is opened
 // Clear inputs
 // Mask telephone and zip code input
@@ -86,7 +92,7 @@ function generateInfo(form) {
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
         Image: $(form + "-img").attr("src"),
-        Notes: $(form + "-notes").val().replace(/\r?\n/g, '\\r\\n')
+        Notes: $(form + "-notes").val()
     }
 }
 
@@ -106,14 +112,14 @@ function editContact() {
     updateContactCard(contactInfo.ContactID, contactInfo);
     updateDetails();
 
-    apiHandler("EditContact", JSON.stringify(contactInfo));
+    apiHandler("EditContact", JSON.stringify(prepareInfo(contactInfo)));
 }
 
 function addContact(button) {
     button.disabled = true;
     let contactInfo = generateInfo("#add");
 
-    let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).newContactID;
+    let newID = apiHandler("AddContact", JSON.stringify(prepareInfo(contactInfo))).newContactID;
     contactInfo.ContactID = newID;
 
     contactList.push(contactInfo);

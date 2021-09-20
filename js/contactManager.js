@@ -18,6 +18,7 @@ $("#contact-adder").on("show.bs.modal", function () {
     $("#add-notes").val("");
 
     $("#add-phone").mask('(999) 999-9999');
+
 });
 
 // Fill inputs with current contact details and mask phone/zip inputs
@@ -31,7 +32,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-state").val(currentCard.State);
     $("#edit-zip").val(currentCard.ZipCode);
     $("#edit-img").attr("src", currentCard.Image);
-    $("#edit-notes").val(currentCard.Notes.replace('<br />', '\r\n\g'));
+    $("#edit-notes").val(currentCard.Notes.replace('<br />', '\r\n'));
 
     $("#edit-phone").mask('(999) 999-9999');
 });
@@ -68,7 +69,8 @@ function updateDetails() {
         currentCard.ZipCode
     );
 
-    $("#details-notes").text(currentCard.Notes);
+    $("#details-notes").empty();
+    $("#details-notes").append(currentCard.Notes);
 }
 
 // Create an object with values from selected form ("#edit" or "#add")
@@ -84,7 +86,7 @@ function generateInfo(form) {
         ZipCode: $(form + "-zip").val(),
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
-        Image: $(form + "-img").attr("src"), // put random image path if add form
+        Image: $(form + "-img").attr("src"),
         Notes: $(form + "-notes").val().replace(/\r?\n/g, '<br />')
     }
 }

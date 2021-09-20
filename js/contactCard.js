@@ -18,7 +18,7 @@ let contact = /*html*/`
                         </div>
                         <div style="max-height: 30px">
                             <i class="bi-envelope me-2 d-inline-block align-middle"></i>
-                            <div id="new-contact-email" class="d-inline-block text-truncate align-middle w-auto" style="max-width: 150px"></div>
+                            <div id="new-contact-email" class="d-inline-block text-truncate align-middle" style="max-width: 150px"></div>
                         </div>
                 </div>
             </div>

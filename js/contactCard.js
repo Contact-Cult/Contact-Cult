@@ -16,7 +16,7 @@ let contact = /*html*/`
                             <i class="bi-telephone me-2 d-inline-flex align-middle"></i>
                             <div id="new-contact-phone" class="d-inline-flex align-middle"></div>
                         </div>
-                        <div height="30px">
+                        <div style="max-height: 30px">
                             <i class="bi-envelope me-2 d-inline-block align-middle"></i>
                             <div id="new-contact-email" class="d-inline-block text-truncate align-middle w-auto" ></div>
                         </div>

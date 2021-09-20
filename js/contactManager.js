@@ -46,13 +46,6 @@ $("#contact-details").on("show.bs.modal", function (event) {
     updateDetails();
 });
 
-$("textarea").each(function () {
-    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-  }).on("input", function () {
-    this.style.height = "auto";
-    this.style.height = (this.scrollHeight) + "px";
-  });
-
 $("#contact-deleter").on("show.bs.modal", function () {
     $("#delete-name").text("Delete " + currentCard.FirstName + " " + currentCard.LastName);
 });

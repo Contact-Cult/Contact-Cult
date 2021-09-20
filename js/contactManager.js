@@ -1,11 +1,5 @@
 let contactList = [];
 
-function prepareInfo(info) {
-    let temp = info;
-    temp.Notes = info.Notes.replace(/\r?\n/g, '\\r\\n');
-    return temp;
-}
-
 // Enable add button when window is opened
 // Clear inputs
 // Mask telephone and zip code input
@@ -38,7 +32,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-state").val(currentCard.State);
     $("#edit-zip").val(currentCard.ZipCode);
     $("#edit-img").attr("src", currentCard.Image);
-    $("#edit-notes").val(currentCard.Notes);
+    $("#edit-notes").val(currentCard.Notes.replace('\\r\\n', '\r\n'));
 
     $("#edit-phone").mask('(999) 999-9999');
 });
@@ -92,7 +86,7 @@ function generateInfo(form) {
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
         Image: $(form + "-img").attr("src"),
-        Notes: $(form + "-notes").val()
+        Notes: $(form + "-notes").val().replace(/\r?\n/g, '\\r\\n')
     }
 }
 
@@ -112,14 +106,14 @@ function editContact() {
     updateContactCard(contactInfo.ContactID, contactInfo);
     updateDetails();
 
-    apiHandler("EditContact", JSON.stringify(prepareInfo(contactInfo)));
+    apiHandler("EditContact", JSON.stringify(contactInfo));
 }
 
 function addContact(button) {
     button.disabled = true;
     let contactInfo = generateInfo("#add");
 
-    let newID = apiHandler("AddContact", JSON.stringify(prepareInfo(contactInfo))).newContactID;
+    let newID = apiHandler("AddContact", JSON.stringify(contactInfo)).newContactID;
     contactInfo.ContactID = newID;
 
     contactList.push(contactInfo);

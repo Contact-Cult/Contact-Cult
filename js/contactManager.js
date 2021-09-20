@@ -69,7 +69,8 @@ function updateDetails() {
         currentCard.ZipCode
     );
 
-    $("#details-notes").text(currentCard.Notes);
+    $("#details-notes").empty();
+    $("#details-notes").append(currentCard.Notes);
 }
 
 // Create an object with values from selected form ("#edit" or "#add")

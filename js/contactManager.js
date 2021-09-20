@@ -70,7 +70,7 @@ function updateDetails() {
     );
 
     $("#details-notes").empty();
-    $("#details-notes").append(currentCard.Notes.replace('\\r\\n', '\r\n'));
+    $("#details-notes").append(currentCard.Notes.replace('\\r\\n', '<br />'));
 }
 
 // Create an object with values from selected form ("#edit" or "#add")

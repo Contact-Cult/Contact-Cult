@@ -14,7 +14,7 @@ $("#contact-adder").on("show.bs.modal", function () {
     $("#add-city").val("");
     $("#add-state").val("");
     $("#add-zip").val("");
-    $("#add-img").attr("src", "images/ContactCult_Logo_1.png"); // random image here
+    $("#add-img").attr("src", "images/ContactCult_Logo_1.png");
     $("#add-notes").val("");
 
     $("#add-phone").mask('(999) 999-9999');

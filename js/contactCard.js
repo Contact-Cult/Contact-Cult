@@ -76,7 +76,6 @@ function newContactCard(info, index) {
 }
 
 function updateContactCard(id, info) {
-    // if names are too long, truncate to fit on card in 2 lines
     $("#firstname-" + id).text(info.FirstName + " ");
     $("#lastname-" + id).text(info.LastName);
     $("#phone-" + id).text(info.PhoneNumber);

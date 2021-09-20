@@ -18,7 +18,6 @@ $("#contact-adder").on("show.bs.modal", function () {
     $("#add-notes").val("");
 
     $("#add-phone").mask('(999) 999-9999');
-    $("#add-zip").mask('99999-999');
 });
 
 // Fill inputs with current contact details and mask phone/zip inputs
@@ -35,7 +34,6 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-notes").val(currentCard.Notes.replace('<br />', '\r\n\g'));
 
     $("#edit-phone").mask('(999) 999-9999');
-    $("#edit-zip").mask('99999-999');
 });
 
 // When contact details are opened,

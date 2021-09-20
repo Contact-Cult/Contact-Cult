@@ -32,7 +32,7 @@ $("#contact-editor").on("show.bs.modal", function () {
     $("#edit-state").val(currentCard.State);
     $("#edit-zip").val(currentCard.ZipCode);
     $("#edit-img").attr("src", currentCard.Image);
-    $("#edit-notes").val(currentCard.Notes.replace('\\r\\n', '\r\n'));
+    $("#edit-notes").val(currentCard.Notes.replaceAll('\\r\\n', '\r\n'));
 
     $("#edit-phone").mask('(999) 999-9999');
 });
@@ -70,7 +70,7 @@ function updateDetails() {
     );
 
     $("#details-notes").empty();
-    $("#details-notes").append(currentCard.Notes.replace('\\r\\n', '<br />'));
+    $("#details-notes").append(currentCard.Notes.replaceAll('\\r\\n', '<br />'));
 }
 
 // Create an object with values from selected form ("#edit" or "#add")
@@ -87,7 +87,7 @@ function generateInfo(form) {
         PhoneNumber: $(form + "-phone").val(),
         Email: $(form + "-email").val(),
         Image: $(form + "-img").attr("src"),
-        Notes: $(form + "-notes").val().replace(/\r?\n/g, '\\r\\n')
+        Notes: $(form + "-notes").val().replaceAll(/\r?\n/g, '\\r\\n')
     }
 }
 
